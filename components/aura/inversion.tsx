@@ -1,122 +1,93 @@
-const pagos = [
-  {
-    pago: "Pago 1",
-    fecha: "Semana 1 (Anticipado)",
-    monto: "$3,000",
-    detalle: "Activación de acceso corporativo, setup técnico, configuración inicial",
-    color: "#8B5CF6",
-    bg: "#F5F3FF",
-  },
-  {
-    pago: "Pago 2",
-    fecha: "Mes 1 · 15 Abril",
-    monto: "$2,500",
-    detalle: "Evaluación de primer mes completo",
-    color: "#EC4899",
-    bg: "#FDF2F8",
-  },
-  {
-    pago: "Pago 3",
-    fecha: "Mes 2 · 15 Mayo",
-    monto: "$2,500",
-    detalle: "Evaluación de segundo mes completo",
-    color: "#6B7280",
-    bg: "#F9FAFB",
-  },
-]
-
-const bonos = [
-  { condicion: "70 usuarios activos en Mes 1", bono: "+$1,500" },
-  { condicion: "100 clases completadas en Mes 2-3", bono: "+$2,000" },
-  { condicion: "NPS >+5 al finalizar piloto", bono: "+$1,000" },
-]
-
 export default function Inversion() {
   return (
-    <section className="w-full bg-[#F9FAFB] py-20 px-6 md:px-12">
-      <div className="max-w-6xl mx-auto">
-        <div className="mb-12">
-          <p className="text-xs font-medium tracking-widest text-[#9CA3AF] uppercase mb-3">Sección 6</p>
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-black text-balance">
-            Estructura de Inversión
-          </h2>
-        </div>
+    <section className="w-full bg-background py-28 px-8 md:px-16">
+      <div className="max-w-5xl mx-auto">
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+        <p className="text-[10px] tracking-[0.45em] uppercase text-muted-foreground mb-10" style={{ fontFamily: "'Geist', sans-serif" }}>
+          Inversión
+        </p>
+
+        <h2 className="font-serif font-light text-foreground text-balance mb-20" style={{ fontSize: "clamp(2rem, 4.5vw, 3.4rem)", lineHeight: 1.15 }}>
+          Estructura de pagos<br />
+          <span className="italic">escalonada y basada en resultados.</span>
+        </h2>
+
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
+
           {/* Pagos */}
           <div>
-            <h3 className="text-lg font-semibold text-black mb-6">Cronograma de Pagos</h3>
-            <div className="space-y-4">
-              {pagos.map((p) => (
-                <div
-                  key={p.pago}
-                  className="flex gap-5 bg-white rounded-lg p-5 shadow-sm"
-                >
-                  <div
-                    className="flex-shrink-0 w-14 text-center rounded-md py-2 flex flex-col items-center justify-center"
-                    style={{ background: p.bg }}
-                  >
-                    <span className="text-lg font-bold" style={{ color: p.color }}>
-                      {p.monto}
-                    </span>
-                  </div>
+            <p className="text-[9px] tracking-[0.4em] uppercase text-muted-foreground mb-10" style={{ fontFamily: "'Geist', sans-serif" }}>
+              Cronograma de pagos
+            </p>
+            <div className="space-y-0 divide-y divide-border border-t border-b border-border">
+              {[
+                { n: "01", fecha: "Semana 1 — Anticipado", monto: "$3,000", desc: "Activación de acceso corporativo, setup técnico, configuración inicial." },
+                { n: "02", fecha: "15 Abril — Mes 1", monto: "$2,500", desc: "Evaluación de primer mes completo." },
+                { n: "03", fecha: "15 Mayo — Mes 2", monto: "$2,500", desc: "Evaluación de segundo mes completo." },
+              ].map((p) => (
+                <div key={p.n} className="grid grid-cols-[48px_1fr_auto] gap-6 py-8 items-start">
+                  <p className="font-serif font-light text-muted-foreground" style={{ fontSize: "1.8rem", lineHeight: 1 }}>
+                    {p.n}
+                  </p>
                   <div>
-                    <p className="text-sm font-bold text-black">{p.pago}</p>
-                    <p className="text-xs text-[#9CA3AF] mb-1">{p.fecha}</p>
-                    <p className="text-sm text-[#6B7280] leading-relaxed">{p.detalle}</p>
+                    <p className="text-[9px] tracking-[0.4em] uppercase text-muted-foreground mb-2" style={{ fontFamily: "'Geist', sans-serif" }}>
+                      {p.fecha}
+                    </p>
+                    <p className="text-muted-foreground leading-relaxed" style={{ fontFamily: "'Geist', sans-serif", fontSize: "0.85rem" }}>
+                      {p.desc}
+                    </p>
                   </div>
+                  <p className="font-serif font-light text-foreground" style={{ fontSize: "1.3rem", lineHeight: 1 }}>
+                    {p.monto}
+                  </p>
                 </div>
               ))}
-
-              {/* Base total */}
-              <div className="flex items-center justify-between bg-black text-white rounded-lg px-5 py-4">
-                <span className="font-semibold">Base Total (3 meses)</span>
-                <span className="text-xl font-bold">$8,000</span>
+              <div className="grid grid-cols-[48px_1fr_auto] gap-6 py-8 items-center bg-foreground -mx-0">
+                <div />
+                <p className="font-serif text-background" style={{ fontSize: "1rem" }}>
+                  Base total — 3 meses
+                </p>
+                <p className="font-serif font-light text-background" style={{ fontSize: "1.6rem", lineHeight: 1 }}>
+                  $8,000
+                </p>
               </div>
             </div>
           </div>
 
           {/* Bonos */}
           <div>
-            <h3 className="text-lg font-semibold text-black mb-6">Bonos por Resultados</h3>
-            <div className="bg-white rounded-lg shadow-sm overflow-hidden">
-              <div className="bg-[#F3F4F6] px-5 py-3">
-                <p className="text-xs font-medium text-[#9CA3AF] uppercase tracking-wider">Evaluados al final del Mes 3</p>
-              </div>
-              <div className="divide-y divide-[#F3F4F6]">
-                {bonos.map((b) => (
-                  <div key={b.condicion} className="flex items-center justify-between px-5 py-4">
-                    <p className="text-sm text-[#6B7280] leading-relaxed">{b.condicion}</p>
-                    <span className="text-sm font-bold text-[#8B5CF6] ml-4 flex-shrink-0">{b.bono}</span>
-                  </div>
-                ))}
-              </div>
-              <div className="bg-[#F5F3FF] px-5 py-4 flex items-center justify-between">
-                <span className="font-semibold text-[#8B5CF6]">Máximo Total</span>
-                <span className="text-xl font-bold text-[#8B5CF6]">$12,500</span>
-              </div>
-            </div>
-
-            {/* Resumen visual */}
-            <div className="mt-6 bg-white rounded-lg p-5 shadow-sm">
-              <p className="text-xs font-medium tracking-wider text-[#9CA3AF] uppercase mb-4">Rango de inversión</p>
-              <div className="flex items-end gap-6">
-                <div className="text-center">
-                  <div className="w-16 bg-[#6B7280] rounded-t-sm mx-auto" style={{ height: "48px" }} />
-                  <p className="text-xs text-[#6B7280] mt-1">Mínimo</p>
-                  <p className="text-base font-bold text-black">$8,000</p>
-                </div>
-                <div className="text-center">
-                  <div className="w-16 bg-[#8B5CF6] rounded-t-sm mx-auto" style={{ height: "78px" }} />
-                  <p className="text-xs text-[#6B7280] mt-1">Máximo</p>
-                  <p className="text-base font-bold text-[#8B5CF6]">$12,500</p>
-                </div>
-                <div className="text-center flex-1">
-                  <p className="text-xs text-[#9CA3AF] leading-relaxed italic">
-                    Los bonos se activan únicamente si se alcanzan los resultados acordados.
+            <p className="text-[9px] tracking-[0.4em] uppercase text-muted-foreground mb-10" style={{ fontFamily: "'Geist', sans-serif" }}>
+              Bonos por resultados · evaluados al Mes 3
+            </p>
+            <div className="space-y-0 divide-y divide-border border-t border-b border-border mb-10">
+              {[
+                { cond: "70 usuarios activos en Mes 1", bono: "+$1,500" },
+                { cond: "100 clases completadas en Mes 2–3", bono: "+$2,000" },
+                { cond: "NPS >+5 al finalizar piloto", bono: "+$1,000" },
+              ].map((b) => (
+                <div key={b.cond} className="flex items-center justify-between gap-6 py-7">
+                  <p className="text-muted-foreground leading-relaxed" style={{ fontFamily: "'Geist', sans-serif", fontSize: "0.875rem" }}>
+                    {b.cond}
+                  </p>
+                  <p className="font-serif text-foreground flex-shrink-0" style={{ fontSize: "1.1rem" }}>
+                    {b.bono}
                   </p>
                 </div>
+              ))}
+            </div>
+
+            <div className="flex items-end justify-between pt-4">
+              <div>
+                <p className="text-[9px] tracking-[0.4em] uppercase text-muted-foreground mb-2" style={{ fontFamily: "'Geist', sans-serif" }}>
+                  Máximo total
+                </p>
+                <p className="font-serif font-light text-foreground" style={{ fontSize: "clamp(2.5rem, 5vw, 4rem)", lineHeight: 1 }}>
+                  $12,500
+                </p>
               </div>
+              <p className="text-muted-foreground italic text-right max-w-[180px]" style={{ fontFamily: "'Geist', sans-serif", fontSize: "0.75rem" }}>
+                Los bonos se activan únicamente al alcanzar los resultados acordados.
+              </p>
             </div>
           </div>
         </div>

@@ -1,33 +1,54 @@
 export default function HeroSection() {
   return (
-    <section className="w-full bg-white py-24 px-6 md:px-12 text-center" style={{ background: "linear-gradient(to bottom, #ffffff, #f9fafb)" }}>
-      <div className="max-w-3xl mx-auto flex flex-col items-center gap-6">
-        <span className="text-xs font-medium tracking-widest text-[#9CA3AF] uppercase">
-          AURA · Propuesta Comercial
+    <section className="relative w-full overflow-hidden" style={{ height: "100svh", minHeight: 560 }}>
+      {/* Full-bleed hero image */}
+      <img
+        src="/images/hero-meditation.jpg"
+        alt="Persona meditando en calma"
+        className="absolute inset-0 w-full h-full object-cover object-center"
+      />
+      {/* Soft dark veil */}
+      <div className="absolute inset-0" style={{ background: "linear-gradient(to bottom, rgba(0,0,0,0.18) 0%, rgba(0,0,0,0.42) 60%, rgba(0,0,0,0.65) 100%)" }} />
+
+      {/* Top nav */}
+      <header className="absolute top-0 left-0 right-0 z-20 flex items-center justify-between px-8 md:px-16 pt-8">
+        <span className="text-white/90 text-xs tracking-[0.4em] uppercase" style={{ fontFamily: "'Geist', sans-serif", fontWeight: 300 }}>
+          AURA
         </span>
-        <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-black leading-tight text-balance">
-          Plataforma Digital de Bienestar Integral
+        <span className="text-white/50 text-[10px] tracking-[0.25em] uppercase" style={{ fontFamily: "'Geist', sans-serif" }}>
+          Propuesta Comercial · Willdom · 2025
+        </span>
+      </header>
+
+      {/* Center content */}
+      <div className="absolute inset-0 z-10 flex flex-col items-center justify-center text-center px-6">
+        <p className="text-white/60 text-[10px] tracking-[0.5em] uppercase mb-8" style={{ fontFamily: "'Geist', sans-serif" }}>
+          BIENESTAR INTEGRAL · ACCESO CORPORATIVO
+        </p>
+
+        <h1
+          className="text-white font-serif font-light text-balance"
+          style={{ fontSize: "clamp(4.5rem, 14vw, 11rem)", lineHeight: 0.9, letterSpacing: "-0.01em" }}
+        >
+          AURA
         </h1>
-        <p className="text-xl md:text-2xl font-semibold text-[#6B7280]">
-          Con Acceso Corporativo para Willdom
+
+        <div className="w-12 h-px bg-white/40 my-8" />
+
+        <p
+          className="text-white/75 font-serif italic font-light text-balance"
+          style={{ fontSize: "clamp(1.1rem, 2.8vw, 1.6rem)", letterSpacing: "0.05em" }}
+        >
+          El bienestar de tu equipo, profundamente.
         </p>
-        <p className="text-base md:text-lg text-[#6B7280] max-w-xl leading-relaxed">
-          Solución científicamente comprobada para mejorar bienestar, prevenir crisis y recuperar productividad en developers remotos.
-        </p>
-        <div className="flex flex-wrap justify-center gap-4 mt-4">
-          <div className="flex items-center gap-2 bg-[#F3F4F6] rounded-full px-4 py-2">
-            <span className="w-2 h-2 rounded-full bg-[#8B5CF6] inline-block" />
-            <span className="text-sm text-[#6B7280] font-medium">87 usuarios esperados</span>
-          </div>
-          <div className="flex items-center gap-2 bg-[#F3F4F6] rounded-full px-4 py-2">
-            <span className="w-2 h-2 rounded-full bg-[#EC4899] inline-block" />
-            <span className="text-sm text-[#6B7280] font-medium">ROI 3.9x en 3 meses</span>
-          </div>
-          <div className="flex items-center gap-2 bg-[#F3F4F6] rounded-full px-4 py-2">
-            <span className="w-2 h-2 rounded-full bg-black inline-block" />
-            <span className="text-sm text-[#6B7280] font-medium">Piloto 3 meses</span>
-          </div>
-        </div>
+      </div>
+
+      {/* Bottom scroll cue */}
+      <div className="absolute bottom-10 left-1/2 -translate-x-1/2 z-20 flex flex-col items-center gap-3">
+        <div className="w-px h-14 bg-white/30" />
+        <span className="text-white/40 text-[9px] tracking-[0.4em] uppercase" style={{ fontFamily: "'Geist', sans-serif" }}>
+          Scroll
+        </span>
       </div>
     </section>
   )

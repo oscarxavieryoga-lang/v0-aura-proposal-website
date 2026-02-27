@@ -1,124 +1,93 @@
-const realidadItems = [
-  "Aislamiento: sin conexión casual, sin comunidad física",
-  "Insomnio: la mente no desconecta del trabajo en casa",
-  "Dolor crónico: 8 horas sentado acumula daño ignorado",
-  "Estrés acumulado: sin herramientas para regularse emocionalmente",
-  "Vulnerabilidad: a depresión silenciosa sin avisos previos",
-]
-
 const impactos = [
   {
-    color: "#8B5CF6",
-    bg: "#F5F3FF",
-    title: "Cuando Mejora el Sueño",
-    benefits: [
-      { headline: "Sistema nervioso se regula", detail: "Menos ansiedad, mejor manejo de presión, menos reactividad emocional." },
-      { headline: "Claridad mental", detail: "Decisiones mejores, menor cantidad de errores, mejor concentración." },
-      { headline: "Energía recuperada", detail: "Vida fuera del trabajo posible de nuevo, relaciones mejoran." },
+    title: "Cuando mejora el sueño",
+    pull: "El sistema nervioso se regula. La mente descansa. El trabajo fluye.",
+    points: [
+      { h: "Menos ansiedad", b: "El sistema nervioso regulado reduce reactividad emocional durante el día." },
+      { h: "Claridad mental", b: "Decisiones mejores, menos errores, mejor concentración en problemas complejos." },
+      { h: "Energía de vuelta", b: "Vida fuera del trabajo posible de nuevo. Relaciones mejoran. Sensación de estar vivo." },
     ],
-    stat: "Capacidad cognitiva +30% · Riesgo depresión -40%",
-    source: "Harvard Business Review",
+    stat: "+30% capacidad cognitiva · –40% riesgo de depresión",
+    source: "Harvard Business Review, 2019",
   },
   {
-    color: "#EC4899",
-    bg: "#FDF2F8",
-    title: "Cuando Recupera su Cuerpo",
-    benefits: [
-      { headline: "Libera tensión acumulada", detail: "Vuelve a sentirse vivo en su corporalidad, menos disociación cuerpo-mente." },
-      { headline: "Menos dolor = mejor concentración", detail: "Deja de lidiar constantemente con el dolor de espalda." },
-      { headline: "Mejor autoestima", detail: "Recupera sensación de control, se siente cuidado por sí mismo." },
+    title: "Cuando recupera su cuerpo",
+    pull: "El movimiento libera lo que el escritorio acumula.",
+    points: [
+      { h: "Tensión liberada", b: "Vuelve a sentirse vivo en su corporalidad. Menos disociación cuerpo-mente." },
+      { h: "Sin dolor, más foco", b: "Deja de lidiar constantemente con el dolor de espalda para poder concentrarse." },
+      { h: "Autoestima recuperada", b: "Sensación de control sobre sí mismo. Se siente cuidado, dignificado." },
     ],
-    stat: "Ansiedad -40% · Depresión -30%",
+    stat: "–40% ansiedad · –30% depresión",
     source: "American Psychological Association",
   },
   {
-    color: "#6B7280",
-    bg: "#F9FAFB",
-    title: "Cuando Regula el Estrés",
-    benefits: [
-      { headline: "Recupera sensación de control", detail: "Tiene herramientas que funcionan, mayor agencia sobre su experiencia." },
-      { headline: "Menos resentimiento acumulado", detail: "Regula en el momento, no llega el fin de semana explotando." },
-      { headline: "Prevención de crisis", detail: "Developer con herramientas evita colapso. Depresión silenciosa tiene opciones." },
+    title: "Cuando aprende a regular el estrés",
+    pull: "Herramientas que funcionan, no presión que reprime.",
+    points: [
+      { h: "Sensación de control", b: "No es víctima del estrés. Tiene herramientas reales que generan agencia." },
+      { h: "Menos resentimiento", b: "Regula en el momento, no llega el fin de semana explotando o desconectado." },
+      { h: "Prevención de crisis", b: "El developer con herramientas evita el colapso. La depresión silenciosa tiene opciones." },
     ],
-    stat: "Depresión clínica -60% · Burnout -50%",
-    source: "WHO Global Mental Health Report 2023",
+    stat: "–60% riesgo depresión clínica · –50% burnout",
+    source: "WHO Global Mental Health Report, 2023",
   },
 ]
 
 export default function ImpactoBienestar() {
   return (
-    <section className="w-full bg-[#F9FAFB] py-20 px-6 md:px-12">
-      <div className="max-w-6xl mx-auto">
-        {/* Header */}
-        <div className="mb-12">
-          <p className="text-xs font-medium tracking-widest text-[#9CA3AF] uppercase mb-3">Sección 4</p>
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-black text-balance">
-            El Impacto: Bienestar Emocional y Mental
-          </h2>
-          <p className="text-lg text-[#6B7280] mt-3 italic leading-relaxed">
-            Antes de hablar de dinero, hablemos de personas.
-          </p>
-        </div>
+    <section className="w-full bg-foreground py-28 px-8 md:px-16">
+      <div className="max-w-5xl mx-auto">
 
-        {/* La realidad */}
-        <div className="bg-white rounded-lg p-8 shadow-sm mb-14">
-          <h3 className="text-xl font-bold text-black mb-6">La Realidad del Developer Remoto</h3>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-            {realidadItems.map((item) => (
-              <div key={item} className="flex items-start gap-3">
-                <span className="mt-1 w-2 h-2 rounded-full bg-[#8B5CF6] flex-shrink-0" />
-                <p className="text-sm text-[#6B7280] leading-relaxed">{item}</p>
-              </div>
-            ))}
-          </div>
-          <div className="mt-6 pt-6 border-t border-[#F3F4F6]">
-            <p className="text-sm font-semibold text-black">
-              Esto <span className="text-[#8B5CF6]">NO</span> es "normal en tech". Es dolor real que afecta la calidad de vida.
-            </p>
-          </div>
-        </div>
+        {/* Label */}
+        <p className="text-[10px] tracking-[0.45em] uppercase text-background/40 mb-10" style={{ fontFamily: "'Geist', sans-serif" }}>
+          El Impacto
+        </p>
 
-        {/* 3 impactos — todos visibles, fluidos */}
-        <div className="space-y-10">
+        {/* Big editorial opener */}
+        <h2 className="font-serif font-light text-background text-balance mb-6" style={{ fontSize: "clamp(2rem, 4.5vw, 3.4rem)", lineHeight: 1.15 }}>
+          Antes de hablar de dinero,<br />
+          <span className="italic">hablemos de personas.</span>
+        </h2>
+
+        <p className="text-background/60 mb-20 max-w-lg leading-relaxed" style={{ fontFamily: "'Geist', sans-serif", fontSize: "0.95rem" }}>
+          El dolor del developer remoto no es "normal en tech". Es real, acumulado, e ignorado. Aislamiento, insomnio, dolor postural, estrés sin herramientas — vulnerabilidad a depresión silenciosa sin avisos previos.
+        </p>
+
+        {/* 3 impact blocks */}
+        <div className="space-y-0 divide-y divide-background/15 border-t border-background/15">
           {impactos.map((imp) => (
-            <div key={imp.title} className="bg-white rounded-lg shadow-sm overflow-hidden">
-              {/* Header stripe */}
-              <div
-                className="px-8 py-5 border-l-4"
-                style={{ borderColor: imp.color, background: imp.bg }}
-              >
-                <h3 className="text-xl font-bold" style={{ color: imp.color }}>
-                  {imp.title}
-                </h3>
+            <div key={imp.title} className="py-16">
+
+              <h3 className="font-serif font-light text-background mb-4" style={{ fontSize: "clamp(1.6rem, 3vw, 2.4rem)", lineHeight: 1.2 }}>
+                {imp.title}
+              </h3>
+
+              <p className="font-serif italic text-background/70 mb-12" style={{ fontSize: "1.05rem" }}>
+                {imp.pull}
+              </p>
+
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-10 mb-12">
+                {imp.points.map((pt) => (
+                  <div key={pt.h}>
+                    <p className="font-serif text-background mb-2" style={{ fontSize: "1rem" }}>
+                      {pt.h}
+                    </p>
+                    <p className="text-background/55 leading-relaxed" style={{ fontFamily: "'Geist', sans-serif", fontSize: "0.85rem" }}>
+                      {pt.b}
+                    </p>
+                  </div>
+                ))}
               </div>
 
-              {/* Content */}
-              <div className="px-8 py-8">
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
-                  {imp.benefits.map((b) => (
-                    <div key={b.headline} className="flex flex-col gap-2">
-                      <div className="flex items-center gap-2">
-                        <span
-                          className="w-1.5 h-1.5 rounded-full flex-shrink-0"
-                          style={{ background: imp.color }}
-                        />
-                        <p className="text-sm font-semibold text-black">{b.headline}</p>
-                      </div>
-                      <p className="text-sm text-[#6B7280] leading-relaxed pl-3.5">{b.detail}</p>
-                    </div>
-                  ))}
-                </div>
-
-                {/* Stat destacada */}
-                <div
-                  className="rounded-md px-6 py-4 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2"
-                  style={{ background: imp.bg }}
-                >
-                  <p className="text-base font-bold" style={{ color: imp.color }}>
-                    {imp.stat}
-                  </p>
-                  <p className="text-xs text-[#9CA3AF] italic">{imp.source}</p>
-                </div>
+              <div className="flex flex-col sm:flex-row sm:items-center gap-4 pt-8 border-t border-background/15">
+                <p className="font-serif text-background/90" style={{ fontSize: "1.05rem" }}>
+                  {imp.stat}
+                </p>
+                <span className="hidden sm:block w-px h-4 bg-background/20 mx-2" />
+                <p className="text-background/40 italic" style={{ fontFamily: "'Geist', sans-serif", fontSize: "0.78rem" }}>
+                  {imp.source}
+                </p>
               </div>
             </div>
           ))}

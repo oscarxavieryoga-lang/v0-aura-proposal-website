@@ -11,7 +11,7 @@ import Footer from "@/components/aura/footer"
 
 export default function Page() {
   return (
-    <main className="bg-white text-black font-sans">
+    <main className="bg-background text-foreground font-serif">
       <HeroSection />
       <ResumenEjecutivo />
       <ElContexto />
