@@ -1,7 +1,38 @@
-const programaDistribucion = [
-  { label: "Programa Sueño", devs: 35, pct: 40, color: "#8B5CF6", bg: "#F5F3FF" },
-  { label: "Programa Movimiento", devs: 30, pct: 35, color: "#EC4899", bg: "#FDF2F8" },
-  { label: "Programa Estrés", devs: 22, pct: 25, color: "#6B7280", bg: "#F9FAFB" },
+"use client"
+
+import {
+  Bar,
+  BarChart,
+  CartesianGrid,
+  Cell,
+  Pie,
+  PieChart,
+  ResponsiveContainer,
+  Tooltip,
+  XAxis,
+  YAxis,
+} from "recharts"
+
+const productividadData = [
+  { estado: "Cansado", perdidas: 3, productivas: 5 },
+  { estado: "Descansado", perdidas: 1.5, productivas: 6.5 },
+]
+
+const sleepLossData = [
+  { concepto: "Días perdidos", valor: 11.3 },
+  { concepto: "USD por día", valor: 200 },
+  { concepto: "Pérdida anual", valor: 2260 },
+]
+
+const programData = [
+  { nombre: "Sueño", usuarios: 35, color: "#8B5CF6" },
+  { nombre: "Movimiento", usuarios: 30, color: "#EC4899" },
+  { nombre: "Estrés", usuarios: 22, color: "#6B7280" },
+]
+
+const roiData = [
+  { concepto: "Inversión", valor: 8000, color: "#6B7280" },
+  { concepto: "Retorno 3M", valor: 30932, color: "#8B5CF6" },
 ]
 
 const tablaAnual = [
@@ -10,215 +41,121 @@ const tablaAnual = [
   { programa: "Estrés", anual: "$55,000", meses3: "$13,750", color: "#6B7280" },
 ]
 
-const kpis = [
-  { label: "Participación Mes 1", value: ">70 usuarios", color: "#8B5CF6", bg: "#F5F3FF" },
-  { label: "Retención Mes 3", value: "40-50%", color: "#EC4899", bg: "#FDF2F8" },
-  { label: "Satisfacción NPS", value: ">+5", color: "#8B5CF6", bg: "#F5F3FF" },
-  { label: "Completitud", value: "60%+ usuarios", color: "#6B7280", bg: "#F9FAFB" },
-]
-
 export default function ImpactoFinanciero() {
   return (
     <section className="w-full bg-white py-20 px-6 md:px-12">
-      <div className="max-w-6xl mx-auto space-y-16">
-        {/* Header */}
+      <div className="max-w-6xl mx-auto space-y-12">
         <div>
           <p className="text-xs font-medium tracking-widest text-[#9CA3AF] uppercase mb-3">Sección 5</p>
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-black text-balance">
-            El Impacto: Financiero
-          </h2>
-          <p className="text-lg text-[#6B7280] mt-3 leading-relaxed">
-            ROI medible basado en datos científicos.
-          </p>
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-black text-balance">El Impacto: Financiero</h2>
+          <p className="text-lg text-[#6B7280] mt-3 leading-relaxed">Menos texto, más visualización clara de resultados.</p>
         </div>
 
-        {/* Modelo de cálculo */}
-        <div>
-          <h3 className="text-xl font-bold text-black mb-6">El Modelo de Cálculo</h3>
-          <p className="text-sm text-[#6B7280] mb-8 leading-relaxed max-w-2xl">
-            El ROI no significa trabajar más horas. Significa trabajar <strong className="text-black">mejor</strong> en las mismas horas.
-          </p>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 items-center">
-            <div className="bg-[#FEF2F2] rounded-lg p-6">
-              <p className="text-xs font-medium tracking-wider text-[#EF4444] uppercase mb-3">Developer Cansado</p>
-              <p className="text-sm text-[#6B7280] leading-relaxed">8h en escritorio</p>
-              <p className="text-sm text-[#6B7280] leading-relaxed">3h perdidas en errores, distracciones</p>
-              <p className="text-lg font-bold text-[#EF4444] mt-3">5h productivas</p>
-            </div>
-            <div className="flex items-center justify-center">
-              <div className="text-center">
-                <div className="w-12 h-12 rounded-full bg-[#8B5CF6] text-white flex items-center justify-center text-xl font-bold mx-auto">
-                  →
-                </div>
-                <p className="text-xs text-[#9CA3AF] mt-2">AURA</p>
-              </div>
-            </div>
-            <div className="bg-[#F0FDF4] rounded-lg p-6">
-              <p className="text-xs font-medium tracking-wider text-[#22C55E] uppercase mb-3">Developer Descansado</p>
-              <p className="text-sm text-[#6B7280] leading-relaxed">8h en escritorio</p>
-              <p className="text-sm text-[#6B7280] leading-relaxed">1.5h perdidas (la mitad)</p>
-              <p className="text-lg font-bold text-[#22C55E] mt-3">6.5h productivas</p>
-            </div>
-          </div>
-          <div className="mt-4 text-center">
-            <span className="inline-block bg-[#F5F3FF] text-[#8B5CF6] font-bold text-sm px-5 py-2 rounded-full">
-              Diferencia: +1.5 horas de TRABAJO DE CALIDAD en el mismo tiempo
-            </span>
-          </div>
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+          <article className="bg-[#F9FAFB] rounded-2xl p-6 border border-[#F3F4F6]">
+            <h3 className="text-lg font-bold text-black mb-1">Productividad real: cansado vs descansado</h3>
+            <p className="text-sm text-[#6B7280] mb-4">+1.5h productivas por developer en la misma jornada.</p>
+            <ResponsiveContainer width="100%" height={260}>
+              <BarChart data={productividadData}>
+                <CartesianGrid strokeDasharray="3 3" stroke="#E5E7EB" />
+                <XAxis dataKey="estado" />
+                <YAxis />
+                <Tooltip />
+                <Bar dataKey="perdidas" fill="#EF4444" radius={[6, 6, 0, 0]} />
+                <Bar dataKey="productivas" fill="#8B5CF6" radius={[6, 6, 0, 0]} />
+              </BarChart>
+            </ResponsiveContainer>
+          </article>
+
+          <article className="bg-[#F9FAFB] rounded-2xl p-6 border border-[#F3F4F6]">
+            <h3 className="text-lg font-bold text-black mb-1">Costo anual del mal descanso</h3>
+            <p className="text-sm text-[#6B7280] mb-4">Referencia: Harvard Business Review 2019.</p>
+            <ResponsiveContainer width="100%" height={260}>
+              <BarChart data={sleepLossData}>
+                <CartesianGrid strokeDasharray="3 3" stroke="#E5E7EB" />
+                <XAxis dataKey="concepto" />
+                <YAxis />
+                <Tooltip />
+                <Bar dataKey="valor" fill="#EC4899" radius={[6, 6, 0, 0]} />
+              </BarChart>
+            </ResponsiveContainer>
+          </article>
         </div>
 
-        {/* Dato científico */}
-        <div className="bg-[#F5F3FF] rounded-lg p-8 md:p-10 text-center">
-          <p className="text-xs font-medium tracking-widest text-[#9CA3AF] uppercase mb-4">Dato Científico</p>
-          <p className="text-7xl md:text-8xl font-bold text-[#8B5CF6] mb-3">11.3</p>
-          <p className="text-xl font-semibold text-black mb-2">días de productividad perdida por persona / año</p>
-          <p className="text-sm text-[#6B7280] italic mb-6">Harvard Business Review, 2019</p>
-          <div className="inline-block bg-white rounded-lg px-6 py-3 shadow-sm">
-            <p className="text-base font-bold text-[#8B5CF6]">
-              = $2,260 USD / año por developer
-            </p>
-          </div>
-        </div>
-
-        {/* Aplicación a Willdom */}
-        <div>
-          <h3 className="text-xl font-bold text-black mb-2">Aplicación a Willdom</h3>
-          <p className="text-sm text-[#6B7280] mb-8 leading-relaxed">
-            350 developers × 25% participación ={" "}
-            <strong className="text-black">87 usuarios activos</strong>
-          </p>
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-            {programaDistribucion.map((p) => (
-              <div
-                key={p.label}
-                className="rounded-lg p-5 text-center"
-                style={{ background: p.bg }}
-              >
-                <p className="text-xs font-medium tracking-wider uppercase mb-2" style={{ color: p.color }}>
-                  {p.label}
-                </p>
-                <p className="text-4xl font-bold mb-1" style={{ color: p.color }}>
-                  {p.devs}
-                </p>
-                <p className="text-sm text-[#6B7280]">developers ({p.pct}%)</p>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        {/* Tablas */}
-        <div>
-          <h3 className="text-xl font-bold text-black mb-8">Impacto Financiero</h3>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {/* Tabla anual */}
-            <div className="rounded-lg overflow-hidden border border-[#F3F4F6] shadow-sm">
-              <div className="bg-[#F3F4F6] px-5 py-3">
-                <p className="text-sm font-semibold text-black">Impacto Anual</p>
-              </div>
-              <table className="w-full text-sm">
-                <thead>
-                  <tr className="bg-[#F9FAFB]">
-                    <th className="text-left px-5 py-3 text-xs font-medium text-[#9CA3AF] uppercase tracking-wider">Programa</th>
-                    <th className="text-right px-5 py-3 text-xs font-medium text-[#9CA3AF] uppercase tracking-wider">Impacto Anual</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {tablaAnual.map((row, i) => (
-                    <tr key={row.programa} className={i % 2 === 0 ? "bg-white" : "bg-[#F9FAFB]"}>
-                      <td className="px-5 py-3 font-medium" style={{ color: row.color }}>{row.programa}</td>
-                      <td className="px-5 py-3 text-right font-bold text-black">{row.anual}</td>
-                    </tr>
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+          <article className="bg-[#F9FAFB] rounded-2xl p-6 border border-[#F3F4F6]">
+            <h3 className="text-lg font-bold text-black mb-1">Distribución de usuarios activos</h3>
+            <p className="text-sm text-[#6B7280] mb-4">350 developers × 25% participación = 87 usuarios.</p>
+            <ResponsiveContainer width="100%" height={280}>
+              <PieChart>
+                <Pie data={programData} dataKey="usuarios" nameKey="nombre" outerRadius={100} label>
+                  {programData.map((entry) => (
+                    <Cell key={entry.nombre} fill={entry.color} />
                   ))}
-                  <tr className="bg-[#F3F4F6]">
-                    <td className="px-5 py-3 font-bold text-black">TOTAL</td>
-                    <td className="px-5 py-3 text-right font-bold text-[#8B5CF6]">$123,625</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
+                </Pie>
+              </PieChart>
+            </ResponsiveContainer>
+          </article>
 
-            {/* Tabla 3 meses */}
-            <div className="rounded-lg overflow-hidden border border-[#F3F4F6] shadow-sm">
-              <div className="bg-[#F3F4F6] px-5 py-3">
-                <p className="text-sm font-semibold text-black">Impacto 3 Meses (Piloto)</p>
-              </div>
-              <table className="w-full text-sm">
-                <thead>
-                  <tr className="bg-[#F9FAFB]">
-                    <th className="text-left px-5 py-3 text-xs font-medium text-[#9CA3AF] uppercase tracking-wider">Programa</th>
-                    <th className="text-right px-5 py-3 text-xs font-medium text-[#9CA3AF] uppercase tracking-wider">Impacto 3 Meses</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {tablaAnual.map((row, i) => (
-                    <tr key={row.programa} className={i % 2 === 0 ? "bg-white" : "bg-[#F9FAFB]"}>
-                      <td className="px-5 py-3 font-medium" style={{ color: row.color }}>{row.programa}</td>
-                      <td className="px-5 py-3 text-right font-bold text-black">{row.meses3}</td>
-                    </tr>
+          <article className="bg-[#111827] rounded-2xl p-6 border border-[#1F2937]">
+            <h3 className="text-lg font-bold text-white mb-1">Inversión vs retorno en 3 meses</h3>
+            <p className="text-sm text-[#D1D5DB] mb-4">Supuestos conservadores: 30% del potencial máximo.</p>
+            <ResponsiveContainer width="100%" height={280}>
+              <BarChart data={roiData}>
+                <CartesianGrid strokeDasharray="3 3" stroke="#374151" />
+                <XAxis dataKey="concepto" stroke="#E5E7EB" />
+                <YAxis stroke="#E5E7EB" />
+                <Tooltip formatter={(value: number) => `$${value.toLocaleString()}`} />
+                <Bar dataKey="valor" radius={[6, 6, 0, 0]}>
+                  {roiData.map((entry) => (
+                    <Cell key={entry.concepto} fill={entry.color} />
                   ))}
-                  <tr className="bg-[#F3F4F6]">
-                    <td className="px-5 py-3 font-bold text-black">TOTAL</td>
-                    <td className="px-5 py-3 text-right font-bold text-[#8B5CF6]">$30,932</td>
+                </Bar>
+              </BarChart>
+            </ResponsiveContainer>
+            <p className="text-4xl font-bold text-[#C4B5FD] text-center">ROI 3.9x</p>
+          </article>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="rounded-lg overflow-hidden border border-[#F3F4F6] shadow-sm">
+            <div className="bg-[#F3F4F6] px-5 py-3">
+              <p className="text-sm font-semibold text-black">Impacto Anual</p>
+            </div>
+            <table className="w-full text-sm">
+              <tbody>
+                {tablaAnual.map((row, i) => (
+                  <tr key={row.programa} className={i % 2 === 0 ? "bg-white" : "bg-[#F9FAFB]"}>
+                    <td className="px-5 py-3 font-medium" style={{ color: row.color }}>{row.programa}</td>
+                    <td className="px-5 py-3 text-right font-bold text-black">{row.anual}</td>
                   </tr>
-                </tbody>
-              </table>
-            </div>
+                ))}
+                <tr className="bg-[#F3F4F6]">
+                  <td className="px-5 py-3 font-bold text-black">TOTAL</td>
+                  <td className="px-5 py-3 text-right font-bold text-[#8B5CF6]">$123,625</td>
+                </tr>
+              </tbody>
+            </table>
           </div>
 
-          {/* Bar visual */}
-          <div className="mt-8 bg-[#F9FAFB] rounded-lg p-6">
-            <p className="text-xs font-medium tracking-wider text-[#9CA3AF] uppercase mb-5">Retorno en 3 meses vs. Inversión</p>
-            <div className="space-y-4">
-              <div>
-                <div className="flex justify-between text-sm mb-1">
-                  <span className="font-medium text-[#6B7280]">Inversión</span>
-                  <span className="font-bold text-black">$8,000</span>
-                </div>
-                <div className="h-4 bg-[#E5E7EB] rounded-full overflow-hidden">
-                  <div className="h-full bg-[#6B7280] rounded-full" style={{ width: "25.8%" }} />
-                </div>
-              </div>
-              <div>
-                <div className="flex justify-between text-sm mb-1">
-                  <span className="font-medium text-[#8B5CF6]">Retorno estimado</span>
-                  <span className="font-bold text-[#8B5CF6]">$30,932</span>
-                </div>
-                <div className="h-4 bg-[#E5E7EB] rounded-full overflow-hidden">
-                  <div className="h-full bg-[#8B5CF6] rounded-full" style={{ width: "100%" }} />
-                </div>
-              </div>
+          <div className="rounded-lg overflow-hidden border border-[#F3F4F6] shadow-sm">
+            <div className="bg-[#F3F4F6] px-5 py-3">
+              <p className="text-sm font-semibold text-black">Impacto 3 Meses (Piloto)</p>
             </div>
-          </div>
-        </div>
-
-        {/* ROI */}
-        <div className="rounded-xl bg-[#8B5CF6] px-8 py-12 md:py-16 text-center shadow-lg">
-          <p className="text-xs font-medium tracking-widest text-[#C4B5FD] uppercase mb-4">ROI del Piloto</p>
-          <p className="text-8xl md:text-9xl font-bold text-white mb-3">3.9x</p>
-          <p className="text-xl md:text-2xl font-semibold text-[#EDE9FE] mb-2">
-            Inversión $8,000 · Retorno $30,932 en 3 meses
-          </p>
-          <p className="text-sm text-[#C4B5FD] italic">
-            Supuestos conservadores (30% del potencial máximo documentado)
-          </p>
-        </div>
-
-        {/* KPIs */}
-        <div>
-          <h3 className="text-xl font-bold text-black mb-6">Métricas de Éxito</h3>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
-            {kpis.map((k) => (
-              <div
-                key={k.label}
-                className="rounded-lg p-6 text-center shadow-sm"
-                style={{ background: k.bg }}
-              >
-                <p className="text-2xl font-bold mb-2" style={{ color: k.color }}>
-                  {k.value}
-                </p>
-                <p className="text-sm text-[#6B7280] leading-snug">{k.label}</p>
-              </div>
-            ))}
+            <table className="w-full text-sm">
+              <tbody>
+                {tablaAnual.map((row, i) => (
+                  <tr key={row.programa} className={i % 2 === 0 ? "bg-white" : "bg-[#F9FAFB]"}>
+                    <td className="px-5 py-3 font-medium" style={{ color: row.color }}>{row.programa}</td>
+                    <td className="px-5 py-3 text-right font-bold text-black">{row.meses3}</td>
+                  </tr>
+                ))}
+                <tr className="bg-[#F3F4F6]">
+                  <td className="px-5 py-3 font-bold text-black">TOTAL</td>
+                  <td className="px-5 py-3 text-right font-bold text-[#8B5CF6]">$30,932</td>
+                </tr>
+              </tbody>
+            </table>
           </div>
         </div>
       </div>
