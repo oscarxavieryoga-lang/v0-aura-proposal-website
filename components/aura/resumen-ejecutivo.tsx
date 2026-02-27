@@ -1,46 +1,62 @@
 export default function ResumenEjecutivo() {
   return (
-    <section className="w-full py-28 px-8 md:px-16 bg-background">
+    <section id="resumen" className="w-full py-14 px-6 md:px-12 bg-background">
       <div className="max-w-5xl mx-auto">
 
-        {/* Label */}
-        <p className="text-[10px] tracking-[0.45em] uppercase text-muted-foreground mb-10" style={{ fontFamily: "'Geist', sans-serif" }}>
-          Resumen Ejecutivo
+        <p className="font-sans text-xs font-medium tracking-widest uppercase mb-4" style={{ color: "#4A7C6F" }}>
+          01 · Resumen Ejecutivo
         </p>
 
-        {/* Opening statement — large editorial serif */}
-        <h2 className="font-serif font-light text-foreground text-balance mb-16" style={{ fontSize: "clamp(2.2rem, 5vw, 3.8rem)", lineHeight: 1.15 }}>
-          Willdom enfrentó una crisis de salud mental.<br />
-          <span className="italic">La pregunta que surgió fue clara:</span>
-        </h2>
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-start">
+          {/* Left: narrative */}
+          <div>
+            <h2 className="font-serif text-foreground text-balance mb-4" style={{ fontSize: "clamp(1.5rem, 3vw, 2.2rem)", lineHeight: 1.2, fontWeight: 600 }}>
+              Una crisis real. Una pregunta honesta.<br />Una solución comprobada.
+            </h2>
+            <p className="font-sans text-muted-foreground leading-relaxed mb-5" style={{ fontSize: "0.9rem" }}>
+              Willdom enfrentó recientemente una crisis de salud mental en su equipo: un developer en depresión sin avisos previos. Esto generó una pregunta clara: <strong className="text-foreground">¿Cómo mejoramos genuinamente el bienestar de nuestro equipo?</strong>
+            </p>
+            <p className="font-sans text-muted-foreground leading-relaxed" style={{ fontSize: "0.9rem" }}>
+              AURA es la respuesta. Una plataforma digital de bienestar integral con acceso corporativo — prácticas reales, privacidad total, comunidad global, y acceso 24/7. Sin vigilancia, sin presión.
+            </p>
 
-        <p className="font-serif italic text-muted-foreground mb-20" style={{ fontSize: "clamp(1.3rem, 3vw, 2rem)", lineHeight: 1.4 }}>
-          "¿Cómo mejoramos genuinamente el bienestar de nuestro equipo?"
-        </p>
-
-        {/* Divider */}
-        <div className="w-full h-px bg-border mb-20" />
-
-        {/* 4 facts — horizontal layout */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-0 divide-y sm:divide-y-0 sm:divide-x divide-border">
-          {[
-            { label: "La solución", value: "AURA", sub: "Plataforma de bienestar integral" },
-            { label: "Participación esperada", value: "25%", sub: "87 de 350 developers" },
-            { label: "Retorno estimado", value: "3.9×", sub: "ROI en 3 meses de piloto" },
-            { label: "Inversión base", value: "$8,000", sub: "Piloto 3 meses" },
-          ].map((item) => (
-            <div key={item.label} className="px-0 sm:px-8 py-10 sm:py-0 first:pl-0 last:border-r-0">
-              <p className="text-[10px] tracking-[0.4em] uppercase text-muted-foreground mb-3" style={{ fontFamily: "'Geist', sans-serif" }}>
-                {item.label}
-              </p>
-              <p className="font-serif font-light text-foreground mb-1" style={{ fontSize: "clamp(2rem, 4vw, 3rem)", lineHeight: 1 }}>
-                {item.value}
-              </p>
-              <p className="text-sm text-muted-foreground" style={{ fontFamily: "'Geist', sans-serif" }}>
-                {item.sub}
+            {/* Piloto info */}
+            <div className="mt-6 p-4 rounded-md border" style={{ borderColor: "#DEDAD5", background: "#EBF2F0" }}>
+              <p className="font-sans font-semibold text-sm mb-1" style={{ color: "#1A2E25" }}>Piloto: 3 meses de evaluación completa</p>
+              <p className="font-sans text-xs leading-relaxed" style={{ color: "#4A7C6F" }}>
+                Setup + presentaciones en 3–4 semanas. Evaluación y decisión final: 10 de junio.
               </p>
             </div>
-          ))}
+          </div>
+
+          {/* Right: key numbers */}
+          <div className="grid grid-cols-2 gap-3">
+            {[
+              { label: "Participación esperada", value: "25%", sub: "87 de 350 developers", accent: false },
+              { label: "ROI estimado (3 meses)", value: "3.9×", sub: "$30,932 de retorno", accent: true },
+              { label: "Inversión base piloto", value: "$8,000", sub: "pagos escalonados", accent: false },
+              { label: "Inversión máxima total", value: "$12,500", sub: "con bonos por resultados", accent: false },
+            ].map((item) => (
+              <div
+                key={item.label}
+                className="rounded-md p-4 border"
+                style={{
+                  background: item.accent ? "#1A2E25" : "#FFFFFF",
+                  borderColor: item.accent ? "#1A2E25" : "#DEDAD5",
+                }}
+              >
+                <p className="font-sans text-xs mb-2 leading-tight" style={{ color: item.accent ? "rgba(255,255,255,0.55)" : "#6B6B66" }}>
+                  {item.label}
+                </p>
+                <p className="font-serif font-semibold mb-0.5" style={{ fontSize: "1.7rem", lineHeight: 1, color: item.accent ? "#FFFFFF" : "#1A1A18" }}>
+                  {item.value}
+                </p>
+                <p className="font-sans text-xs" style={{ color: item.accent ? "rgba(255,255,255,0.45)" : "#6B6B66" }}>
+                  {item.sub}
+                </p>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </section>

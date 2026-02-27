@@ -4,32 +4,32 @@
 @custom-variant dark (&:is(.dark *));
 
 :root {
-  /* AURA / SANTUARIO palette */
-  --background: oklch(0.988 0.004 80);       /* warm off-white / cream #FAFAF7 */
-  --foreground: oklch(0.14 0.005 60);        /* deep warm black #111 */
-  --card: oklch(0.975 0.005 80);             /* slightly darker cream */
-  --card-foreground: oklch(0.14 0.005 60);
-  --popover: oklch(0.988 0.004 80);
-  --popover-foreground: oklch(0.14 0.005 60);
-  --primary: oklch(0.14 0.005 60);           /* deep black - buttons, accents */
-  --primary-foreground: oklch(0.988 0.004 80);
-  --secondary: oklch(0.93 0.007 80);         /* warm gray/stone */
-  --secondary-foreground: oklch(0.14 0.005 60);
-  --muted: oklch(0.95 0.005 80);
-  --muted-foreground: oklch(0.48 0.008 60);  /* warm medium gray */
-  --accent: oklch(0.93 0.007 80);
-  --accent-foreground: oklch(0.14 0.005 60);
+  /* AURA professional palette */
+  --background: #F8F7F4;                     /* warm parchment */
+  --foreground: #1A1A18;                     /* near-black */
+  --card: #FFFFFF;
+  --card-foreground: #1A1A18;
+  --popover: #FFFFFF;
+  --popover-foreground: #1A1A18;
+  --primary: #1A1A18;
+  --primary-foreground: #F8F7F4;
+  --secondary: #EEECEA;                      /* soft stone */
+  --secondary-foreground: #1A1A18;
+  --muted: #EEECEA;
+  --muted-foreground: #6B6B66;              /* warm mid-gray */
+  --accent: #4A7C6F;                        /* sage green — calm professional */
+  --accent-foreground: #FFFFFF;
   --destructive: oklch(0.577 0.245 27.325);
   --destructive-foreground: oklch(0.577 0.245 27.325);
-  --border: oklch(0.88 0.006 80);            /* warm light border */
-  --input: oklch(0.88 0.006 80);
-  --ring: oklch(0.48 0.008 60);
+  --border: #DEDAD5;
+  --input: #DEDAD5;
+  --ring: #4A7C6F;
   --chart-1: oklch(0.646 0.222 41.116);
   --chart-2: oklch(0.6 0.118 184.704);
   --chart-3: oklch(0.398 0.07 227.392);
   --chart-4: oklch(0.828 0.189 84.429);
   --chart-5: oklch(0.769 0.188 70.08);
-  --radius: 0rem;                            /* sharp corners — editorial feel */
+  --radius: 6px;
   --sidebar: oklch(0.985 0 0);
   --sidebar-foreground: oklch(0.145 0 0);
   --sidebar-primary: oklch(0.205 0 0);
@@ -38,11 +38,13 @@
   --sidebar-accent-foreground: oklch(0.205 0 0);
   --sidebar-border: oklch(0.922 0 0);
   --sidebar-ring: oklch(0.708 0 0);
-  /* custom AURA tokens */
-  --stone: oklch(0.93 0.007 80);
-  --stone-dark: oklch(0.86 0.009 75);
-  --ink: oklch(0.14 0.005 60);
-  --ink-light: oklch(0.48 0.008 60);
+  /* AURA custom tokens */
+  --sage: #4A7C6F;
+  --sage-light: #EBF2F0;
+  --ink: #1A1A18;
+  --ink-light: #6B6B66;
+  --stone: #EEECEA;
+  --stone-dark: #DEDAD5;
 }
 
 .dark {
@@ -81,10 +83,9 @@
 }
 
 @theme inline {
-  --font-sans: 'Cormorant Garamond', 'Georgia', serif;
-  --font-serif: 'Cormorant Garamond', 'Georgia', serif;
+  --font-sans: 'Inter', 'system-ui', sans-serif;
+  --font-serif: 'Playfair Display', 'Georgia', serif;
   --font-mono: 'Geist Mono', 'Geist Mono Fallback';
-  --font-label: 'Geist', 'Geist Fallback';
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-card: var(--card);

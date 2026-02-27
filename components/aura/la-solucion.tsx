@@ -1,147 +1,125 @@
 const pillars = [
-  { label: "Prácticas Reales", body: "Meditación, yoga, breathing y movimiento guiados por especialistas. Basados en investigación científica, diseñados para resolver problemas específicos." },
-  { label: "Estructura Sin Fricción", body: "Programas con inicio, proceso e integración claros. No son cargas — generan logro genuino y continuidad natural." },
-  { label: "Privacidad Total", body: "Espacio completamente separado de sistemas corporativos. Sin vigilancia, sin presión, sin reportes individuales. Datos 100% privados." },
-  { label: "Comunidad Global", body: "Parte de una plataforma abierta al público. Usuarios de distintas industrias y roles. La sensación de no estar solo." },
+  { icon: "◆", label: "Prácticas reales", body: "Meditación, yoga, breathing y movimiento guiados por especialistas certificados, basados en evidencia científica." },
+  { icon: "◆", label: "Estructura sin fricción", body: "Programas diseñados para completarse con claridad. Generan logro real, no frustración." },
+  { icon: "◆", label: "Privacidad total", body: "Espacio separado de sistemas corporativos. Sin vigilancia ni presión. Datos 100% privados." },
+  { icon: "◆", label: "Comunidad global", body: "Plataforma abierta al público. Usuarios de diferentes industrias. No están solos." },
 ]
 
 const programs = [
   {
-    tag: "14 días",
-    title: "Para el insomnio",
-    subtitle: "Meditación · Breathing · Educación",
+    tag: "Programa · 14 días",
+    title: "Mejora de sueño",
+    includes: "Meditación, breathing, educación",
     result: "+1–2 horas de sueño real",
-    science: "Capacidad cognitiva +30% · Riesgo depresión –40%",
-    source: "Harvard Business Review",
-    image: "/images/sleep-wellness.jpg",
-    imageAlt: "Descanso profundo y sueño restaurador",
+    metrics: "+30% capacidad cognitiva · –40% riesgo depresión",
+    source: "Harvard Business Review, 2019",
   },
   {
-    tag: "21 días",
-    title: "Para el dolor postural",
-    subtitle: "Yoga · Stretching · Educación",
+    tag: "Programa · 21 días",
+    title: "Dolor postural",
+    includes: "Yoga, stretching, educación",
     result: "–35–50% reducción de dolor",
-    science: "Ansiedad –40% · Depresión –30%",
+    metrics: "Ansiedad –40% · Depresión –30%",
     source: "American Psychological Association",
-    image: "/images/yoga-nature.jpg",
-    imageAlt: "Yoga y movimiento consciente en la naturaleza",
   },
   {
-    tag: "7 días",
-    title: "Para el estrés crónico",
-    subtitle: "Meditación · Breathing · Educación",
+    tag: "Programa · 7 días",
+    title: "Regulación del estrés",
+    includes: "Meditación, breathing, educación",
     result: "Reducción visible de estrés",
-    science: "Depresión clínica –60% · Burnout –50%",
-    source: "WHO Global Mental Health Report 2023",
-    image: "/images/stress-relief.jpg",
-    imageAlt: "Calma y regulación emocional",
+    metrics: "Depresión clínica –60% · Burnout –50%",
+    source: "WHO Global Mental Health Report, 2023",
   },
 ]
 
 export default function LaSolucion() {
   return (
-    <section className="w-full bg-background py-28 px-8 md:px-16">
+    <section id="solucion" className="w-full py-14 px-6 md:px-12 bg-background border-t" style={{ borderColor: "#DEDAD5" }}>
       <div className="max-w-5xl mx-auto">
 
-        {/* Label */}
-        <p className="text-[10px] tracking-[0.45em] uppercase text-muted-foreground mb-10" style={{ fontFamily: "'Geist', sans-serif" }}>
-          La Solución
+        <p className="font-sans text-xs font-medium tracking-widest uppercase mb-4" style={{ color: "#4A7C6F" }}>
+          03 · La Solución
         </p>
 
-        {/* Big heading */}
-        <h2 className="font-serif font-light text-foreground text-balance mb-6" style={{ fontSize: "clamp(2rem, 4.5vw, 3.4rem)", lineHeight: 1.15 }}>
-          AURA es una arquitectura de bienestar.<br />
-          <span className="italic">No un beneficio. Un espacio.</span>
-        </h2>
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-start mb-10">
+          <div>
+            <h2 className="font-serif text-foreground text-balance mb-3" style={{ fontSize: "clamp(1.5rem, 3vw, 2.2rem)", lineHeight: 1.2, fontWeight: 600 }}>
+              AURA: una arquitectura de bienestar comprobada.
+            </h2>
+            <p className="font-sans text-muted-foreground leading-relaxed" style={{ fontSize: "0.9rem" }}>
+              No es un beneficio superficial. Es un espacio estructurado, privado, y basado en evidencia científica — diseñado para que el bienestar ocurra de verdad, no en papel.
+            </p>
+          </div>
+          <div className="overflow-hidden rounded-md" style={{ height: 200 }}>
+            <img
+              src="/images/dev-break.jpg"
+              alt="Developer tomando un descanso consciente"
+              className="w-full h-full object-cover"
+            />
+          </div>
+        </div>
 
-        <p className="text-muted-foreground mb-20 max-w-lg leading-relaxed" style={{ fontFamily: "'Geist', sans-serif", fontSize: "0.95rem" }}>
-          Acceso 24/7, privacidad total, prácticas reales guiadas por especialistas, y comunidad global. Sin vigilancia corporativa.
-        </p>
-
-        {/* 4 pillars — horizontal lines */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-0 divide-y sm:divide-y-0 border-t border-b border-border mb-28">
+        {/* 4 pillars */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 mb-10">
           {pillars.map((p, i) => (
-            <div
-              key={p.label}
-              className={`py-10 px-0 ${i % 2 === 0 ? "sm:pr-12 sm:border-r border-border" : "sm:pl-12"} ${i >= 2 ? "sm:border-t border-border" : ""}`}
-            >
-              <p className="text-[9px] tracking-[0.45em] uppercase text-muted-foreground mb-4" style={{ fontFamily: "'Geist', sans-serif" }}>
+            <div key={p.label} className="rounded-md p-4 border" style={{ background: "#EBF2F0", borderColor: "#C8DED9" }}>
+              <p className="font-sans text-xs font-semibold tracking-widest uppercase mb-2" style={{ color: "#4A7C6F" }}>
                 0{i + 1}
               </p>
-              <h3 className="font-serif font-light text-foreground mb-3" style={{ fontSize: "1.3rem" }}>
+              <h3 className="font-serif font-semibold text-foreground mb-2" style={{ fontSize: "1rem", lineHeight: 1.3 }}>
                 {p.label}
               </h3>
-              <p className="text-muted-foreground leading-relaxed" style={{ fontFamily: "'Geist', sans-serif", fontSize: "0.875rem" }}>
-                {p.body}
-              </p>
+              <p className="font-sans text-xs text-muted-foreground leading-relaxed">{p.body}</p>
             </div>
           ))}
         </div>
 
-        {/* How it works — 4 numbered steps */}
-        <p className="text-[10px] tracking-[0.45em] uppercase text-muted-foreground mb-12" style={{ fontFamily: "'Geist', sans-serif" }}>
-          Cómo funciona
-        </p>
-        <div className="grid grid-cols-1 sm:grid-cols-4 gap-8 mb-28">
-          {[
-            { n: "1", label: "Acceso privado", desc: "Link separado. Login individual. Sin integración con sistemas corporativos." },
-            { n: "2", label: "Elige tu camino", desc: "Cada persona selecciona según su necesidad real. Sin presión." },
-            { n: "3", label: "Práctica en vivo", desc: "Acceso 24/7. Sin horarios fijos. Tu ritmo, tu tiempo." },
-            { n: "4", label: "Datos agregados", desc: "Admin ve participación y retención — nunca datos personales." },
-          ].map((s) => (
-            <div key={s.n}>
-              <p className="font-serif font-light text-foreground mb-4" style={{ fontSize: "3rem", lineHeight: 1 }}>
-                {s.n}
-              </p>
-              <p className="font-serif text-foreground mb-2" style={{ fontSize: "1rem" }}>{s.label}</p>
-              <p className="text-muted-foreground leading-relaxed" style={{ fontFamily: "'Geist', sans-serif", fontSize: "0.825rem" }}>
-                {s.desc}
-              </p>
-            </div>
-          ))}
-        </div>
-
-        {/* Programs — image + content pairs */}
-        <p className="text-[10px] tracking-[0.45em] uppercase text-muted-foreground mb-12" style={{ fontFamily: "'Geist', sans-serif" }}>
-          Programas de ejemplo
-        </p>
-
-        <div className="space-y-0 divide-y divide-border border-t border-b border-border">
-          {programs.map((prog, i) => (
-            <div
-              key={prog.title}
-              className={`grid grid-cols-1 md:grid-cols-2 gap-0 ${i % 2 === 1 ? "md:[direction:rtl]" : ""}`}
-            >
-              {/* Image */}
-              <div className="overflow-hidden" style={{ height: "clamp(260px, 35vw, 420px)", direction: "ltr" }}>
-                <img
-                  src={prog.image}
-                  alt={prog.imageAlt}
-                  className="w-full h-full object-cover"
-                />
+        {/* How it works */}
+        <div className="rounded-md p-5 border mb-10" style={{ background: "#FFFFFF", borderColor: "#DEDAD5" }}>
+          <p className="font-sans text-xs font-medium tracking-widest uppercase mb-4" style={{ color: "#6B6B66" }}>
+            Cómo funciona
+          </p>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+            {[
+              { n: "1", label: "Acceso privado", desc: "Link separado, login individual. No integrado en sistemas corporativos." },
+              { n: "2", label: "Elige tu programa", desc: "Cada persona selecciona según necesidad. Sin presión ni juicio." },
+              { n: "3", label: "Práctica 24/7", desc: "Sin horarios fijos. Tu ritmo, tu tiempo, tu lugar." },
+              { n: "4", label: "Datos agregados", desc: "Admin ve participación general — nunca datos personales." },
+            ].map((s) => (
+              <div key={s.n} className="flex gap-3">
+                <span
+                  className="w-6 h-6 rounded-full flex items-center justify-center flex-shrink-0 font-sans font-semibold text-xs text-white mt-0.5"
+                  style={{ background: "#4A7C6F", minWidth: "1.5rem" }}
+                >
+                  {s.n}
+                </span>
+                <div>
+                  <p className="font-sans font-semibold text-foreground text-sm mb-0.5">{s.label}</p>
+                  <p className="font-sans text-xs text-muted-foreground leading-relaxed">{s.desc}</p>
+                </div>
               </div>
+            ))}
+          </div>
+        </div>
 
-              {/* Content */}
-              <div className="flex flex-col justify-center px-8 md:px-12 py-14" style={{ direction: "ltr" }}>
-                <p className="text-[9px] tracking-[0.45em] uppercase text-muted-foreground mb-6" style={{ fontFamily: "'Geist', sans-serif" }}>
-                  {prog.tag}
-                </p>
-                <h3 className="font-serif font-light text-foreground mb-3" style={{ fontSize: "clamp(1.5rem, 2.8vw, 2.2rem)", lineHeight: 1.15 }}>
-                  {prog.title}
-                </h3>
-                <p className="text-muted-foreground mb-8" style={{ fontFamily: "'Geist', sans-serif", fontSize: "0.85rem" }}>
-                  {prog.subtitle}
-                </p>
-                <div className="w-8 h-px bg-border mb-8" />
-                <p className="font-serif italic text-foreground mb-2" style={{ fontSize: "1.1rem" }}>
-                  "{prog.result}"
-                </p>
-                <p className="text-muted-foreground mb-1" style={{ fontFamily: "'Geist', sans-serif", fontSize: "0.8rem" }}>
-                  {prog.science}
-                </p>
-                <p className="text-muted-foreground italic" style={{ fontFamily: "'Geist', sans-serif", fontSize: "0.72rem" }}>
-                  {prog.source}
-                </p>
+        {/* Programs grid */}
+        <p className="font-sans text-xs font-medium tracking-widest uppercase mb-4" style={{ color: "#6B6B66" }}>
+          Ejemplos de programas
+        </p>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+          {programs.map((prog) => (
+            <div key={prog.title} className="rounded-md border overflow-hidden" style={{ borderColor: "#DEDAD5" }}>
+              <div className="px-4 py-3 border-b" style={{ background: "#1A2E25", borderColor: "#2A4035" }}>
+                <p className="font-sans text-xs" style={{ color: "rgba(255,255,255,0.5)" }}>{prog.tag}</p>
+                <p className="font-serif font-semibold text-white mt-0.5" style={{ fontSize: "1.05rem" }}>{prog.title}</p>
+              </div>
+              <div className="p-4 bg-card">
+                <p className="font-sans text-xs text-muted-foreground mb-3">{prog.includes}</p>
+                <div className="rounded px-3 py-2 mb-3" style={{ background: "#EBF2F0" }}>
+                  <p className="font-sans text-xs font-semibold" style={{ color: "#4A7C6F" }}>Resultado: {prog.result}</p>
+                </div>
+                <p className="font-sans text-xs text-muted-foreground mb-1">{prog.metrics}</p>
+                <p className="font-sans text-xs italic" style={{ color: "#9B9B95" }}>{prog.source}</p>
               </div>
             </div>
           ))}

@@ -1,4 +1,5 @@
 import HeroSection from "@/components/aura/hero-section"
+import TableOfContents from "@/components/aura/table-of-contents"
 import ResumenEjecutivo from "@/components/aura/resumen-ejecutivo"
 import ElContexto from "@/components/aura/el-contexto"
 import LaSolucion from "@/components/aura/la-solucion"
@@ -11,8 +12,9 @@ import Footer from "@/components/aura/footer"
 
 export default function Page() {
   return (
-    <main className="bg-background text-foreground font-serif">
+    <main className="bg-background text-foreground font-sans">
       <HeroSection />
+      <TableOfContents />
       <ResumenEjecutivo />
       <ElContexto />
       <LaSolucion />
