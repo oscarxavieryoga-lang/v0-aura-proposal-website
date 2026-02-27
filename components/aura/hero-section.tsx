@@ -1,91 +1,145 @@
 export default function HeroSection() {
   return (
     <section
-      className="relative w-full overflow-hidden flex flex-col"
-      style={{ height: "100svh", minHeight: 600, background: "linear-gradient(135deg, #0f0f0f 0%, #1a1a1a 50%, #111 100%)" }}
+      className="relative w-full overflow-hidden flex flex-col bg-white"
+      style={{ height: "100svh", minHeight: 600 }}
     >
-      {/* Subtle texture overlay */}
-      <div
-        className="absolute inset-0 opacity-[0.03]"
-        style={{
-          backgroundImage: `repeating-linear-gradient(
-            0deg, transparent, transparent 2px,
-            rgba(255,255,255,0.5) 2px, rgba(255,255,255,0.5) 3px
-          )`,
-        }}
-      />
-
       {/* Top nav */}
       <header className="relative z-20 flex items-center justify-between px-8 md:px-16 pt-8">
         <span
-          className="text-white/50 text-[10px] tracking-[0.5em] uppercase"
+          className="text-black/40 text-[10px] tracking-[0.5em] uppercase"
           style={{ fontFamily: "'Geist', sans-serif", fontWeight: 300 }}
         >
           AURA
         </span>
         <span
-          className="text-white/30 text-[10px] tracking-[0.25em] uppercase"
+          className="text-black/25 text-[10px] tracking-[0.25em] uppercase"
           style={{ fontFamily: "'Geist', sans-serif" }}
         >
           Confidencial · Febrero 2025
         </span>
       </header>
 
-      {/* Main content — centered */}
-      <div className="relative z-10 flex flex-col items-center justify-center flex-1 text-center px-6">
+      {/* Main layout — texto izquierda, foto derecha */}
+      <div className="relative z-10 flex flex-1 items-center px-8 md:px-16 gap-12">
 
-        {/* Eyebrow */}
-        <p
-          className="text-white/35 text-[10px] tracking-[0.6em] uppercase mb-12"
-          style={{ fontFamily: "'Geist', sans-serif" }}
-        >
-          PROPUESTA COMERCIAL
-        </p>
+        {/* LEFT — Propuesta protagonista */}
+        <div className="flex flex-col justify-center flex-1 max-w-2xl">
 
-        {/* Company name — the destination */}
-        <p
-          className="text-white/50 tracking-[0.35em] uppercase mb-4"
-          style={{ fontFamily: "'Geist', sans-serif", fontSize: "clamp(0.75rem, 1.8vw, 1rem)", fontWeight: 300 }}
-        >
-          Para Willdom
-        </p>
-
-        {/* AURA — protagonist */}
-        <h1
-          className="text-white font-serif font-light"
-          style={{ fontSize: "clamp(5rem, 16vw, 13rem)", lineHeight: 0.88, letterSpacing: "-0.02em" }}
-        >
-          AURA
-        </h1>
-
-        {/* Divider */}
-        <div className="flex items-center gap-6 my-10">
-          <div className="w-16 h-px bg-white/20" />
-          <span
-            className="text-white/30 text-[9px] tracking-[0.5em] uppercase"
-            style={{ fontFamily: "'Geist', sans-serif" }}
+          <p
+            className="text-black/40 uppercase mb-3"
+            style={{
+              fontFamily: "'Geist', sans-serif",
+              fontSize: "clamp(0.7rem, 1.4vw, 0.85rem)",
+              letterSpacing: "0.35em",
+              fontWeight: 400,
+            }}
           >
-            Bienestar Integral · Acceso Corporativo
-          </span>
-          <div className="w-16 h-px bg-white/20" />
+            PROPUESTA COMERCIAL
+          </p>
+
+          <h1
+            className="font-serif font-light text-black"
+            style={{
+              fontSize: "clamp(2.8rem, 7vw, 5.5rem)",
+              lineHeight: 1.05,
+              letterSpacing: "-0.01em",
+            }}
+          >
+            Una plataforma de
+            <br />
+            bienestar integral
+            <br />
+            para Willdom.
+          </h1>
+
+          <div className="w-10 h-px bg-black/20 my-8" />
+
+          <p
+            className="text-black/55 font-serif italic font-light"
+            style={{
+              fontSize: "clamp(1rem, 2vw, 1.3rem)",
+              lineHeight: 1.65,
+              letterSpacing: "0.02em",
+            }}
+          >
+            Piloto de 3 meses. ROI estimado 3.9×.
+            <br />
+            Inversión base $8,000 USD.
+          </p>
+
+          <div className="flex items-center gap-8 mt-10">
+            <div className="flex flex-col gap-1">
+              <span
+                className="text-black font-serif"
+                style={{ fontSize: "clamp(1.6rem, 3.5vw, 2.4rem)", fontWeight: 300, lineHeight: 1 }}
+              >
+                3.9×
+              </span>
+              <span
+                className="text-black/35 uppercase"
+                style={{ fontFamily: "'Geist', sans-serif", fontSize: "0.65rem", letterSpacing: "0.3em" }}
+              >
+                ROI estimado
+              </span>
+            </div>
+            <div className="w-px h-10 bg-black/10" />
+            <div className="flex flex-col gap-1">
+              <span
+                className="text-black font-serif"
+                style={{ fontSize: "clamp(1.6rem, 3.5vw, 2.4rem)", fontWeight: 300, lineHeight: 1 }}
+              >
+                25%
+              </span>
+              <span
+                className="text-black/35 uppercase"
+                style={{ fontFamily: "'Geist', sans-serif", fontSize: "0.65rem", letterSpacing: "0.3em" }}
+              >
+                Participación esperada
+              </span>
+            </div>
+            <div className="w-px h-10 bg-black/10" />
+            <div className="flex flex-col gap-1">
+              <span
+                className="text-black font-serif"
+                style={{ fontSize: "clamp(1.6rem, 3.5vw, 2.4rem)", fontWeight: 300, lineHeight: 1 }}
+              >
+                3 m.
+              </span>
+              <span
+                className="text-black/35 uppercase"
+                style={{ fontFamily: "'Geist', sans-serif", fontSize: "0.65rem", letterSpacing: "0.3em" }}
+              >
+                Piloto
+              </span>
+            </div>
+          </div>
         </div>
 
-        {/* Value proposition — this is what they came to read */}
-        <p
-          className="text-white/70 font-serif italic font-light max-w-xl"
-          style={{ fontSize: "clamp(1.15rem, 2.5vw, 1.55rem)", lineHeight: 1.6, letterSpacing: "0.03em" }}
+        {/* RIGHT — Foto contenida, no full-bleed */}
+        <div
+          className="hidden md:block flex-shrink-0 relative overflow-hidden rounded-2xl"
+          style={{ width: "38%", height: "70vh", maxHeight: 560 }}
         >
-          Una plataforma de bienestar integral para el equipo de Willdom.
-          <br />
-          Piloto 3 meses · ROI 3.9× · Inversión desde $8,000 USD.
-        </p>
+          <img
+            src="/images/hero-meditation.jpg"
+            alt="Persona meditando en calma"
+            className="w-full h-full object-cover object-center"
+            style={{ filter: "grayscale(15%) brightness(0.97)" }}
+          />
+          {/* Soft fade en el borde izquierdo para integrar con el blanco */}
+          <div
+            className="absolute inset-y-0 left-0 w-16"
+            style={{ background: "linear-gradient(to right, white, transparent)" }}
+          />
+        </div>
       </div>
 
-      {/* Bottom — scroll cue */}
-      <div className="relative z-20 flex flex-col items-center gap-3 pb-10">
-        <div className="w-px h-14 bg-white/20" />
+      {/* Bottom scroll cue */}
+      <div className="relative z-20 flex flex-col items-center gap-3 pb-8">
+        <div className="w-px h-10 bg-black/15" />
         <span
-          className="text-white/25 text-[9px] tracking-[0.4em] uppercase"
+          className="text-black/25 text-[9px] tracking-[0.4em] uppercase"
           style={{ fontFamily: "'Geist', sans-serif" }}
         >
           Scroll
