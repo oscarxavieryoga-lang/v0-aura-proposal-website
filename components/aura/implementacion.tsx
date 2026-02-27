@@ -1,146 +1,83 @@
 const fases = [
-  {
-    numero: "01",
-    titulo: "Preparación",
-    duracion: "3-4 semanas",
-    color: "#8B5CF6",
-    bg: "#F5F3FF",
-    items: [
-      "Setup técnico del acceso corporativo",
-      "Configuración de dashboard privado",
-      "Preparación de materiales de comunicación",
-    ],
-  },
-  {
-    numero: "02",
-    titulo: "Lanzamiento",
-    duracion: "Semana 4-5",
-    color: "#EC4899",
-    bg: "#FDF2F8",
-    items: [
-      "Presentaciones a equipos pequeños (30-45 min)",
-      "Link de acceso disponible en comunicación oficial",
-      "Soporte técnico activo para dudas",
-    ],
-  },
-  {
-    numero: "03",
-    titulo: "Monitoreo",
-    duracion: "Mes 1, 2 y 3",
-    color: "#6B7280",
-    bg: "#F9FAFB",
-    items: [
-      "Reportes mensuales de participación",
-      "Feedback recolectado de usuarios",
-      "Ajustes si se requieren",
-    ],
-  },
-  {
-    numero: "04",
-    titulo: "Evaluación Final",
-    duracion: "Final Mes 3",
-    color: "#000000",
-    bg: "#F3F4F6",
-    items: [
-      "Reporte final con datos completos",
-      "Decisión conjunta: Continuar / Expandir / Pausar",
-    ],
-  },
-]
-
-const responsabilidades = [
-  {
-    quien: "AURA",
-    color: "#8B5CF6",
-    bg: "#F5F3FF",
-    items: [
-      "Setup técnico y acceso corporativo",
-      "Reportes mensuales de datos agregados",
-      "Soporte técnico continuo",
-      "Disponibilidad para reuniones de presentación",
-    ],
-  },
-  {
-    quien: "Willdom",
-    color: "#EC4899",
-    bg: "#FDF2F8",
-    items: [
-      "Comunicación clara a colaboradores (invitación, no presión)",
-      "Facilitar reuniones de presentación a equipos",
-      "Recolectar feedback honesto de usuarios",
-      "Participar en evaluación final",
-    ],
-  },
+  { n: "01", title: "Preparación", time: "3–4 semanas", items: ["Setup técnico del acceso corporativo", "Configuración de dashboard privado", "Preparación de materiales de comunicación"] },
+  { n: "02", title: "Lanzamiento", time: "Semana 4–5", items: ["Presentaciones a equipos pequeños (30–45 min)", "Link de acceso disponible sin presión", "Soporte técnico activo para dudas"] },
+  { n: "03", title: "Monitoreo", time: "Mes 1, 2 y 3", items: ["Reportes mensuales de participación", "Feedback recolectado de usuarios", "Ajustes si se requieren"] },
+  { n: "04", title: "Evaluación", time: "Final Mes 3", items: ["Reporte final con datos completos", "Decisión conjunta: Continuar / Expandir / Pausar"] },
 ]
 
 export default function Implementacion() {
   return (
-    <section className="w-full bg-white py-20 px-6 md:px-12">
-      <div className="max-w-6xl mx-auto">
-        <div className="mb-12">
-          <p className="text-xs font-medium tracking-widest text-[#9CA3AF] uppercase mb-3">Sección 7</p>
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-black text-balance">
-            Timeline y Ejecución
-          </h2>
-        </div>
+    <section className="w-full bg-background py-28 px-8 md:px-16">
+      <div className="max-w-5xl mx-auto">
 
-        {/* Timeline */}
-        <div className="relative mb-16">
-          {/* Línea conectora visible en desktop */}
-          <div className="hidden lg:block absolute top-10 left-16 right-16 h-px bg-[#E5E7EB] z-0" />
+        <p className="text-[10px] tracking-[0.45em] uppercase text-muted-foreground mb-10" style={{ fontFamily: "'Geist', sans-serif" }}>
+          Implementación
+        </p>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 relative z-10">
-            {fases.map((fase) => (
-              <div key={fase.numero} className="flex flex-col gap-4">
-                <div className="flex items-center gap-3 lg:flex-col lg:items-start">
-                  <div
-                    className="w-12 h-12 rounded-full flex items-center justify-center text-sm font-bold flex-shrink-0"
-                    style={{ background: fase.bg, color: fase.color }}
-                  >
-                    {fase.numero}
-                  </div>
-                  <div>
-                    <p className="font-bold text-black">{fase.titulo}</p>
-                    <p className="text-xs text-[#9CA3AF]">{fase.duracion}</p>
-                  </div>
-                </div>
-                <ul className="space-y-2 pl-1">
-                  {fase.items.map((item) => (
-                    <li key={item} className="flex items-start gap-2 text-sm text-[#6B7280] leading-relaxed">
-                      <span className="mt-1.5 w-1.5 h-1.5 rounded-full flex-shrink-0" style={{ background: fase.color }} />
+        <h2 className="font-serif font-light text-foreground text-balance mb-20" style={{ fontSize: "clamp(2rem, 4.5vw, 3.4rem)", lineHeight: 1.15 }}>
+          De la firma al primer resultado:<br />
+          <span className="italic">un proceso simple.</span>
+        </h2>
+
+        {/* Timeline — 4 columnas */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-0 divide-y sm:divide-y-0 sm:divide-x divide-border border border-border mb-20">
+          {fases.map((f) => (
+            <div key={f.n} className="p-8">
+              <p className="font-serif font-light text-muted-foreground mb-6" style={{ fontSize: "2.5rem", lineHeight: 1 }}>
+                {f.n}
+              </p>
+              <p className="font-serif text-foreground mb-1" style={{ fontSize: "1.05rem" }}>
+                {f.title}
+              </p>
+              <p className="text-[9px] tracking-[0.35em] uppercase text-muted-foreground mb-6" style={{ fontFamily: "'Geist', sans-serif" }}>
+                {f.time}
+              </p>
+              <ul className="space-y-3">
+                {f.items.map((item) => (
+                  <li key={item} className="flex gap-3 items-start">
+                    <span className="mt-2 w-1 h-1 rounded-full bg-muted-foreground flex-shrink-0" />
+                    <span className="text-muted-foreground leading-relaxed" style={{ fontFamily: "'Geist', sans-serif", fontSize: "0.82rem" }}>
                       {item}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ))}
-          </div>
+                    </span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
         </div>
 
         {/* Responsabilidades */}
-        <div>
-          <h3 className="text-lg font-bold text-black mb-6">Responsabilidades</h3>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {responsabilidades.map((r) => (
-              <div key={r.quien} className="rounded-lg overflow-hidden border border-[#F3F4F6] shadow-sm">
-                <div className="px-6 py-4" style={{ background: r.bg }}>
-                  <p className="font-bold text-base" style={{ color: r.color }}>
-                    {r.quien}
-                  </p>
-                </div>
-                <div className="px-6 py-5 bg-white">
-                  <ul className="space-y-3">
-                    {r.items.map((item) => (
-                      <li key={item} className="flex items-start gap-3 text-sm text-[#6B7280] leading-relaxed">
-                        <span className="mt-1.5 w-1.5 h-1.5 rounded-full flex-shrink-0" style={{ background: r.color }} />
-                        {item}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </div>
-            ))}
-          </div>
+        <p className="text-[10px] tracking-[0.45em] uppercase text-muted-foreground mb-10" style={{ fontFamily: "'Geist', sans-serif" }}>
+          Responsabilidades
+        </p>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-0 divide-y md:divide-y-0 md:divide-x divide-border border border-border">
+          {[
+            {
+              who: "AURA",
+              items: ["Setup técnico y acceso corporativo", "Reportes mensuales de datos agregados (no personales)", "Soporte técnico continuo", "Disponibilidad para reuniones de presentación"],
+            },
+            {
+              who: "Willdom",
+              items: ["Comunicación a colaboradores — invitación, no presión", "Facilitar reuniones de presentación a equipos", "Recolectar feedback honesto de usuarios", "Participar en evaluación final del piloto"],
+            },
+          ].map((r) => (
+            <div key={r.who} className="p-10">
+              <p className="font-serif font-light text-foreground mb-8" style={{ fontSize: "1.5rem" }}>
+                {r.who}
+              </p>
+              <ul className="space-y-4">
+                {r.items.map((item) => (
+                  <li key={item} className="flex gap-3 items-start">
+                    <span className="mt-2 w-1 h-1 rounded-full bg-foreground flex-shrink-0" />
+                    <span className="text-muted-foreground leading-relaxed" style={{ fontFamily: "'Geist', sans-serif", fontSize: "0.875rem" }}>
+                      {item}
+                    </span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
         </div>
       </div>
     </section>
