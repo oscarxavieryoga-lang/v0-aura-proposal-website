@@ -534,15 +534,16 @@ export default function Page() {
       marginBottom: "40px"
     }}>
       <img
-        src="/emotional-regulation-man.jpg"
-        alt="Persona en presencia consciente con su entorno"
-        style={{
-          width: "100%",
-          height: "100%",
-          objectFit: "cover",
-          display: "block"
-        }}
-      />
+  src="/emotional-regulation-man.jpg"
+  alt="Persona en presencia consciente con su entorno"
+  style={{
+    width: "100%",
+    height: "100%",
+    objectFit: "cover",
+    objectPosition: "center 30%",
+    display: "block"
+  }}
+/>
     </div>
 
     <div style={{ maxWidth: "760px", marginBottom: "80px" }}>
