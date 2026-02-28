@@ -57,7 +57,7 @@ export default function Page() {
 
   const programas = [
     {
-      tag: "14 días", title: "Para el insomnio",
+      tag: "14 días", title: "Programa para el insomnio",
       sub: "Meditación · Breathing · Educación",
       result: "+1–2 horas de sueño real",
       science: "Capacidad cognitiva +30% · Riesgo depresión –40% · Concentración +25%",
@@ -65,7 +65,7 @@ export default function Page() {
       img: "/images/sleep-wellness.jpg",
     },
     {
-      tag: "21 días", title: "Para el dolor postural",
+      tag: "21 días", title: "Programa para el dolor postural",
       sub: "Yoga · Stretching · Educación",
       result: "–35 a 50% reducción de dolor",
       science: "Ansiedad –40% · Depresión –30% · Autoestima y control mejorados",
@@ -73,7 +73,7 @@ export default function Page() {
       img: "/images/yoga-nature.jpg",
     },
     {
-      tag: "7 días",  title: "Para el estrés crónico",
+      tag: "7 días",  title: "Programa para el estrés crónico",
       sub: "Meditación · Breathing · Educación",
       result: "Reducción visible de estrés",
       science: "Depresión clínica –60% · Burnout –50%",
