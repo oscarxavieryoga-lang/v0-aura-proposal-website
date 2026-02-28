@@ -1,46 +1,16 @@
 "use client"
 import React, { useRef, useState } from "react"
 
-// ─────────────────────────────────────────────────────────────────────────────
-// GUÍA DE IMÁGENES — para generarlas coherentes con la propuesta
-//
-// /images/hero-meditation.jpg
-//   MOOD: Calmado, íntimo, profesional. Luz natural suave. Tonos neutros cálidos.
-//   INCLUIR: Persona adulta 25–40 años, ropa casual de buena calidad, entorno
-//   limpio. Interior con luz de ventana o exterior tranquilo. Expresión neutral-calmada.
-//   EVITAR: Poses exageradas, velas/cristales, ropa deportiva brillante, stock forzado.
-//
-// /images/sleep-wellness.jpg   [Programa insomnio]
-//   MOOD: Sereno, oscuro-cálido, íntimo. Luz tenue amarilla o azul-nocturno suave.
-//   INCLUIR: Cama ordenada con sábanas neutras (blanco/gris/beige) y luz de amanecer.
-//   Sin personas o cuerpo en reposo apenas visible. Sin alarm clocks ni insomnio clínico.
-//
-// /images/yoga-nature.jpg      [Programa dolor postural]
-//   MOOD: Natural, luminoso, tranquilo. Luz de día suave. Verde o beige de fondo.
-//   INCLUIR: Persona en estiramiento simple (neck roll, forward fold, cat-cow).
-//   Exterior con pasto o interior con madera. Ropa casual neutra sin logos.
-//   EVITAR: Poses avanzadas, gym, colchonetas de colores brillantes.
-//
-// /images/stress-relief.jpg    [Programa estrés]
-//   MOOD: Calmado pero activo. Luz natural lateral.
-//   INCLUIR: Persona ojos cerrados, mano en pecho o nuca — autocontención consciente.
-//   Entorno simple: sofá, silla, exterior. Expresión de concentración tranquila.
-//   EVITAR: Sonrisa exagerada, spas, meditación en loto clásico.
-//
-// /images/team-developers.jpg  [Sección impacto — fondo]
-//   Ya tienes esta imagen.
-// ─────────────────────────────────────────────────────────────────────────────
-
 export default function Page() {
   const G = "Inter, system-ui, sans-serif"
   const S = "'Playfair Display', Georgia, serif"
 
-  // 7 secciones — secciones 04 y 05 anteriores fusionadas en una
   const refs = {
     resumen:        useRef<HTMLElement>(null),
     contexto:       useRef<HTMLElement>(null),
-    solucion:       useRef<HTMLElement>(null),
     impacto:        useRef<HTMLElement>(null),
+    solucion:       useRef<HTMLElement>(null),
+    financiero:     useRef<HTMLElement>(null),
     inversion:      useRef<HTMLElement>(null),
     implementacion: useRef<HTMLElement>(null),
     pasos:          useRef<HTMLElement>(null),
@@ -51,13 +21,14 @@ export default function Page() {
   const [apendiceOpen, setApendiceOpen] = useState(false)
 
   const toc = [
-    { n: "01", label: "Resumen Ejecutivo",  ref: refs.resumen },
-    { n: "02", label: "El Contexto",        ref: refs.contexto },
-    { n: "03", label: "La Solución",        ref: refs.solucion },
-    { n: "04", label: "El Impacto",         ref: refs.impacto },
-    { n: "05", label: "Inversión",          ref: refs.inversion },
-    { n: "06", label: "Implementación",     ref: refs.implementacion },
-    { n: "07", label: "Próximos Pasos",     ref: refs.pasos },
+    { n: "01", label: "Resumen Ejecutivo", ref: refs.resumen },
+    { n: "02", label: "El Contexto", ref: refs.contexto },
+    { n: "03", label: "Impacto Humano", ref: refs.impacto },
+    { n: "04", label: "La Solución", ref: refs.solucion },
+    { n: "05", label: "Impacto Financiero", ref: refs.financiero },
+    { n: "06", label: "Inversión", ref: refs.inversion },
+    { n: "07", label: "Implementación", ref: refs.implementacion },
+    { n: "08", label: "Próximos Pasos", ref: refs.pasos },
   ]
 
   const challenges = [
@@ -82,38 +53,6 @@ export default function Page() {
       impact: "18–22% reducción de productividad + riesgo de depresión silenciosa",
       source: "American Psychological Association, 2024",
     },
-  ]
-
-  // Impacto — columna izquierda (personas) — 3 bloques con mismo nivel visual
-  const impactPersonas = [
-    {
-      h3: "Cuando mejora el sueño",
-      pull: "El sistema nervioso se regula. La mente descansa. El trabajo fluye.",
-      puntos: ["Menos ansiedad", "Claridad mental", "Energía recuperada"],
-      dato: "+30% capacidad cognitiva · –40% riesgo de depresión",
-      fuente: "Harvard Business Review, 2019",
-    },
-    {
-      h3: "Cuando recupera su cuerpo",
-      pull: "El movimiento libera lo que el escritorio acumula.",
-      puntos: ["Tensión liberada", "Sin dolor, más foco", "Autoestima recuperada"],
-      dato: "–40% ansiedad · –30% depresión",
-      fuente: "American Psychological Association",
-    },
-    {
-      h3: "Cuando aprende a regular el estrés",
-      pull: "Herramientas reales que funcionan — no presión que reprime.",
-      puntos: ["Sensación de control", "Menos resentimiento", "Prevención de crisis"],
-      dato: "–60% riesgo depresión clínica · –50% burnout",
-      fuente: "WHO Global Mental Health Report, 2023",
-    },
-  ]
-
-  // Impacto — columna derecha (empresa) — mismo nivel visual que columna izquierda
-  const retornoProgramas = [
-    { label: "Sueño",      devs: 35, retorno: "$5,932",  pct: 43 },
-    { label: "Movimiento", devs: 30, retorno: "$11,250", pct: 82 },
-    { label: "Estrés",     devs: 22, retorno: "$13,750", pct: 100 },
   ]
 
   const programas = [
@@ -150,7 +89,6 @@ export default function Page() {
     { n: "04", title: "Evaluación",   time: "Final del Mes 3", items: ["Reporte final con datos completos del piloto", "Evaluación de bonos por resultados", "Decisión conjunta: Continuar · Expandir · Pausar"] },
   ]
 
-  // Estilos reutilizables
   const EB: React.CSSProperties = { fontFamily: G, fontSize: "11px", letterSpacing: "0.45em", textTransform: "uppercase", color: "#999", marginBottom: "24px" }
   const SUB: React.CSSProperties = { fontFamily: G, fontSize: "10px", letterSpacing: "0.4em", textTransform: "uppercase", color: "#aaa" }
   const SECPAD: React.CSSProperties = { padding: "80px clamp(20px,5vw,60px)" }
@@ -211,7 +149,7 @@ export default function Page() {
 
           <header style={{ display: "flex", justifyContent: "space-between", alignItems: "center", padding: "24px clamp(20px,5vw,60px)", borderBottom: "1px solid #e8e8e4" }}>
             <span style={{ fontFamily: G, fontSize: "11px", letterSpacing: "0.4em", textTransform: "uppercase", color: "#555", fontWeight: 600 }}>AURA</span>
-            <span style={{ fontFamily: G, fontSize: "11px", letterSpacing: "0.25em", textTransform: "uppercase", color: "#999" }}>Confidencial · Febrero 2025</span>
+            <span style={{ fontFamily: G, fontSize: "11px", letterSpacing: "0.25em", textTransform: "uppercase", color: "#999" }}>Confidencial · Febrero 2026</span>
           </header>
 
           <div style={{ flex: 1, display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", textAlign: "center", padding: "56px clamp(20px,5vw,60px) 40px" }}>
@@ -220,7 +158,6 @@ export default function Page() {
               PROPUESTA COMERCIAL · WILLDOM · 2025
             </span>
 
-            {/* H1 */}
             <h1 style={{ fontFamily: S, fontWeight: 500, fontSize: "clamp(2.4rem,6vw,5.2rem)", lineHeight: 1.05, color: "#1a1a1a", letterSpacing: "-0.01em", marginBottom: "10px" }}>
               Propuesta Comercial
             </h1>
@@ -230,23 +167,19 @@ export default function Page() {
 
             <div style={{ width: "40px", height: "2px", background: "#1a1a1a", margin: "0 auto 20px" }} />
 
-            {/* Subtítulo */}
             <p style={{ fontFamily: S, fontStyle: "italic", fontSize: "clamp(1rem,2vw,1.3rem)", color: "#888", lineHeight: 1.65, maxWidth: "520px", marginBottom: "16px" }}>
               Bienestar integral para el equipo —<br />un piloto de 3 meses con retorno medible.
             </p>
 
-            {/* TAGLINE — entre subtítulo y métricas, #999, sans, pequeño */}
             <p style={{ fontFamily: G, fontSize: "clamp(0.85rem,1.4vw,0.95rem)", color: "#999", textAlign: "center", marginBottom: "28px" }}>
               Un contenedor de bienestar diseñado para sostener procesos reales.
             </p>
 
-            {/* Imagen hero */}
             <div style={{ width: "100%", maxWidth: "720px", height: "clamp(200px,32vw,380px)", overflow: "hidden", borderRadius: "12px", marginBottom: "36px", background: "#e8e8e4" }}>
               <img src="/images/hero-meditation.jpg" alt="Persona en calma activa"
                 style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "center 35%", display: "block" }} />
             </div>
 
-            {/* 3 métricas — layout sin cambios */}
             <div className="hero-metrics" style={{ display: "flex", gap: "48px", alignItems: "center" }}>
               {[
                 { val: "3.9×",   label: "ROI estimado" },
@@ -305,12 +238,10 @@ export default function Page() {
               "¿Cómo mejoramos genuinamente el bienestar de nuestro equipo?"
             </p>
 
-            {/* Body sin "con acceso corporativo" */}
             <p style={{ fontFamily: G, fontSize: "1rem", color: "#555", lineHeight: 1.85, maxWidth: "700px", marginBottom: "48px" }}>
               AURA es la respuesta. Un espacio de bienestar diseñado para developers remotos que cargan con insomnio, dolor postural y estrés crónico. Acceso 24/7, privacidad total, prácticas reales guiadas por especialistas. Sin vigilancia corporativa.
             </p>
 
-            {/* Timeline */}
             <div style={{ background: "#f0efe9", padding: "24px 32px", marginBottom: "40px", borderLeft: "3px solid #1a1a1a", display: "flex", gap: "40px", flexWrap: "wrap" }}>
               {[
                 { val: "3–4 semanas", label: "Setup y presentaciones" },
@@ -327,7 +258,6 @@ export default function Page() {
               ))}
             </div>
 
-            {/* 4 métricas — "La solución" → "Arquitectura del Bienestar" */}
             <div style={{ borderTop: "1px solid #e0e0da", paddingTop: "40px", display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(180px,1fr))", gap: "32px" }}>
               {[
                 { label: "La solución",            value: "AURA",   sub: "Arquitectura del Bienestar" },
@@ -356,7 +286,6 @@ export default function Page() {
               El developer remoto carga con dolor real,<br /><em>sin herramientas para manejarlo.</em>
             </h2>
 
-            {/* Body reemplazado */}
             <p style={{ fontFamily: G, fontSize: "1rem", color: "#555", lineHeight: 1.85, maxWidth: "680px", marginBottom: "48px" }}>
               No es el estrés normal de un trabajo exigente. Es acumulado, ignorado, y silencioso. La investigación documenta tres áreas donde el impacto es profundo — y medible.
             </p>
@@ -365,10 +294,8 @@ export default function Page() {
               {challenges.map((c) => (
                 <div key={c.roman} className="g-ctx" style={{ display: "grid", gridTemplateColumns: "40px 1fr 1fr", gap: "clamp(16px,4vw,48px)", padding: "40px 0", borderBottom: "1px solid #d8d7d0", alignItems: "start" }}>
 
-                  {/* Número romano decorativo */}
                   <p style={{ fontFamily: S, fontSize: "1.5rem", color: "#ccc", lineHeight: 1, paddingTop: "4px" }}>{c.roman}</p>
 
-                  {/* Columna central */}
                   <div>
                     <h3 style={{ fontFamily: S, fontSize: "clamp(1.2rem,2vw,1.6rem)", fontWeight: 400, marginBottom: "14px" }}>{c.title}</h3>
                     <p style={{ fontFamily: S, fontSize: "clamp(2.5rem,5vw,4rem)", fontWeight: 400, lineHeight: 1, marginBottom: "8px" }}>{c.stat}</p>
@@ -379,7 +306,6 @@ export default function Page() {
                     </div>
                   </div>
 
-                  {/* Columna derecha — impacto directo, SIN eyebrow "Impacto documentado" */}
                   <div style={{ paddingTop: "4px" }}>
                     <p style={{ fontFamily: S, fontSize: "1.05rem", lineHeight: 1.45, marginBottom: "14px" }}>{c.impact}</p>
                     <p style={{ fontFamily: G, fontSize: "0.82rem", color: "#aaa", fontStyle: "italic" }}>{c.source}</p>
@@ -388,7 +314,6 @@ export default function Page() {
               ))}
             </div>
 
-            {/* Línea de cierre */}
             <p style={{ fontFamily: S, fontStyle: "italic", color: "#777", fontSize: "1rem", textAlign: "center", marginTop: "36px" }}>
               Esto fue lo que Willdom vivió de cerca.
             </p>
@@ -396,24 +321,190 @@ export default function Page() {
         </section>
 
         {/* ══════════════════════════════════════════════
-            03 · LA SOLUCIÓN
+            03 · IMPACTO HUMANO (ANTES SECCIÓN 04)
+        ══════════════════════════════════════════════ */}
+        <section ref={refs.impacto} style={{ ...SECPAD, background: "#f0efe9" }}>
+          <div style={MW}>
+            <p style={EB}>03 · Impacto Humano</p>
+
+            <h2 style={{
+              fontFamily: S,
+              fontSize: "clamp(1.8rem,3.5vw,2.8rem)",
+              fontWeight: 400,
+              lineHeight: 1.2,
+              marginBottom: "14px"
+            }}>
+              El retorno de cuidar a tu equipo.
+            </h2>
+
+            <p style={{
+              fontFamily: S,
+              fontSize: "clamp(1rem,1.8vw,1.2rem)",
+              fontStyle: "italic",
+              color: "#777",
+              lineHeight: 1.6,
+              maxWidth: "680px",
+              marginBottom: "60px"
+            }}>
+              Cuidar a las personas y cuidar al negocio no son decisiones separadas. Son la misma.
+            </p>
+
+            {/* ───────── BLOQUE 1 · VIDA REAL + IMAGEN ───────── */}
+
+            <p style={{ ...SUB, marginBottom: "20px" }}>
+              Impacto en la vida cotidiana
+            </p>
+
+            <div style={{
+              width: "100%",
+              borderRadius: "16px",
+              overflow: "hidden",
+              background: "#e8e8e4",
+              marginBottom: "40px"
+            }}>
+              <img
+                src="/images/emotional-regulation-man.jpg"
+                alt="Persona en presencia consciente con su entorno"
+                style={{
+                  width: "100%",
+                  height: "auto",
+                  display: "block"
+                }}
+              />
+            </div>
+
+            <div style={{ maxWidth: "760px", marginBottom: "80px" }}>
+              <p style={{
+                fontFamily: G,
+                fontSize: "1rem",
+                color: "#555",
+                lineHeight: 1.9,
+                marginBottom: "24px"
+              }}>
+                Cuando una persona aprende a regular su sistema nervioso,
+                dormir mejor y respirar antes de reaccionar,
+                el impacto no se queda en la oficina.
+              </p>
+
+              <p style={{
+                fontFamily: G,
+                fontSize: "1rem",
+                color: "#555",
+                lineHeight: 1.9,
+                marginBottom: "24px"
+              }}>
+                Se traslada a su casa.<br/>
+                A sus relaciones.<br/>
+                A cómo responde ante el conflicto.<br/>
+                A cómo escucha.<br/>
+                A cómo se vincula.
+              </p>
+
+              <p style={{
+                fontFamily: G,
+                fontSize: "1rem",
+                color: "#555",
+                lineHeight: 1.9,
+                marginBottom: "32px"
+              }}>
+                Una persona regulada piensa antes de actuar,
+                responde en lugar de reaccionar,
+                reconoce sus emociones sin negarlas
+                y toma decisiones con mayor conciencia.
+              </p>
+
+              <p style={{
+                fontFamily: S,
+                fontSize: "clamp(1.4rem,2.5vw,1.8rem)",
+                fontStyle: "italic",
+                lineHeight: 1.4,
+                color: "#1a1a1a"
+              }}>
+                Equipos más regulados generan familias más estables.<br/>
+                Familias más estables sostienen sociedades más sanas.
+              </p>
+            </div>
+
+            <div className="g-impact" style={{
+              display: "grid",
+              gridTemplateColumns: "1fr 1fr",
+              gap: "0 48px"
+            }}>
+
+              <div>
+                <p style={{ ...SUB, marginBottom: "20px" }}>
+                  Beneficios para las personas
+                </p>
+
+                <div style={{ borderTop: "1px solid #d8d7d0", paddingTop: "24px" }}>
+                  <h3 style={{
+                    fontFamily: S,
+                    fontSize: "clamp(1.1rem,1.8vw,1.35rem)",
+                    fontWeight: 400,
+                    marginBottom: "14px"
+                  }}>
+                    Regulación emocional sostenida
+                  </h3>
+
+                  <ul style={{
+                    listStyle: "none",
+                    display: "flex",
+                    flexDirection: "column",
+                    gap: "10px"
+                  }}>
+                    {[
+                      "Menos ansiedad reactiva",
+                      "Mayor claridad mental",
+                      "Mejor toma de decisiones",
+                      "Prevención de burnout",
+                      "Mejores vínculos interpersonales"
+                    ].map(item => (
+                      <li key={item} style={{
+                        display: "flex",
+                        gap: "10px",
+                        alignItems: "flex-start"
+                      }}>
+                        <span style={{
+                          width: "4px",
+                          height: "4px",
+                          borderRadius: "50%",
+                          background: "#999",
+                          marginTop: "8px"
+                        }} />
+                        <span style={{
+                          fontFamily: G,
+                          fontSize: "0.9rem",
+                          color: "#555",
+                          lineHeight: 1.6
+                        }}>
+                          {item}
+                        </span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </section>
+
+        {/* ══════════════════════════════════════════════
+            04 · LA SOLUCIÓN
         ══════════════════════════════════════════════ */}
         <section ref={refs.solucion} style={{ ...SECPAD, background: "#fafaf8" }}>
           <div style={MW}>
-            <p style={EB}>03 · La Solución</p>
+            <p style={EB}>04 · La Solución</p>
 
-            {/* H2: "Arquitectura del Bienestar" como concepto central, no enterrado */}
             <h2 style={{ fontFamily: S, fontSize: "clamp(1.8rem,3.5vw,2.8rem)", fontWeight: 400, lineHeight: 1.2, marginBottom: "18px" }}>
               AURA · Arquitectura del Bienestar.<br />
               <em>No un beneficio. Un espacio.</em>
             </h2>
 
-            {/* Body — sin mención a acceso corporativo técnico */}
             <p style={{ fontFamily: G, fontSize: "1rem", color: "#555", lineHeight: 1.85, maxWidth: "700px", marginBottom: "48px" }}>
               Tu equipo entra por voluntad propia — sin presión, sin integración con sistemas corporativos, sin vigilancia. Lo que pasa adentro es de ellos. Lo que Willdom ve son los resultados.
             </p>
 
-            {/* 4 pilares — solo pilar 03 cambia */}
             <div className="g2" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", borderTop: "1px solid #e0e0da", borderBottom: "1px solid #e0e0da", marginBottom: "56px" }}>
               {[
                 {
@@ -426,7 +517,6 @@ export default function Page() {
                 },
                 {
                   n: "03", label: "Privacidad Total",
-                  // COPY NUEVO — pilar 03
                   body: "Tu equipo entra. Lo que pasa adentro, es de ellos. Espacio completamente separado de los sistemas corporativos. Sin vigilancia, sin reportes individuales. Datos 100% privados.",
                 },
                 {
@@ -448,7 +538,6 @@ export default function Page() {
               ))}
             </div>
 
-            {/* Cómo funciona */}
             <p style={{ ...EB, marginBottom: "32px" }}>Cómo funciona</p>
             <div className="g4" style={{ display: "grid", gridTemplateColumns: "repeat(4,1fr)", gap: "24px", marginBottom: "56px" }}>
               {[
@@ -465,7 +554,6 @@ export default function Page() {
               ))}
             </div>
 
-            {/* Programas de ejemplo — 3 imágenes */}
             <p style={{ ...EB, marginBottom: "32px" }}>Programas de ejemplo</p>
             <div style={{ borderTop: "1px solid #e0e0da" }}>
               {programas.map((prog, i) => (
@@ -490,261 +578,205 @@ export default function Page() {
             </p>
           </div>
         </section>
-{/* ══════════════════════════════════════════════
-    04 · EL IMPACTO
-══════════════════════════════════════════════ */}
-<section ref={refs.impacto} style={{ ...SECPAD, background: "#f0efe9" }}>
-  <div style={MW}>
-    <p style={EB}>04 · El Impacto</p>
 
-    <h2 style={{
-      fontFamily: S,
-      fontSize: "clamp(1.8rem,3.5vw,2.8rem)",
-      fontWeight: 400,
-      lineHeight: 1.2,
-      marginBottom: "14px"
-    }}>
-      El retorno de cuidar a tu equipo.
-    </h2>
-
-    <p style={{
-      fontFamily: S,
-      fontSize: "clamp(1rem,1.8vw,1.2rem)",
-      fontStyle: "italic",
-      color: "#777",
-      lineHeight: 1.6,
-      maxWidth: "680px",
-      marginBottom: "60px"
-    }}>
-      Cuidar a las personas y cuidar al negocio no son decisiones separadas. Son la misma.
-    </p>
-
-    {/* ───────── BLOQUE 1 · VIDA REAL + IMAGEN ───────── */}
-
-    <p style={{ ...SUB, marginBottom: "20px" }}>
-      Impacto en la vida cotidiana
-    </p>
-
-    <div style={{
-  width: "100%",
-  borderRadius: "16px",
-  overflow: "hidden",
-  background: "#e8e8e4",
-  marginBottom: "40px"
-}}>
-  <img
-    src="/emotional-regulation-man.jpg"
-    alt="Persona en presencia consciente con su entorno"
-    style={{
-      width: "100%",
-      height: "auto",
-      display: "block"
-    }}
-  />
-</div>
-
-    <div style={{ maxWidth: "760px", marginBottom: "80px" }}>
-      <p style={{
-        fontFamily: G,
-        fontSize: "1rem",
-        color: "#555",
-        lineHeight: 1.9,
-        marginBottom: "24px"
-      }}>
-        Cuando una persona aprende a regular su sistema nervioso,
-        dormir mejor y respirar antes de reaccionar,
-        el impacto no se queda en la oficina.
-      </p>
-
-      <p style={{
-        fontFamily: G,
-        fontSize: "1rem",
-        color: "#555",
-        lineHeight: 1.9,
-        marginBottom: "24px"
-      }}>
-        Se traslada a su casa.<br/>
-        A sus relaciones.<br/>
-        A cómo responde ante el conflicto.<br/>
-        A cómo escucha.<br/>
-        A cómo se vincula.
-      </p>
-
-      <p style={{
-        fontFamily: G,
-        fontSize: "1rem",
-        color: "#555",
-        lineHeight: 1.9,
-        marginBottom: "32px"
-      }}>
-        Una persona regulada piensa antes de actuar,
-        responde en lugar de reaccionar,
-        reconoce sus emociones sin negarlas
-        y toma decisiones con mayor conciencia.
-      </p>
-
-      <p style={{
-        fontFamily: S,
-        fontSize: "clamp(1.4rem,2.5vw,1.8rem)",
-        fontStyle: "italic",
-        lineHeight: 1.4,
-        color: "#1a1a1a"
-      }}>
-        Equipos más regulados generan familias más estables.<br/>
-        Familias más estables sostienen sociedades más sanas.
-      </p>
-    </div>
-
-    {/* ───────── BLOQUE 2 · PRODUCTIVIDAD ───────── */}
-
-    <div className="g-impact" style={{
-      display: "grid",
-      gridTemplateColumns: "1fr 1fr",
-      gap: "0 48px"
-    }}>
-
-      {/* IZQUIERDA */}
-      <div>
-        <p style={{ ...SUB, marginBottom: "20px" }}>
-          Beneficios para las personas
-        </p>
-
-        <div style={{ borderTop: "1px solid #d8d7d0", paddingTop: "24px" }}>
-          <h3 style={{
-            fontFamily: S,
-            fontSize: "clamp(1.1rem,1.8vw,1.35rem)",
-            fontWeight: 400,
-            marginBottom: "14px"
-          }}>
-            Regulación emocional sostenida
-          </h3>
-
-          <ul style={{
-            listStyle: "none",
-            display: "flex",
-            flexDirection: "column",
-            gap: "10px"
-          }}>
-            {[
-              "Menos ansiedad reactiva",
-              "Mayor claridad mental",
-              "Mejor toma de decisiones",
-              "Prevención de burnout",
-              "Mejores vínculos interpersonales"
-            ].map(item => (
-              <li key={item} style={{
-                display: "flex",
-                gap: "10px",
-                alignItems: "flex-start"
-              }}>
-                <span style={{
-                  width: "4px",
-                  height: "4px",
-                  borderRadius: "50%",
-                  background: "#999",
-                  marginTop: "8px"
-                }} />
-                <span style={{
-                  fontFamily: G,
-                  fontSize: "0.9rem",
-                  color: "#555",
-                  lineHeight: 1.6
-                }}>
-                  {item}
-                </span>
-              </li>
-            ))}
-          </ul>
-        </div>
-      </div>
-
-      {/* DERECHA */}
-      <div>
-        <p style={{ ...SUB, marginBottom: "20px" }}>
-          Impacto en productividad
-        </p>
-
-        <div style={{ borderTop: "1px solid #d8d7d0", paddingTop: "24px" }}>
-          <h3 style={{
-            fontFamily: S,
-            fontSize: "clamp(1.1rem,1.8vw,1.35rem)",
-            fontWeight: 400,
-            marginBottom: "8px"
-          }}>
-            Lo que se pierde sin intervención
-          </h3>
-
-          <p style={{
-            fontFamily: S,
-            fontSize: "clamp(2.8rem,5vw,4rem)",
-            fontWeight: 400,
-            lineHeight: 1,
-            marginBottom: "8px"
-          }}>
-            11.3
-          </p>
-
-          <p style={{
-            fontFamily: G,
-            fontSize: "0.95rem",
-            color: "#555",
-            marginBottom: "6px"
-          }}>
-            días de productividad perdida por persona, por año
-          </p>
-
-          <p style={{
-            fontFamily: S,
-            fontSize: "clamp(2.8rem,5vw,4rem)",
-            fontWeight: 400,
-            margin: "40px 0 10px"
-          }}>
-            3.9×
-          </p>
-
-          <p style={{
-            fontFamily: G,
-            fontSize: "0.85rem",
-            color: "#777"
-          }}>
-            Retorno estimado del piloto en 3 meses
-          </p>
-        </div>
-      </div>
-    </div>
-
-  </div>
-</section>
         {/* ══════════════════════════════════════════════
-            05 · INVERSIÓN — renumerada
-            Sin escenarios A/B/C. Sin explicación NPS.
-            Sin Opción 2.
+            05 · IMPACTO FINANCIERO (NUEVA SECCIÓN)
+        ══════════════════════════════════════════════ */}
+        <section ref={refs.financiero} style={{ ...SECPAD, background: "#f0efe9" }}>
+          <div style={MW}>
+
+            <p style={EB}>05 · Impacto Financiero</p>
+
+            <h2 style={{
+              fontFamily: S,
+              fontSize: "clamp(1.8rem,3.5vw,2.8rem)",
+              fontWeight: 400,
+              lineHeight: 1.2,
+              marginBottom: "18px"
+            }}>
+              El bienestar también<br/><em>tiene retorno medible.</em>
+            </h2>
+
+            <p style={{
+              fontFamily: S,
+              fontSize: "clamp(1rem,1.8vw,1.2rem)",
+              fontStyle: "italic",
+              color: "#777",
+              lineHeight: 1.6,
+              maxWidth: "680px",
+              marginBottom: "60px"
+            }}>
+              No significa trabajar más horas. Significa trabajar mejor en las mismas horas. Los estudios documentan cuánta productividad se pierde — y cuánta se puede recuperar.
+            </p>
+
+            {/* BLOQUE · DATO CIENTÍFICO DOCUMENTADO */}
+            <div style={{
+              background: "#fff",
+              padding: "clamp(32px,5vw,48px)",
+              borderRadius: "12px",
+              marginBottom: "56px",
+              borderTop: "3px solid #1a1a1a"
+            }}>
+              <p style={{ ...SUB, marginBottom: "16px", textAlign: "center" }}>DATO CIENTÍFICO DOCUMENTADO</p>
+              
+              <p style={{
+                fontFamily: S,
+                fontSize: "clamp(2.5rem,6vw,4.5rem)",
+                fontWeight: 400,
+                lineHeight: 1,
+                textAlign: "center",
+                marginBottom: "12px"
+              }}>
+                11.3
+              </p>
+
+              <p style={{
+                fontFamily: G,
+                fontSize: "clamp(0.95rem,1.5vw,1.05rem)",
+                color: "#555",
+                textAlign: "center",
+                marginBottom: "8px"
+              }}>
+                días de productividad perdida por persona, por año
+              </p>
+
+              <p style={{
+                fontFamily: G,
+                fontSize: "0.82rem",
+                color: "#999",
+                textAlign: "center",
+                fontStyle: "italic"
+              }}>
+                Harvard Business Review, 2019
+              </p>
+
+              <div style={{
+                borderTop: "1px solid #e0e0da",
+                marginTop: "20px",
+                paddingTop: "16px",
+                textAlign: "center"
+              }}>
+                <p style={{
+                  fontFamily: G,
+                  fontSize: "0.88rem",
+                  color: "#777"
+                }}>
+                  −$2,260 USD · por developer · por año
+                </p>
+              </div>
+            </div>
+
+            {/* GRÁFICAS DE RETORNO */}
+            <div style={{ marginBottom: "56px" }}>
+              <p style={{ ...SUB, marginBottom: "32px" }}>Retorno estimado por programa (25% participación)</p>
+
+              <div style={{
+                display: "grid",
+                gridTemplateColumns: "1fr",
+                gap: "28px"
+              }}>
+                {[
+                  { label: "Sueño",      devs: "35 developers", retorno: "$5,912", pct: 43 },
+                  { label: "Movimiento", devs: "30 developers", retorno: "$11,250", pct: 82 },
+                  { label: "Estrés",     devs: "22 developers", retorno: "$13,750", pct: 100 },
+                ].map((r) => (
+                  <div key={r.label} style={{
+                    display: "grid",
+                    gridTemplateColumns: "140px 1fr auto",
+                    gap: "24px",
+                    alignItems: "center",
+                    paddingBottom: "28px",
+                    borderBottom: "1px solid #e0e0da"
+                  }}>
+                    <div>
+                      <p style={{ fontFamily: G, fontSize: "0.95rem", fontWeight: 600, color: "#1a1a1a" }}>
+                        {r.label}
+                      </p>
+                      <p style={{ fontFamily: G, fontSize: "0.82rem", color: "#999", marginTop: "4px" }}>
+                        {r.devs}
+                      </p>
+                    </div>
+
+                    <div style={{ display: "flex", alignItems: "center", gap: "12px" }}>
+                      <div style={{
+                        width: `${r.pct}%`,
+                        height: "8px",
+                        background: "#1a1a1a",
+                        borderRadius: "2px"
+                      }} />
+                    </div>
+
+                    <p style={{
+                      fontFamily: S,
+                      fontSize: "clamp(1.1rem,2vw,1.3rem)",
+                      fontWeight: 400,
+                      color: "#1a1a1a",
+                      whiteSpace: "nowrap"
+                    }}>
+                      {r.retorno}
+                    </p>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* TOTAL */}
+            <div style={{
+              background: "#fff",
+              padding: "clamp(24px,4vw,36px)",
+              borderRadius: "8px",
+              display: "grid",
+              gridTemplateColumns: "1fr auto",
+              gap: "24px",
+              alignItems: "center",
+              borderTop: "2px solid #1a1a1a"
+            }}>
+              <div>
+                <p style={{ fontFamily: G, fontSize: "0.9rem", color: "#555" }}>
+                  Total recuperado en 3 meses
+                </p>
+                <p style={{ fontFamily: G, fontSize: "0.82rem", color: "#999", marginTop: "4px" }}>
+                  87 developers · supuestos conservadores al 30%
+                </p>
+              </div>
+              <p style={{
+                fontFamily: S,
+                fontSize: "clamp(1.8rem,3.5vw,2.5rem)",
+                fontWeight: 400,
+                color: "#1a1a1a"
+              }}>
+                $30,912
+              </p>
+            </div>
+
+          </div>
+        </section>
+
+        {/* ══════════════════════════════════════════════
+            06 · INVERSIÓN
         ══════════════════════════════════════════════ */}
         <section ref={refs.inversion} style={{ ...SECPAD, background: "#fafaf8" }}>
           <div style={MW}>
-            <p style={EB}>05 · Inversión</p>
+            <p style={EB}>06 · Inversión</p>
 
-            {/* H2 nuevo */}
             <h2 style={{ fontFamily: S, fontSize: "clamp(1.8rem,3.5vw,2.8rem)", fontWeight: 400, lineHeight: 1.2, marginBottom: "18px" }}>
               Pagamos el éxito juntos.<br />
               <em>Si AURA funciona, ambos lo sabemos.</em>
             </h2>
 
-            {/* Body nuevo — sin justificaciones */}
             <p style={{ fontFamily: G, fontSize: "1rem", color: "#555", lineHeight: 1.85, maxWidth: "680px", marginBottom: "48px" }}>
               La inversión base cubre el piloto completo de 3 meses. Los bonos adicionales solo se activan si se alcanzan los resultados — si no hay resultados, no hay bonos. Willdom tiene acceso al dashboard en tiempo real durante todo el proceso.
             </p>
 
             <div className="g-inv" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "56px" }}>
 
-              {/* Cronograma */}
               <div>
                 <p style={{ ...SUB, marginBottom: "20px" }}>Cronograma de pagos</p>
                 <div style={{ borderTop: "1px solid #e0e0da" }}>
                   {[
-                    { n: "01", fecha: "Semana 1 — Anticipado", monto: "$3,000", desc: "Activación del acceso corporativo y setup técnico." },
-                    { n: "02", fecha: "15 de Abril — Mes 1",   monto: "$2,500", desc: "Evaluación completa del primer mes." },
-                    { n: "03", fecha: "15 de Mayo — Mes 2",    monto: "$2,500", desc: "Evaluación del segundo mes." },
+                    { n: "01", fecha: "Semana 1 — Anticipado", monto: "$3,100", desc: "Activación del acceso corporativo y setup técnico." },
+                    { n: "02", fecha: "15 de Abril — Mes 1",   monto: "$3,100", desc: "Evaluación completa del primer mes." },
+                    { n: "03", fecha: "15 de Mayo — Mes 2",    monto: "$3,100", desc: "Evaluación del segundo mes." },
                   ].map((p) => (
                     <div key={p.n} style={{ display: "grid", gridTemplateColumns: "36px 1fr auto", gap: "14px", padding: "22px 0", borderBottom: "1px solid #e0e0da", alignItems: "start" }}>
                       <p style={{ fontFamily: S, fontSize: "1.3rem", color: "#ccc", lineHeight: 1 }}>{p.n}</p>
@@ -755,23 +787,20 @@ export default function Page() {
                       <p style={{ fontFamily: S, fontSize: "1.15rem", whiteSpace: "nowrap" }}>{p.monto}</p>
                     </div>
                   ))}
-                  {/* Bloque negro total */}
                   <div style={{ display: "grid", gridTemplateColumns: "36px 1fr auto", gap: "14px", padding: "20px", background: "#1a1a1a", alignItems: "center" }}>
                     <div />
                     <p style={{ fontFamily: G, fontSize: "0.92rem", color: "#f0efe9" }}>Total base obligatorio — 3 meses</p>
-                    <p style={{ fontFamily: S, fontSize: "1.4rem", color: "#f0efe9" }}>$8,000</p>
+                    <p style={{ fontFamily: S, fontSize: "1.4rem", color: "#f0efe9" }}>$9,300</p>
                   </div>
                 </div>
               </div>
 
-              {/* Bonos — sin explicación NPS, sin escenarios */}
               <div>
                 <p style={{ ...SUB, marginBottom: "20px" }}>Bonos adicionales · evaluados al Mes 3</p>
                 <div style={{ borderTop: "1px solid #e0e0da", marginBottom: "28px" }}>
                   {[
                     { cond: "Más de 70 usuarios activos en el Mes 1",         bono: "+$1,500" },
                     { cond: "Más de 100 prácticas completadas en Mes 2–3",     bono: "+$2,000" },
-                    // NPS — sin explicación de qué es
                     { cond: "NPS mayor a +5 al finalizar el piloto",           bono: "+$1,000" },
                   ].map((b) => (
                     <div key={b.cond} style={{ display: "flex", justifyContent: "space-between", alignItems: "center", gap: "14px", padding: "18px 0", borderBottom: "1px solid #e0e0da" }}>
@@ -782,9 +811,8 @@ export default function Page() {
                 </div>
 
                 <p style={{ ...SUB, marginBottom: "8px" }}>Máximo total</p>
-                <p style={{ fontFamily: S, fontSize: "clamp(2.2rem,4.5vw,3.5rem)", fontWeight: 400, lineHeight: 1, marginBottom: "16px" }}>$12,500</p>
+                <p style={{ fontFamily: S, fontSize: "clamp(2.2rem,4.5vw,3.5rem)", fontWeight: 400, lineHeight: 1, marginBottom: "16px" }}>$13,800</p>
 
-                {/* Línea de confianza — al final de la columna bonos */}
                 <p style={{ fontFamily: G, fontSize: "0.82rem", color: "#aaa", fontStyle: "italic", lineHeight: 1.7 }}>
                   "Willdom ve en tiempo real qué metas se están cumpliendo. No hay sorpresas."
                 </p>
@@ -794,17 +822,16 @@ export default function Page() {
         </section>
 
         {/* ══════════════════════════════════════════════
-            06 · IMPLEMENTACIÓN — renumerada
+            07 · IMPLEMENTACIÓN
         ══════════════════════════════════════════════ */}
         <section ref={refs.implementacion} style={{ ...SECPAD, background: "#f0efe9" }}>
           <div style={MW}>
-            <p style={EB}>06 · Implementación</p>
+            <p style={EB}>07 · Implementación</p>
 
             <h2 style={{ fontFamily: S, fontSize: "clamp(1.8rem,3.5vw,2.8rem)", fontWeight: 400, lineHeight: 1.2, marginBottom: "18px" }}>
               De la firma al primer resultado:<br /><em>un proceso simple y sin fricción.</em>
             </h2>
 
-            {/* Última frase ajustada */}
             <p style={{ fontFamily: G, fontSize: "1rem", color: "#555", lineHeight: 1.85, maxWidth: "680px", marginBottom: "48px" }}>
               El piloto inicia con el primer pago. En 3–4 semanas el acceso está activo. En la semana 4–5 el equipo ya puede empezar a practicar. La decisión al final del Mes 3 la toman juntos, con datos en mano. Sin promesas, sin presión.
             </p>
@@ -842,7 +869,6 @@ export default function Page() {
                 {
                   who: "Willdom",
                   items: [
-                    // Copy ajustado
                     "Comunicar al equipo — como invitación. Nunca como obligación.",
                     "Facilitar las reuniones de presentación con equipos pequeños",
                     "Recolectar feedback honesto de quienes usen la plataforma",
@@ -867,29 +893,25 @@ export default function Page() {
         </section>
 
         {/* ══════════════════════════════════════════════
-            07 · PRÓXIMOS PASOS — renumerada
+            08 · PRÓXIMOS PASOS
         ══════════════════════════════════════════════ */}
         <section ref={refs.pasos} style={{ ...SECPAD, background: "#1a1a1a", display: "flex", alignItems: "center", justifyContent: "center" }}>
           <div style={{ maxWidth: "640px", textAlign: "center" }}>
-            <p style={{ ...EB, color: "#555" }}>07 · Próximos Pasos</p>
+            <p style={{ ...EB, color: "#555" }}>08 · Próximos Pasos</p>
 
-            {/* H2 — "30 minutos" según guía */}
             <h2 style={{ fontFamily: S, fontSize: "clamp(2rem,5vw,4rem)", fontWeight: 400, lineHeight: 1.15, color: "#f0efe9", marginBottom: "20px" }}>
               Una reunión de 30 minutos<br /><em>para cerrar el acuerdo.</em>
             </h2>
 
-            {/* Párrafo 1 — simplificado */}
             <p style={{ fontFamily: G, fontSize: "1rem", color: "#888", lineHeight: 1.85, marginBottom: "12px" }}>
               Con el equipo de decisión de Willdom. Responder preguntas, ver la plataforma en vivo, firmar.
             </p>
 
-            {/* Párrafo 2 — ajustado */}
             <p style={{ fontFamily: G, fontSize: "0.88rem", color: "#555", lineHeight: 1.8, marginBottom: "40px" }}>
               El piloto puede iniciar en menos de 4 semanas.<br />
               El equipo puede estar practicando antes de que termine el mes.
             </p>
 
-            {/* CTA */}
             <a
               href="mailto:contacto@aura.com"
               style={{ display: "inline-block", border: "1px solid rgba(255,255,255,0.25)", color: "#f0efe9", fontFamily: G, fontSize: "0.82rem", letterSpacing: "0.3em", textTransform: "uppercase", padding: "18px 40px", textDecoration: "none", marginBottom: "48px" }}
@@ -897,7 +919,6 @@ export default function Page() {
               Agendar Reunión
             </a>
 
-            {/* Presentado por — antes del CTA según guía */}
             <div style={{ borderTop: "1px solid #2e2e2e", paddingTop: "32px" }}>
               <p style={{ ...SUB, color: "#444", marginBottom: "20px" }}>Presentado por</p>
               <div style={{ display: "flex", justifyContent: "center", gap: "clamp(20px,5vw,56px)", flexWrap: "wrap" }}>
@@ -916,7 +937,7 @@ export default function Page() {
         </section>
 
         {/* ══════════════════════════════════════════════
-            APÉNDICES — colapsables
+            APÉNDICES
         ══════════════════════════════════════════════ */}
         <section style={{ background: "#fafaf8", padding: "40px clamp(20px,5vw,60px)" }}>
           <div style={MW}>
@@ -988,7 +1009,7 @@ export default function Page() {
               <p style={{ fontFamily: G, fontSize: "0.82rem", color: "#888" }}>Arquitectura del Bienestar</p>
             </div>
             <div style={{ textAlign: "right" }}>
-              <p style={{ fontFamily: G, fontSize: "0.78rem", color: "#aaa", marginBottom: "4px" }}>Propuesta Comercial · Willdom · Febrero 2025</p>
+              <p style={{ fontFamily: G, fontSize: "0.78rem", color: "#aaa", marginBottom: "4px" }}>Propuesta Comercial · Willdom · Febrero 2026</p>
               <p style={{ fontFamily: G, fontSize: "0.72rem", color: "#bbb", fontStyle: "italic" }}>Confidencial</p>
             </div>
           </div>
