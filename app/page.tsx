@@ -492,129 +492,169 @@ export default function Page() {
         </section>
 
         {/* ══════════════════════════════════════════════
-            04 · EL IMPACTO — SECCIÓN FUSIONADA
-            Secciones 04 + 05 anteriores unificadas.
-            Dos columnas 50/50, mismo peso visual.
-            Fondo #f0efe9 limpio — sin overlay oscuro.
-        ══════════════════════════════════════════════ */}
-        <section ref={refs.impacto} style={{ ...SECPAD, background: "#f0efe9" }}>
-          <div style={MW}>
-            <p style={EB}>04 · El Impacto</p>
+    04 · EL IMPACTO — REDISEÑO
+    Primero: impacto humano profundo
+    Luego: impacto productivo
+══════════════════════════════════════════════ */}
+<section ref={refs.impacto} style={{ ...SECPAD, background: "#f0efe9" }}>
+  <div style={MW}>
+    <p style={EB}>04 · El Impacto</p>
 
-            <h2 style={{ fontFamily: S, fontSize: "clamp(1.8rem,3.5vw,2.8rem)", fontWeight: 400, lineHeight: 1.2, marginBottom: "14px" }}>
-              El retorno de cuidar a tu equipo.
-            </h2>
-            <p style={{ fontFamily: S, fontSize: "clamp(1rem,1.8vw,1.2rem)", fontStyle: "italic", color: "#777", lineHeight: 1.6, maxWidth: "680px", marginBottom: "48px" }}>
-              Cuidar a las personas y cuidar al negocio no son decisiones separadas. Son la misma.
+    <h2 style={{
+      fontFamily: S,
+      fontSize: "clamp(1.8rem,3.5vw,2.8rem)",
+      fontWeight: 400,
+      lineHeight: 1.2,
+      marginBottom: "14px"
+    }}>
+      El retorno de cuidar a tu equipo.
+    </h2>
+
+    <p style={{
+      fontFamily: S,
+      fontSize: "clamp(1rem,1.8vw,1.2rem)",
+      fontStyle: "italic",
+      color: "#777",
+      lineHeight: 1.6,
+      maxWidth: "680px",
+      marginBottom: "64px"
+    }}>
+      Cuidar a las personas y cuidar al negocio no son decisiones separadas. Son la misma.
+    </p>
+
+    {/* ───────────────────────────── */}
+    {/* PRIMER BLOQUE — VIDA REAL    */}
+    {/* ───────────────────────────── */}
+
+    <div style={{ marginBottom: "80px" }}>
+      <p style={{ ...SUB, marginBottom: "20px" }}>Impacto en la vida real</p>
+
+      <div style={{ maxWidth: "720px" }}>
+        <p style={{ fontFamily: G, fontSize: "1rem", color: "#555", lineHeight: 1.85, marginBottom: "20px" }}>
+          Cuando una persona aprende a regular su sistema nervioso, dormir mejor y respirar antes de reaccionar,
+          el impacto no se queda en la oficina.
+        </p>
+
+        <p style={{ fontFamily: G, fontSize: "1rem", color: "#555", lineHeight: 1.85, marginBottom: "20px" }}>
+          Se traslada a su casa. A sus vínculos. A cómo responde ante el conflicto.
+          A cómo escucha. A cómo se comunica.
+        </p>
+
+        <div style={{ marginBottom: "20px" }}>
+          {[
+            "Piensa antes de actuar.",
+            "Responde en lugar de reaccionar.",
+            "Reconoce sus emociones sin negarlas.",
+            "Se vincula con mayor claridad y empatía.",
+            "Toma decisiones con mayor conciencia."
+          ].map((t) => (
+            <div key={t} style={{ display: "flex", gap: "10px", marginBottom: "8px" }}>
+              <span style={{ width: "4px", height: "4px", borderRadius: "50%", background: "#999", marginTop: "8px" }} />
+              <span style={{ fontFamily: G, fontSize: "0.95rem", color: "#555", lineHeight: 1.6 }}>{t}</span>
+            </div>
+          ))}
+        </div>
+
+        <p style={{ fontFamily: G, fontSize: "1rem", color: "#555", lineHeight: 1.85, marginBottom: "20px" }}>
+          Esto fortalece la vida familiar, reduce fricciones innecesarias y mejora la calidad de los vínculos.
+          No es solo bienestar laboral. Es bienestar integral.
+        </p>
+
+        <p style={{ fontFamily: G, fontSize: "1rem", color: "#555", lineHeight: 1.85 }}>
+          Y funciona como prevención: ansiedad crónica, burnout, aislamiento emocional
+          y otras problemáticas de salud mental que, cuando aparecen, ya son costosas y difíciles de revertir.
+        </p>
+      </div>
+
+      <div style={{ marginTop: "40px" }}>
+        <p style={{
+          fontFamily: S,
+          fontSize: "clamp(1.1rem,2vw,1.5rem)",
+          fontStyle: "italic",
+          color: "#444",
+          lineHeight: 1.5
+        }}>
+          Equipos más regulados generan familias más estables.<br />
+          Familias más estables sostienen sociedades más sanas.
+        </p>
+      </div>
+    </div>
+
+    {/* ───────────────────────────── */}
+    {/* SEGUNDO BLOQUE — PRODUCTIVIDAD */}
+    {/* ───────────────────────────── */}
+
+    <div className="g-impact" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "0 48px" }}>
+
+      {/* PERSONAS — productividad */}
+      <div>
+        <p style={{ ...SUB, marginBottom: "20px" }}>Impacto medible en el equipo</p>
+
+        {impactPersonas.map((blq) => (
+          <div key={blq.h3} style={{ borderTop: "1px solid #d8d7d0", paddingTop: "24px", marginBottom: "28px" }}>
+            <h3 style={{
+              fontFamily: S,
+              fontSize: "clamp(1.1rem,1.8vw,1.35rem)",
+              fontWeight: 400,
+              marginBottom: "8px"
+            }}>
+              {blq.h3}
+            </h3>
+
+            <p style={{
+              fontFamily: S,
+              fontSize: "0.95rem",
+              fontStyle: "italic",
+              color: "#888",
+              marginBottom: "16px"
+            }}>
+              {blq.pull}
             </p>
 
-            {/* DOS COLUMNAS 50 / 50 — mismo peso visual */}
-            <div className="g-impact" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "0 48px" }}>
-
-              {/* ── IZQUIERDA: Para las personas ── */}
-              <div>
-                <p style={{ ...SUB, marginBottom: "20px" }}>Para las personas</p>
-
-                {impactPersonas.map((blq) => (
-                  <div key={blq.h3} style={{ borderTop: "1px solid #d8d7d0", paddingTop: "24px", marginBottom: "28px" }}>
-                    {/* H3 — mismo font-size en ambas columnas */}
-                    <h3 style={{ fontFamily: S, fontSize: "clamp(1.1rem,1.8vw,1.35rem)", fontWeight: 400, marginBottom: "8px" }}>{blq.h3}</h3>
-                    <p style={{ fontFamily: S, fontSize: "0.95rem", fontStyle: "italic", color: "#888", marginBottom: "16px", lineHeight: 1.5 }}>{blq.pull}</p>
-                    <div style={{ display: "flex", flexDirection: "column", gap: "8px", marginBottom: "14px" }}>
-                      {blq.puntos.map((pt) => (
-                        <div key={pt} style={{ display: "flex", gap: "10px", alignItems: "flex-start" }}>
-                          <span style={{ width: "4px", height: "4px", borderRadius: "50%", background: "#999", flexShrink: 0, marginTop: "8px" }} />
-                          <span style={{ fontFamily: G, fontSize: "0.9rem", color: "#555", lineHeight: 1.6 }}>{pt}</span>
-                        </div>
-                      ))}
-                    </div>
-                    {/* Dato científico — mismo tamaño que los datos de la col derecha */}
-                    <p style={{ fontFamily: G, fontSize: "0.88rem", color: "#777", fontWeight: 500 }}>{blq.dato}</p>
-                    <p style={{ fontFamily: G, fontSize: "0.78rem", color: "#bbb", fontStyle: "italic", marginTop: "4px" }}>{blq.fuente}</p>
-                  </div>
-                ))}
-              </div>
-
-              {/* ── DERECHA: Para la empresa ── */}
-              <div>
-                <p style={{ ...SUB, marginBottom: "20px" }}>Para la empresa</p>
-
-                {/* Bloque 1: dato ancla 11.3 — mismo font-size que H3 izquierdos, NO gigante */}
-                <div style={{ borderTop: "1px solid #d8d7d0", paddingTop: "24px", marginBottom: "28px" }}>
-                  <h3 style={{ fontFamily: S, fontSize: "clamp(1.1rem,1.8vw,1.35rem)", fontWeight: 400, marginBottom: "8px" }}>
-                    Lo que se pierde sin intervención
-                  </h3>
-                  {/* 11.3 — mismo tamaño que H3 izquierdos, NO clamp(3.5rem,12vw,8rem) */}
-                  <p style={{ fontFamily: S, fontSize: "clamp(2.8rem,5vw,4rem)", fontWeight: 400, lineHeight: 1, marginBottom: "8px" }}>11.3</p>
-                  <p style={{ fontFamily: G, fontSize: "0.95rem", color: "#555", marginBottom: "6px" }}>días de productividad perdida por persona, por año</p>
-                  <p style={{ fontFamily: G, fontSize: "0.82rem", color: "#aaa", fontStyle: "italic", marginBottom: "12px" }}>Harvard Business Review, 2019</p>
-                  <p style={{ fontFamily: S, fontSize: "1rem" }}>= $2,260 USD · por developer · por año</p>
-                </div>
-
-                {/* Bloque 2: retorno aplicado a Willdom */}
-                <div style={{ borderTop: "1px solid #d8d7d0", paddingTop: "24px", marginBottom: "28px" }}>
-                  <h3 style={{ fontFamily: S, fontSize: "clamp(1.1rem,1.8vw,1.35rem)", fontWeight: 400, marginBottom: "8px" }}>
-                    Aplicado a Willdom
-                  </h3>
-                  <p style={{ fontFamily: S, fontSize: "0.95rem", fontStyle: "italic", color: "#888", marginBottom: "16px" }}>
-                    87 developers activos · 25% del equipo
-                  </p>
-                  <div style={{ background: "#fff", padding: "20px" }}>
-                    {retornoProgramas.map((r) => (
-                      <div key={r.label} style={{ marginBottom: "14px" }}>
-                        <div style={{ display: "flex", justifyContent: "space-between", alignItems: "baseline", marginBottom: "6px" }}>
-                          <div style={{ display: "flex", gap: "10px", alignItems: "baseline" }}>
-                            <span style={{ fontFamily: S, fontSize: "0.95rem" }}>{r.label}</span>
-                            <span style={{ fontFamily: G, fontSize: "0.78rem", color: "#bbb" }}>{r.devs} devs</span>
-                          </div>
-                          <span style={{ fontFamily: S, fontSize: "1rem" }}>{r.retorno}</span>
-                        </div>
-                        <div style={{ height: "5px", background: "#f0efe9", borderRadius: "3px", overflow: "hidden" }}>
-                          <div style={{ height: "100%", width: `${r.pct}%`, background: "#1a1a1a", borderRadius: "3px" }} />
-                        </div>
-                      </div>
-                    ))}
-                    <div style={{ display: "flex", justifyContent: "space-between", paddingTop: "14px", borderTop: "2px solid #1a1a1a" }}>
-                      <span style={{ fontFamily: G, fontSize: "0.82rem", color: "#aaa" }}>Total recuperado · 3 meses</span>
-                      <span style={{ fontFamily: S, fontSize: "1.1rem" }}>$30,932</span>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Bloque 3: ROI — mismo nivel que bloque 3 izquierdo */}
-                <div style={{ borderTop: "1px solid #d8d7d0", paddingTop: "24px" }}>
-                  <h3 style={{ fontFamily: S, fontSize: "clamp(1.1rem,1.8vw,1.35rem)", fontWeight: 400, marginBottom: "8px" }}>
-                    El retorno del piloto
-                  </h3>
-                  <p style={{ fontFamily: S, fontSize: "0.95rem", fontStyle: "italic", color: "#888", marginBottom: "14px" }}>
-                    $8,000 invertidos · $30,932 recuperados
-                  </p>
-                  {/* 3.9× — MISMO tamaño que el dato "+30%" izquierda, NO 8rem */}
-                  <p style={{ fontFamily: S, fontSize: "clamp(2.8rem,5vw,4rem)", fontWeight: 400, lineHeight: 1, marginBottom: "10px" }}>3.9×</p>
-                  <p style={{ fontFamily: G, fontSize: "0.78rem", color: "#aaa", fontStyle: "italic" }}>
-                    Supuestos conservadores al 30% del potencial máximo documentado.
-                  </p>
-                </div>
-              </div>
-            </div>{/* fin grid impacto */}
-
-            {/* KPIs */}
-            <p style={{ ...SUB, marginBottom: "20px", marginTop: "56px" }}>Métricas de éxito del piloto</p>
-            <div className="g-kpi" style={{ display: "grid", gridTemplateColumns: "repeat(4,1fr)", border: "1px solid #d8d7d0" }}>
-              {[
-                { label: "Participación Mes 1", value: ">70 usuarios" },
-                { label: "Retención Mes 3",      value: "40–50%" },
-                { label: "NPS al finalizar",     value: ">+5" },
-                { label: "Completitud",          value: "60%+" },
-              ].map((k, i, arr) => (
-                <div key={k.label} style={{ padding: "28px 16px", textAlign: "center", borderRight: i < arr.length - 1 ? "1px solid #d8d7d0" : "none" }}>
-                  <p style={{ fontFamily: S, fontSize: "clamp(1.2rem,2.5vw,1.7rem)", fontWeight: 400, lineHeight: 1, marginBottom: "8px" }}>{k.value}</p>
-                  <p style={{ fontFamily: G, fontSize: "0.78rem", color: "#999", lineHeight: 1.4 }}>{k.label}</p>
-                </div>
-              ))}
-            </div>
+            <p style={{
+              fontFamily: G,
+              fontSize: "0.88rem",
+              color: "#777",
+              fontWeight: 500
+            }}>
+              {blq.dato}
+            </p>
           </div>
-        </section>
+        ))}
+      </div>
+
+      {/* EMPRESA */}
+      <div>
+        <p style={{ ...SUB, marginBottom: "20px" }}>Impacto financiero</p>
+
+        <div style={{ borderTop: "1px solid #d8d7d0", paddingTop: "24px", marginBottom: "28px" }}>
+          <h3 style={{ fontFamily: S, fontSize: "1.2rem", marginBottom: "8px" }}>
+            Lo que se pierde sin intervención
+          </h3>
+          <p style={{ fontFamily: S, fontSize: "clamp(2.8rem,5vw,4rem)", lineHeight: 1 }}>
+            11.3
+          </p>
+          <p style={{ fontFamily: G, fontSize: "0.9rem", color: "#555" }}>
+            días de productividad perdida por persona, por año
+          </p>
+        </div>
+
+        <div style={{ borderTop: "1px solid #d8d7d0", paddingTop: "24px" }}>
+          <h3 style={{ fontFamily: S, fontSize: "1.2rem", marginBottom: "8px" }}>
+            Retorno estimado del piloto
+          </h3>
+          <p style={{ fontFamily: S, fontSize: "clamp(2.8rem,5vw,4rem)", lineHeight: 1 }}>
+            3.9×
+          </p>
+          <p style={{ fontFamily: G, fontSize: "0.85rem", color: "#777" }}>
+            Supuestos conservadores al 30% del potencial documentado.
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
 
         {/* ══════════════════════════════════════════════
             05 · INVERSIÓN — renumerada
