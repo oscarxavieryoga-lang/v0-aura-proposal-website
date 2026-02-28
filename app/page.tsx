@@ -263,7 +263,7 @@ export default function Page() {
                 { label: "La solución",            value: "AURA",   sub: "Arquitectura del Bienestar" },
                 { label: "Participación esperada",  value: "25%",    sub: "87 de 350 developers" },
                 { label: "Retorno estimado",        value: "3.9×",   sub: "ROI en 3 meses de piloto" },
-                { label: "Inversión base",          value: "$8,000", sub: "Piloto 3 meses · pagos escalonados" },
+                { label: "Inversión base",          value: "$9,300", sub: "Piloto 3 meses · pagos escalonados" },
               ].map((m) => (
                 <div key={m.label}>
                   <p style={{ ...SUB, marginBottom: "10px" }}>{m.label}</p>
