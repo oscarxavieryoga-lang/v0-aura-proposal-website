@@ -118,7 +118,3 @@ export default function Page() {
       `}</style>
 
       <main style={{ background: "#fafaf8" }}>
-      </main>
-    </>
-  )
-}
