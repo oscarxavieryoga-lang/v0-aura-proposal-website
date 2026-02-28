@@ -534,7 +534,7 @@ export default function Page() {
       marginBottom: "40px"
     }}>
       <img
-        src="public/emotional-regulation-man.jpg"
+        src="/emotional-regulation-man.jpg"
         alt="Persona en presencia consciente con su entorno"
         style={{
           width: "100%",
@@ -565,10 +565,10 @@ export default function Page() {
         lineHeight: 1.9,
         marginBottom: "24px"
       }}>
-        Se traslada a su casa.  
-        A sus relaciones.  
-        A cómo responde ante el conflicto.  
-        A cómo escucha.  
+        Se traslada a su casa.<br/>
+        A sus relaciones.<br/>
+        A cómo responde ante el conflicto.<br/>
+        A cómo escucha.<br/>
         A cómo se vincula.
       </p>
 
@@ -597,7 +597,7 @@ export default function Page() {
       </p>
     </div>
 
-    {/* ───────── BLOQUE 2 · PRODUCTIVIDAD EMPRESARIAL ───────── */}
+    {/* ───────── BLOQUE 2 · PRODUCTIVIDAD ───────── */}
 
     <div className="g-impact" style={{
       display: "grid",
@@ -717,7 +717,6 @@ export default function Page() {
 
   </div>
 </section>
-
         {/* ══════════════════════════════════════════════
             05 · INVERSIÓN — renumerada
             Sin escenarios A/B/C. Sin explicación NPS.
