@@ -37,30 +37,29 @@ export default function Page() {
 
   // 7 secciones — secciones 04 y 05 anteriores fusionadas en una
   const refs = {
-  resumen:        useRef<HTMLElement>(null),
-  contexto:       useRef<HTMLElement>(null),
-  solucion:       useRef<HTMLElement>(null),
-  transformacion: useRef<HTMLElement>(null), // NUEVA
-  impacto:        useRef<HTMLElement>(null),
-  inversion:      useRef<HTMLElement>(null),
-  implementacion: useRef<HTMLElement>(null),
-  pasos:          useRef<HTMLElement>(null),
-}
+    resumen:        useRef<HTMLElement>(null),
+    contexto:       useRef<HTMLElement>(null),
+    solucion:       useRef<HTMLElement>(null),
+    impacto:        useRef<HTMLElement>(null),
+    inversion:      useRef<HTMLElement>(null),
+    implementacion: useRef<HTMLElement>(null),
+    pasos:          useRef<HTMLElement>(null),
+  }
   const scrollTo = (r: React.RefObject<HTMLElement>) =>
     r.current?.scrollIntoView({ behavior: "smooth", block: "start" })
 
   const [apendiceOpen, setApendiceOpen] = useState(false)
 
-const toc = [
-  { n: "01", label: "Resumen Ejecutivo",  ref: refs.resumen },
-  { n: "02", label: "El Contexto",        ref: refs.contexto },
-  { n: "03", label: "La Solución",        ref: refs.solucion },
-  { n: "04", label: "Transformación",     ref: refs.transformacion },
-  { n: "05", label: "El Impacto",         ref: refs.impacto },
-  { n: "06", label: "Inversión",          ref: refs.inversion },
-  { n: "07", label: "Implementación",     ref: refs.implementacion },
-  { n: "08", label: "Próximos Pasos",     ref: refs.pasos },
-]
+  const toc = [
+    { n: "01", label: "Resumen Ejecutivo",  ref: refs.resumen },
+    { n: "02", label: "El Contexto",        ref: refs.contexto },
+    { n: "03", label: "La Solución",        ref: refs.solucion },
+    { n: "04", label: "El Impacto",         ref: refs.impacto },
+    { n: "05", label: "Inversión",          ref: refs.inversion },
+    { n: "06", label: "Implementación",     ref: refs.implementacion },
+    { n: "07", label: "Próximos Pasos",     ref: refs.pasos },
+  ]
+
   const challenges = [
     {
       roman: "I",   title: "Calidad de sueño",
