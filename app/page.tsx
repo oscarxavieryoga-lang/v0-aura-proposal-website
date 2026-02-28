@@ -155,7 +155,7 @@ export default function Page() {
           <div style={{ flex: 1, display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", textAlign: "center", padding: "56px clamp(20px,5vw,60px) 40px" }}>
 
             <span style={{ ...SUB, marginBottom: "20px", display: "block", letterSpacing: "0.5em" }}>
-              PROPUESTA COMERCIAL · WILLDOM · 2025
+              PROPUESTA COMERCIAL · WILLDOM · 2026
             </span>
 
             <h1 style={{ fontFamily: S, fontWeight: 500, fontSize: "clamp(2.4rem,6vw,5.2rem)", lineHeight: 1.05, color: "#1a1a1a", letterSpacing: "-0.01em", marginBottom: "10px" }}>
@@ -184,7 +184,7 @@ export default function Page() {
               {[
                 { val: "3.9×",   label: "ROI estimado" },
                 { val: "87",     label: "Developers activos" },
-                { val: "$8,000", label: "Inversión base" },
+                { val: "$9,300", label: "Inversión base" },
               ].map((m, i, arr) => (
                 <React.Fragment key={m.label}>
                   <div style={{ textAlign: "center" }}>
@@ -363,7 +363,7 @@ export default function Page() {
               marginBottom: "40px"
             }}>
               <img
-                src="/images/emotional-regulation-man.jpg"
+                src="/emotional-regulation-man.jpg"
                 alt="Persona en presencia consciente con su entorno"
                 style={{
                   width: "100%",
