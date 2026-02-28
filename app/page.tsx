@@ -490,9 +490,8 @@ export default function Page() {
             </p>
           </div>
         </section>
-
-       {/* ══════════════════════════════════════════════
-    04 · EL IMPACTO — versión integrada con imagen
+{/* ══════════════════════════════════════════════
+    04 · EL IMPACTO
 ══════════════════════════════════════════════ */}
 <section ref={refs.impacto} style={{ ...SECPAD, background: "#f0efe9" }}>
   <div style={MW}>
@@ -515,130 +514,90 @@ export default function Page() {
       color: "#777",
       lineHeight: 1.6,
       maxWidth: "680px",
-      marginBottom: "64px"
+      marginBottom: "60px"
     }}>
       Cuidar a las personas y cuidar al negocio no son decisiones separadas. Son la misma.
     </p>
 
-    {/* ───────────────────────────── */}
-    {/* BLOQUE 1 — VIDA REAL + IMAGEN */}
-    {/* ───────────────────────────── */}
+    {/* ═════════ BLOQUE 1 — VIDA REAL + IMAGEN ═════════ */}
 
     <p style={{ ...SUB, marginBottom: "20px" }}>
       Impacto en la vida cotidiana
     </p>
 
-    {/* Imagen */}
     <div style={{
       width: "100%",
-      height: "clamp(220px,30vw,380px)",
+      height: "clamp(240px,32vw,420px)",
+      position: "relative",
       overflow: "hidden",
-      borderRadius: "12px",
+      borderRadius: "16px",
       background: "#e8e8e4",
       marginBottom: "40px"
     }}>
-      <img
+      <Image
         src="/images/emotional-regulation-man.jpg"
         alt="Persona en presencia consciente con su entorno"
-        style={{
-          width: "100%",
-          height: "100%",
-          objectFit: "cover",
-          display: "block"
-        }}
+        fill
+        style={{ objectFit: "cover" }}
       />
     </div>
 
-    <div style={{ maxWidth: "720px", marginBottom: "80px" }}>
+    <div style={{
+      maxWidth: "760px",
+      marginBottom: "80px"
+    }}>
       <p style={{
         fontFamily: G,
         fontSize: "1rem",
         color: "#555",
-        lineHeight: 1.85,
-        marginBottom: "20px"
+        lineHeight: 1.9,
+        marginBottom: "24px"
       }}>
-        Cuando una persona aprende a regular su sistema nervioso, dormir mejor
-        y respirar antes de reaccionar, el impacto no se queda en la oficina.
+        Cuando una persona aprende a regular su sistema nervioso,
+        dormir mejor y respirar antes de reaccionar,
+        el impacto no se queda en la oficina.
       </p>
 
       <p style={{
         fontFamily: G,
         fontSize: "1rem",
         color: "#555",
-        lineHeight: 1.85,
-        marginBottom: "20px"
+        lineHeight: 1.9,
+        marginBottom: "24px"
       }}>
-        Se traslada a su casa. A sus vínculos. A cómo responde ante el conflicto.
-        A cómo escucha. A cómo se comunica.
-      </p>
-
-      <div style={{ marginBottom: "20px" }}>
-        {[
-          "Piensa antes de actuar.",
-          "Responde en lugar de reaccionar.",
-          "Reconoce sus emociones sin negarlas.",
-          "Se vincula con mayor claridad y empatía.",
-          "Toma decisiones con mayor conciencia."
-        ].map((t) => (
-          <div key={t} style={{ display: "flex", gap: "10px", marginBottom: "8px" }}>
-            <span style={{
-              width: "4px",
-              height: "4px",
-              borderRadius: "50%",
-              background: "#999",
-              marginTop: "8px"
-            }} />
-            <span style={{
-              fontFamily: G,
-              fontSize: "0.95rem",
-              color: "#555",
-              lineHeight: 1.6
-            }}>
-              {t}
-            </span>
-          </div>
-        ))}
-      </div>
-
-      <p style={{
-        fontFamily: G,
-        fontSize: "1rem",
-        color: "#555",
-        lineHeight: 1.85,
-        marginBottom: "20px"
-      }}>
-        Esto fortalece la vida familiar, reduce fricciones innecesarias
-        y mejora la calidad de los vínculos.
+        Se traslada a su casa.  
+        A sus relaciones.  
+        A cómo responde ante el conflicto.  
+        A cómo escucha.  
+        A cómo se vincula.
       </p>
 
       <p style={{
         fontFamily: G,
         fontSize: "1rem",
         color: "#555",
-        lineHeight: 1.85
+        lineHeight: 1.9,
+        marginBottom: "32px"
       }}>
-        Funciona como prevención: ansiedad crónica, burnout,
-        aislamiento emocional y otras problemáticas de salud mental
-        que, cuando aparecen, ya son costosas y difíciles de revertir.
+        Una persona regulada piensa antes de actuar,
+        responde en lugar de reaccionar,
+        reconoce sus emociones sin negarlas
+        y toma decisiones con mayor conciencia.
       </p>
 
-      <div style={{ marginTop: "40px" }}>
-        <p style={{
-          fontFamily: S,
-          fontSize: "clamp(1.1rem,2vw,1.5rem)",
-          fontStyle: "italic",
-          color: "#444",
-          lineHeight: 1.5
-        }}>
-          Equipos más regulados generan familias más estables.<br />
-          Familias más estables sostienen sociedades más sanas.
-        </p>
-      </div>
+      <p style={{
+        fontFamily: S,
+        fontSize: "clamp(1.4rem,2.5vw,1.8rem)",
+        fontStyle: "italic",
+        lineHeight: 1.4,
+        color: "#1a1a1a"
+      }}>
+        Equipos más regulados generan familias más estables.<br/>
+        Familias más estables sostienen sociedades más sanas.
+      </p>
     </div>
 
-    {/* ───────────────────────────── */}
-    {/* BLOQUE 2 — IMPACTO MEDIBLE   */}
-    {/* ───────────────────────────── */}
+    {/* ═════════ BLOQUE 2 — PRODUCTIVIDAD EMPRESARIAL ═════════ */}
 
     <div className="g-impact" style={{
       display: "grid",
@@ -646,70 +605,68 @@ export default function Page() {
       gap: "0 48px"
     }}>
 
-      {/* IZQUIERDA */}
+      {/* IZQUIERDA — RESUMEN HUMANO */}
       <div>
         <p style={{ ...SUB, marginBottom: "20px" }}>
-          Impacto medible en el equipo
+          Beneficios para las personas
         </p>
 
-        {impactPersonas.map((blq) => (
-          <div key={blq.h3} style={{
-            borderTop: "1px solid #d8d7d0",
-            paddingTop: "24px",
-            marginBottom: "28px"
+        <div style={{ borderTop: "1px solid #d8d7d0", paddingTop: "24px" }}>
+          <h3 style={{
+            fontFamily: S,
+            fontSize: "clamp(1.1rem,1.8vw,1.35rem)",
+            fontWeight: 400,
+            marginBottom: "14px"
           }}>
-            <h3 style={{
-              fontFamily: S,
-              fontSize: "clamp(1.1rem,1.8vw,1.35rem)",
-              fontWeight: 400,
-              marginBottom: "8px"
-            }}>
-              {blq.h3}
-            </h3>
+            Regulación emocional sostenida
+          </h3>
 
-            <p style={{
-              fontFamily: S,
-              fontSize: "0.95rem",
-              fontStyle: "italic",
-              color: "#888",
-              marginBottom: "12px"
-            }}>
-              {blq.pull}
-            </p>
-
-            <p style={{
-              fontFamily: G,
-              fontSize: "0.88rem",
-              color: "#777",
-              fontWeight: 500
-            }}>
-              {blq.dato}
-            </p>
-
-            <p style={{
-              fontFamily: G,
-              fontSize: "0.78rem",
-              color: "#bbb",
-              fontStyle: "italic",
-              marginTop: "4px"
-            }}>
-              {blq.fuente}
-            </p>
-          </div>
-        ))}
+          <ul style={{
+            listStyle: "none",
+            display: "flex",
+            flexDirection: "column",
+            gap: "10px"
+          }}>
+            {[
+              "Menos ansiedad reactiva",
+              "Mayor claridad mental",
+              "Mejor toma de decisiones",
+              "Prevención de burnout",
+              "Mejores vínculos interpersonales"
+            ].map(item => (
+              <li key={item} style={{
+                display: "flex",
+                gap: "10px",
+                alignItems: "flex-start"
+              }}>
+                <span style={{
+                  width: "4px",
+                  height: "4px",
+                  borderRadius: "50%",
+                  background: "#999",
+                  marginTop: "8px"
+                }}/>
+                <span style={{
+                  fontFamily: G,
+                  fontSize: "0.9rem",
+                  color: "#555",
+                  lineHeight: 1.6
+                }}>
+                  {item}
+                </span>
+              </li>
+            ))}
+          </ul>
+        </div>
       </div>
 
-      {/* DERECHA */}
+      {/* DERECHA — EMPRESA */}
       <div>
         <p style={{ ...SUB, marginBottom: "20px" }}>
-          Impacto financiero
+          Impacto en productividad
         </p>
 
-        <div style={{
-          borderTop: "1px solid #d8d7d0",
-          paddingTop: "24px",
-          marginBottom: "28px"
-        }}>
+        <div style={{ borderTop: "1px solid #d8d7d0", paddingTop: "24px" }}>
           <h3 style={{
             fontFamily: S,
             fontSize: "clamp(1.1rem,1.8vw,1.35rem)",
@@ -722,14 +679,16 @@ export default function Page() {
           <p style={{
             fontFamily: S,
             fontSize: "clamp(2.8rem,5vw,4rem)",
-            lineHeight: 1
+            fontWeight: 400,
+            lineHeight: 1,
+            marginBottom: "8px"
           }}>
             11.3
           </p>
 
           <p style={{
             fontFamily: G,
-            fontSize: "0.9rem",
+            fontSize: "0.95rem",
             color: "#555",
             marginBottom: "6px"
           }}>
@@ -737,48 +696,25 @@ export default function Page() {
           </p>
 
           <p style={{
-            fontFamily: G,
-            fontSize: "0.82rem",
-            color: "#aaa",
-            fontStyle: "italic"
-          }}>
-            Harvard Business Review, 2019
-          </p>
-        </div>
-
-        <div style={{
-          borderTop: "1px solid #d8d7d0",
-          paddingTop: "24px"
-        }}>
-          <h3 style={{
-            fontFamily: S,
-            fontSize: "clamp(1.1rem,1.8vw,1.35rem)",
-            fontWeight: 400,
-            marginBottom: "8px"
-          }}>
-            Retorno estimado del piloto
-          </h3>
-
-          <p style={{
             fontFamily: S,
             fontSize: "clamp(2.8rem,5vw,4rem)",
-            lineHeight: 1
+            fontWeight: 400,
+            margin: "40px 0 10px"
           }}>
             3.9×
           </p>
 
           <p style={{
             fontFamily: G,
-            fontSize: "0.78rem",
-            color: "#aaa",
-            fontStyle: "italic"
+            fontSize: "0.85rem",
+            color: "#777"
           }}>
-            Supuestos conservadores al 30% del potencial documentado.
+            Retorno estimado del piloto en 3 meses
           </p>
         </div>
       </div>
-
     </div>
+
   </div>
 </section>
 
