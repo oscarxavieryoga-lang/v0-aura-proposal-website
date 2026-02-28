@@ -526,24 +526,22 @@ export default function Page() {
     </p>
 
     <div style={{
+  width: "100%",
+  borderRadius: "16px",
+  overflow: "hidden",
+  background: "#e8e8e4",
+  marginBottom: "40px"
+}}>
+  <img
+    src="/emotional-regulation-man.jpg"
+    alt="Persona en presencia consciente con su entorno"
+    style={{
       width: "100%",
-      height: "clamp(240px,32vw,420px)",
-      overflow: "hidden",
-      borderRadius: "16px",
-      background: "#e8e8e4",
-      marginBottom: "40px"
-    }}>
-      <img
-  src="/emotional-regulation-man.jpg"
-  alt="Persona en presencia consciente con su entorno"
-  style={{
-    width: "100%",
-    height: "100%",
-    objectFit: "cover",
-    objectPosition: "center 30%",
-    display: "block"
-  }}
-/>
+      height: "auto",
+      display: "block"
+    }}
+  />
+</div>
     </div>
 
     <div style={{ maxWidth: "760px", marginBottom: "80px" }}>
