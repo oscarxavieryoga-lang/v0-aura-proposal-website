@@ -519,7 +519,7 @@ export default function Page() {
       Cuidar a las personas y cuidar al negocio no son decisiones separadas. Son la misma.
     </p>
 
-    {/* ═════════ BLOQUE 1 — VIDA REAL + IMAGEN ═════════ */}
+    {/* ───────── BLOQUE 1 · VIDA REAL + IMAGEN ───────── */}
 
     <p style={{ ...SUB, marginBottom: "20px" }}>
       Impacto en la vida cotidiana
@@ -528,24 +528,24 @@ export default function Page() {
     <div style={{
       width: "100%",
       height: "clamp(240px,32vw,420px)",
-      position: "relative",
       overflow: "hidden",
       borderRadius: "16px",
       background: "#e8e8e4",
       marginBottom: "40px"
     }}>
-      <Image
+      <img
         src="/images/emotional-regulation-man.jpg"
         alt="Persona en presencia consciente con su entorno"
-        fill
-        style={{ objectFit: "cover" }}
+        style={{
+          width: "100%",
+          height: "100%",
+          objectFit: "cover",
+          display: "block"
+        }}
       />
     </div>
 
-    <div style={{
-      maxWidth: "760px",
-      marginBottom: "80px"
-    }}>
+    <div style={{ maxWidth: "760px", marginBottom: "80px" }}>
       <p style={{
         fontFamily: G,
         fontSize: "1rem",
@@ -597,7 +597,7 @@ export default function Page() {
       </p>
     </div>
 
-    {/* ═════════ BLOQUE 2 — PRODUCTIVIDAD EMPRESARIAL ═════════ */}
+    {/* ───────── BLOQUE 2 · PRODUCTIVIDAD EMPRESARIAL ───────── */}
 
     <div className="g-impact" style={{
       display: "grid",
@@ -605,7 +605,7 @@ export default function Page() {
       gap: "0 48px"
     }}>
 
-      {/* IZQUIERDA — RESUMEN HUMANO */}
+      {/* IZQUIERDA */}
       <div>
         <p style={{ ...SUB, marginBottom: "20px" }}>
           Beneficios para las personas
@@ -645,7 +645,7 @@ export default function Page() {
                   borderRadius: "50%",
                   background: "#999",
                   marginTop: "8px"
-                }}/>
+                }} />
                 <span style={{
                   fontFamily: G,
                   fontSize: "0.9rem",
@@ -660,7 +660,7 @@ export default function Page() {
         </div>
       </div>
 
-      {/* DERECHA — EMPRESA */}
+      {/* DERECHA */}
       <div>
         <p style={{ ...SUB, marginBottom: "20px" }}>
           Impacto en productividad
