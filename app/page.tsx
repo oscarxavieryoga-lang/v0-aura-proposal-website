@@ -542,7 +542,6 @@ export default function Page() {
     }}
   />
 </div>
-    </div>
 
     <div style={{ maxWidth: "760px", marginBottom: "80px" }}>
       <p style={{
