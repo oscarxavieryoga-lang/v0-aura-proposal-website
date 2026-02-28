@@ -538,7 +538,7 @@ export default function Page() {
       marginBottom: "40px"
     }}>
       <img
-        src="/images/family-balance.jpg"
+        src="/images/emotional-regulation-man.jpg"
         alt="Persona en presencia consciente con su entorno"
         style={{
           width: "100%",
