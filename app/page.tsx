@@ -395,112 +395,101 @@ export default function Page() {
           </div>
         </section>
 
-       {/* ══════════════════════════════════════════════
-    04 · TRANSFORMACIÓN CONCRETA
-══════════════════════════════════════════════ */}
-<section ref={refs.transformacion} style={{ ...SECPAD, background: "#e3e2dc" }}>
-  <div style={MW}>
-    <p style={EB}>04 · Transformación</p>
+        {/* ══════════════════════════════════════════════
+            03 · LA SOLUCIÓN
+        ══════════════════════════════════════════════ */}
+        <section ref={refs.solucion} style={{ ...SECPAD, background: "#fafaf8" }}>
+          <div style={MW}>
+            <p style={EB}>03 · La Solución</p>
 
-    <h2 style={{
-      fontFamily: S,
-      fontSize: "clamp(1.8rem,3.5vw,2.8rem)",
-      fontWeight: 400,
-      lineHeight: 1.2,
-      marginBottom: "18px"
-    }}>
-      Lo que cambia en 3 meses.
-    </h2>
+            {/* H2: "Arquitectura del Bienestar" como concepto central, no enterrado */}
+            <h2 style={{ fontFamily: S, fontSize: "clamp(1.8rem,3.5vw,2.8rem)", fontWeight: 400, lineHeight: 1.2, marginBottom: "18px" }}>
+              AURA · Arquitectura del Bienestar.<br />
+              <em>No un beneficio. Un espacio.</em>
+            </h2>
 
-    <p style={{
-      fontFamily: G,
-      fontSize: "1rem",
-      color: "#555",
-      lineHeight: 1.85,
-      maxWidth: "680px",
-      marginBottom: "60px"
-    }}>
-      No hablamos de motivación temporal. Hablamos de cambios medibles en sueño, cuerpo y regulación emocional.
-    </p>
+            {/* Body — sin mención a acceso corporativo técnico */}
+            <p style={{ fontFamily: G, fontSize: "1rem", color: "#555", lineHeight: 1.85, maxWidth: "700px", marginBottom: "48px" }}>
+              Tu equipo entra por voluntad propia — sin presión, sin integración con sistemas corporativos, sin vigilancia. Lo que pasa adentro es de ellos. Lo que Willdom ve son los resultados.
+            </p>
 
-    <div style={{ borderTop: "1px solid #d8d7d0" }}>
-      {impactPersonas.map((b) => (
-        <div key={b.h3} style={{
-          padding: "40px 0",
-          borderBottom: "1px solid #d8d7d0"
-        }}>
-          <h3 style={{
-            fontFamily: S,
-            fontSize: "clamp(1.2rem,2vw,1.6rem)",
-            fontWeight: 400,
-            marginBottom: "12px"
-          }}>
-            {b.h3}
-          </h3>
-
-          <p style={{
-            fontFamily: S,
-            fontStyle: "italic",
-            color: "#666",
-            marginBottom: "16px"
-          }}>
-            {b.pull}
-          </p>
-
-          <ul style={{
-            listStyle: "none",
-            display: "flex",
-            flexDirection: "column",
-            gap: "8px",
-            marginBottom: "14px"
-          }}>
-            {b.puntos.map(p => (
-              <li key={p} style={{
-                display: "flex",
-                gap: "8px",
-                alignItems: "flex-start"
-              }}>
-                <span style={{
-                  width: "4px",
-                  height: "4px",
-                  borderRadius: "50%",
-                  background: "#999",
-                  marginTop: "8px"
-                }} />
-                <span style={{
-                  fontFamily: G,
-                  fontSize: "0.9rem",
-                  color: "#555",
-                  lineHeight: 1.6
+            {/* 4 pilares — solo pilar 03 cambia */}
+            <div className="g2" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", borderTop: "1px solid #e0e0da", borderBottom: "1px solid #e0e0da", marginBottom: "56px" }}>
+              {[
+                {
+                  n: "01", label: "Prácticas Reales",
+                  body: "Meditación, yoga, breathing y educación guiados por especialistas certificados. Basados en investigación científica, diseñados para resolver problemas específicos — no para llenar un calendario de beneficios.",
+                },
+                {
+                  n: "02", label: "Estructura Sin Fricción",
+                  body: "Programas con inicio, proceso y resultado claros. No son challenges que pueden fallar — generan logro genuino. Cada práctica tiene claridad de qué esperar y qué cambia.",
+                },
+                {
+                  n: "03", label: "Privacidad Total",
+                  // COPY NUEVO — pilar 03
+                  body: "Tu equipo entra. Lo que pasa adentro, es de ellos. Espacio completamente separado de los sistemas corporativos. Sin vigilancia, sin reportes individuales. Datos 100% privados.",
+                },
+                {
+                  n: "04", label: "Comunidad Global",
+                  body: "Parte de una plataforma abierta al público general. Usuarios de distintas industrias, roles y contextos. La sensación real de no estar solo en el desafío.",
+                },
+              ].map((p, i) => (
+                <div key={p.label} style={{
+                  padding: "32px",
+                  paddingLeft:  i % 2 === 1 ? "32px" : "0",
+                  paddingRight: i % 2 === 0 ? "32px" : "0",
+                  borderRight: i % 2 === 0 ? "1px solid #e0e0da" : "none",
+                  borderTop: i >= 2 ? "1px solid #e0e0da" : "none",
                 }}>
-                  {p}
-                </span>
-              </li>
-            ))}
-          </ul>
+                  <p style={{ ...SUB, marginBottom: "12px" }}>{p.n}</p>
+                  <h3 style={{ fontFamily: S, fontSize: "1.3rem", fontWeight: 400, marginBottom: "10px" }}>{p.label}</h3>
+                  <p style={{ fontFamily: G, fontSize: "0.95rem", color: "#666", lineHeight: 1.78 }}>{p.body}</p>
+                </div>
+              ))}
+            </div>
 
-          <p style={{
-            fontFamily: G,
-            fontSize: "0.85rem",
-            color: "#888"
-          }}>
-            {b.dato}
-          </p>
+            {/* Cómo funciona */}
+            <p style={{ ...EB, marginBottom: "32px" }}>Cómo funciona</p>
+            <div className="g4" style={{ display: "grid", gridTemplateColumns: "repeat(4,1fr)", gap: "24px", marginBottom: "56px" }}>
+              {[
+                { n: "1", label: "Acceso privado",   desc: "Link separado — no integrado en sistemas corporativos. Login individual. Datos 100% privados desde el inicio." },
+                { n: "2", label: "Elige tu camino",  desc: "Cada persona selecciona según su necesidad real. Sin presión para elegir correctamente. La plataforma guía." },
+                { n: "3", label: "Práctica en vivo", desc: "Acceso 24/7. Sin horarios fijos. Tu ritmo, tu tiempo, sin compromisos rígidos." },
+                { n: "4", label: "Datos agregados",  desc: "Willdom ve participación y retención general — nunca datos individuales ni personales." },
+              ].map((s) => (
+                <div key={s.n} style={{ borderTop: "3px solid #1a1a1a", paddingTop: "18px" }}>
+                  <p style={{ fontFamily: S, fontSize: "2.2rem", lineHeight: 1, marginBottom: "12px" }}>{s.n}</p>
+                  <p style={{ fontFamily: G, fontSize: "0.95rem", fontWeight: 600, marginBottom: "8px" }}>{s.label}</p>
+                  <p style={{ fontFamily: G, fontSize: "0.88rem", color: "#666", lineHeight: 1.72 }}>{s.desc}</p>
+                </div>
+              ))}
+            </div>
 
-          <p style={{
-            fontFamily: G,
-            fontSize: "0.75rem",
-            color: "#bbb",
-            fontStyle: "italic",
-            marginTop: "6px"
-          }}>
-            {b.fuente}
-          </p>
-        </div>
-      ))}
-    </div>
-  </div>
-</section>
+            {/* Programas de ejemplo — 3 imágenes */}
+            <p style={{ ...EB, marginBottom: "32px" }}>Programas de ejemplo</p>
+            <div style={{ borderTop: "1px solid #e0e0da" }}>
+              {programas.map((prog, i) => (
+                <div key={prog.title} className="g-prog" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", borderBottom: "1px solid #e0e0da" }}>
+                  <div className="prog-img" style={{ order: i % 2 === 1 ? 2 : 1, height: "clamp(200px,26vw,320px)", overflow: "hidden", background: "#e8e8e4" }}>
+                    <img src={prog.img} alt={prog.title} style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} />
+                  </div>
+                  <div style={{ order: i % 2 === 1 ? 1 : 2, display: "flex", flexDirection: "column", justifyContent: "center", padding: "clamp(24px,4vw,48px)" }}>
+                    <p style={{ ...SUB, marginBottom: "14px" }}>{prog.tag}</p>
+                    <h3 style={{ fontFamily: S, fontSize: "clamp(1.3rem,2.5vw,1.8rem)", fontWeight: 400, marginBottom: "10px", lineHeight: 1.2 }}>{prog.title}</h3>
+                    <p style={{ fontFamily: G, fontSize: "0.88rem", color: "#999", marginBottom: "20px" }}>{prog.sub}</p>
+                    <div style={{ width: "28px", height: "1px", background: "#ccc", marginBottom: "20px" }} />
+                    <p style={{ fontFamily: S, fontSize: "1.1rem", fontStyle: "italic", marginBottom: "12px" }}>"{prog.result}"</p>
+                    <p style={{ fontFamily: G, fontSize: "0.875rem", color: "#777", marginBottom: "4px" }}>{prog.science}</p>
+                    <p style={{ fontFamily: G, fontSize: "0.78rem", color: "#bbb", fontStyle: "italic" }}>{prog.source}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+            <p style={{ fontFamily: G, fontSize: "0.82rem", color: "#aaa", fontStyle: "italic", marginTop: "16px" }}>
+              AURA continúa expandiendo según demanda de usuarios globales y evolución de la investigación científica.
+            </p>
+          </div>
+        </section>
 {/* ══════════════════════════════════════════════
     04 · EL IMPACTO
 ══════════════════════════════════════════════ */}
