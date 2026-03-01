@@ -57,7 +57,7 @@ export default function Page() {
 
   const programas = [
     {
-      tag: "14 días", title: "Programa para el insomnio",
+      tag: "14 días", title: "Para el insomnio",
       sub: "Meditación · Breathing · Educación",
       result: "+1–2 horas de sueño real",
       science: "Capacidad cognitiva +30% · Riesgo depresión –40% · Concentración +25%",
@@ -65,7 +65,7 @@ export default function Page() {
       img: "/images/sleep-wellness.jpg",
     },
     {
-      tag: "21 días", title: "Programa para el dolor postural",
+      tag: "21 días", title: "Para el dolor postural",
       sub: "Yoga · Stretching · Educación",
       result: "–35 a 50% reducción de dolor",
       science: "Ansiedad –40% · Depresión –30% · Autoestima y control mejorados",
@@ -73,7 +73,7 @@ export default function Page() {
       img: "/images/yoga-nature.jpg",
     },
     {
-      tag: "7 días",  title: "Programa para el estrés crónico",
+      tag: "7 días",  title: "Para el estrés crónico",
       sub: "Meditación · Breathing · Educación",
       result: "Reducción visible de estrés",
       science: "Depresión clínica –60% · Burnout –50%",
@@ -155,7 +155,7 @@ export default function Page() {
           <div style={{ flex: 1, display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", textAlign: "center", padding: "56px clamp(20px,5vw,60px) 40px" }}>
 
             <span style={{ ...SUB, marginBottom: "20px", display: "block", letterSpacing: "0.5em" }}>
-              PROPUESTA COMERCIAL · WILLDOM · 2026
+              PROPUESTA COMERCIAL · WILLDOM · 2025
             </span>
 
             <h1 style={{ fontFamily: S, fontWeight: 500, fontSize: "clamp(2.4rem,6vw,5.2rem)", lineHeight: 1.05, color: "#1a1a1a", letterSpacing: "-0.01em", marginBottom: "10px" }}>
@@ -184,7 +184,7 @@ export default function Page() {
               {[
                 { val: "3.9×",   label: "ROI estimado" },
                 { val: "87",     label: "Developers activos" },
-                { val: "$9,300", label: "Inversión base" },
+                { val: "$8,000", label: "Inversión base" },
               ].map((m, i, arr) => (
                 <React.Fragment key={m.label}>
                   <div style={{ textAlign: "center" }}>
@@ -263,7 +263,7 @@ export default function Page() {
                 { label: "La solución",            value: "AURA",   sub: "Arquitectura del Bienestar" },
                 { label: "Participación esperada",  value: "25%",    sub: "87 de 350 developers" },
                 { label: "Retorno estimado",        value: "3.9×",   sub: "ROI en 3 meses de piloto" },
-                { label: "Inversión base",          value: "$9,300", sub: "Piloto 3 meses · pagos escalonados" },
+                { label: "Inversión base",          value: "$8,000", sub: "Piloto 3 meses · pagos escalonados" },
               ].map((m) => (
                 <div key={m.label}>
                   <p style={{ ...SUB, marginBottom: "10px" }}>{m.label}</p>
@@ -363,7 +363,7 @@ export default function Page() {
               marginBottom: "40px"
             }}>
               <img
-                src="/emotional-regulation-man.jpg"
+                src="/images/emotional-regulation-man.jpg"
                 alt="Persona en presencia consciente con su entorno"
                 style={{
                   width: "100%",
@@ -537,6 +537,43 @@ export default function Page() {
                 </div>
               ))}
             </div>
+
+            {/* ───────── QUÉ INCLUYE AURA ───────── */}
+            <div className="g2" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", borderTop: "1px solid #e0e0da", borderBottom: "1px solid #e0e0da", marginBottom: "56px" }}>
+              {[
+                {
+                  label: "Biblioteca activa de clases grabadas",
+                  body: "Contenido estructurado en video, organizado por áreas y niveles. Cada práctica tiene una intención concreta y una ejecución clara.",
+                },
+                {
+                  label: "Programas funcionales diseñados para practicarse desde cualquier lugar",
+                  body: "Secuencias guiadas paso a paso que permiten sostener un proceso sin depender de horarios fijos ni espacios específicos.",
+                },
+                {
+                  label: "Sesión semanal en vivo con facilitadores certificados",
+                  body: "Práctica en tiempo real orientada a regulación del sistema nervioso, prevención del desgaste emocional y fortalecimiento del bienestar sostenible.",
+                },
+                {
+                  label: "Progreso personal visible dentro de la plataforma",
+                  body: "Seguimiento individual de prácticas completadas y avance en programas — visible únicamente para el usuario.",
+                },
+              ].map((item, i) => (
+                <div key={item.label} style={{
+                  padding: "32px",
+                  paddingLeft:  i % 2 === 1 ? "32px" : "0",
+                  paddingRight: i % 2 === 0 ? "32px" : "0",
+                  borderRight: i % 2 === 0 ? "1px solid #e0e0da" : "none",
+                  borderTop: i >= 2 ? "1px solid #e0e0da" : "none",
+                }}>
+                  <h3 style={{ fontFamily: S, fontSize: "1.3rem", fontWeight: 400, marginBottom: "10px" }}>• {item.label}</h3>
+                  <p style={{ fontFamily: G, fontSize: "0.95rem", color: "#666", lineHeight: 1.78 }}>{item.body}</p>
+                </div>
+              ))}
+            </div>
+
+            <p style={{ fontFamily: G, fontSize: "0.9rem", color: "#999", fontStyle: "italic", marginBottom: "56px" }}>
+              Áreas activas: Yoga · Meditación · Entrenamiento · Respiración
+            </p>
 
             <p style={{ ...EB, marginBottom: "32px" }}>Cómo funciona</p>
             <div className="g4" style={{ display: "grid", gridTemplateColumns: "repeat(4,1fr)", gap: "24px", marginBottom: "56px" }}>
