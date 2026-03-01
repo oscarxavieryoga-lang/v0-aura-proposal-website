@@ -490,90 +490,111 @@ export default function Page() {
         </section>
 
         {/* ───────── QUÉ INCLUYE AURA ───────── */}
-            <div style={{ marginTop: "64px" }}>
+            <div style={{ marginTop: "64px", marginBottom: "56px" }}>
 
-              <p style={{ ...SUB, marginBottom: "32px" }}>
+              <p style={{ ...SUB, marginBottom: "48px" }}>
                 Qué incluye AURA
               </p>
 
+              {/* FEATURE BLOCK 1 - ANCHO COMPLETO */}
+              <div style={{
+                background: "#fff",
+                border: "1px solid #e0e0da",
+                borderRadius: "8px",
+                padding: "32px",
+                marginBottom: "28px",
+                minHeight: "140px",
+                display: "flex",
+                flexDirection: "column",
+                justifyContent: "center"
+              }}>
+                <h4 style={{ fontFamily: G, fontWeight: 700, fontSize: "1rem", marginBottom: "12px", color: "#1a1a1a" }}>
+                  • Biblioteca activa de clases grabadas
+                </h4>
+                <p style={{ fontFamily: G, fontSize: "0.95rem", color: "#666", lineHeight: 1.7 }}>
+                  Contenido estructurado en video, organizado por áreas y niveles. Cada práctica tiene una intención concreta y una ejecución clara.
+                </p>
+              </div>
+
+              {/* GRID 2 COLUMNAS - FEATURES 2-5 */}
               <div style={{
                 display: "grid",
                 gridTemplateColumns: "repeat(2, 1fr)",
-                gap: "24px",
-                marginBottom: "40px"
+                gap: "28px",
+                marginBottom: "28px"
               }}>
 
-                {/* CARD 1 */}
+                {/* FEATURE BLOCK 2 */}
                 <div style={{
                   background: "#fff",
                   border: "1px solid #e0e0da",
                   borderRadius: "8px",
-                  padding: "24px"
+                  padding: "32px",
+                  minHeight: "120px",
+                  display: "flex",
+                  flexDirection: "column",
+                  justifyContent: "center"
                 }}>
-                  <p style={{ fontFamily: G, fontWeight: 600, fontSize: "0.95rem", marginBottom: "8px", color: "#1a1a1a" }}>
-                    • Biblioteca activa de clases grabadas
-                  </p>
-                  <p style={{ fontFamily: G, fontSize: "0.95rem", color: "#666", lineHeight: 1.7 }}>
-                    Contenido estructurado en video, organizado por áreas y niveles. Cada práctica tiene una intención concreta y una ejecución clara.
-                  </p>
-                </div>
-
-                {/* CARD 2 */}
-                <div style={{
-                  background: "#fff",
-                  border: "1px solid #e0e0da",
-                  borderRadius: "8px",
-                  padding: "24px"
-                }}>
-                  <p style={{ fontFamily: G, fontWeight: 600, fontSize: "0.95rem", marginBottom: "8px", color: "#1a1a1a" }}>
+                  <h4 style={{ fontFamily: G, fontWeight: 700, fontSize: "1rem", marginBottom: "12px", color: "#1a1a1a" }}>
                     • Programas funcionales diseñados para practicarse desde cualquier lugar
-                  </p>
+                  </h4>
                   <p style={{ fontFamily: G, fontSize: "0.95rem", color: "#666", lineHeight: 1.7 }}>
                     Secuencias guiadas paso a paso que permiten sostener un proceso sin depender de horarios fijos ni espacios específicos.
                   </p>
                 </div>
 
-                {/* CARD 3 */}
+                {/* FEATURE BLOCK 3 */}
                 <div style={{
                   background: "#fff",
                   border: "1px solid #e0e0da",
                   borderRadius: "8px",
-                  padding: "24px"
+                  padding: "32px",
+                  minHeight: "120px",
+                  display: "flex",
+                  flexDirection: "column",
+                  justifyContent: "center"
                 }}>
-                  <p style={{ fontFamily: G, fontWeight: 600, fontSize: "0.95rem", marginBottom: "8px", color: "#1a1a1a" }}>
+                  <h4 style={{ fontFamily: G, fontWeight: 700, fontSize: "1rem", marginBottom: "12px", color: "#1a1a1a" }}>
                     • Sesión semanal en vivo con facilitadores certificados
-                  </p>
+                  </h4>
                   <p style={{ fontFamily: G, fontSize: "0.95rem", color: "#666", lineHeight: 1.7 }}>
                     Práctica en tiempo real orientada a regulación del sistema nervioso, prevención del desgaste emocional y fortalecimiento del bienestar sostenible.
                   </p>
                 </div>
 
-                {/* CARD 4 */}
+                {/* FEATURE BLOCK 4 */}
                 <div style={{
                   background: "#fff",
                   border: "1px solid #e0e0da",
                   borderRadius: "8px",
-                  padding: "24px"
+                  padding: "32px",
+                  minHeight: "120px",
+                  display: "flex",
+                  flexDirection: "column",
+                  justifyContent: "center"
                 }}>
-                  <p style={{ fontFamily: G, fontWeight: 600, fontSize: "0.95rem", marginBottom: "8px", color: "#1a1a1a" }}>
+                  <h4 style={{ fontFamily: G, fontWeight: 700, fontSize: "1rem", marginBottom: "12px", color: "#1a1a1a" }}>
                     • Nuevos programas lanzados cada mes
-                  </p>
+                  </h4>
                   <p style={{ fontFamily: G, fontSize: "0.95rem", color: "#666", lineHeight: 1.7 }}>
                     Actualización constante con métodos y secuencias funcionales que amplían la biblioteca sin saturarla.
                   </p>
                 </div>
 
-                {/* CARD 5 - ANCHO COMPLETO */}
+                {/* FEATURE BLOCK 5 */}
                 <div style={{
                   background: "#fff",
                   border: "1px solid #e0e0da",
                   borderRadius: "8px",
-                  padding: "24px",
-                  gridColumn: "1 / -1"
+                  padding: "32px",
+                  minHeight: "120px",
+                  display: "flex",
+                  flexDirection: "column",
+                  justifyContent: "center"
                 }}>
-                  <p style={{ fontFamily: G, fontWeight: 600, fontSize: "0.95rem", marginBottom: "8px", color: "#1a1a1a" }}>
+                  <h4 style={{ fontFamily: G, fontWeight: 700, fontSize: "1rem", marginBottom: "12px", color: "#1a1a1a" }}>
                     • Progreso personal visible dentro de la plataforma
-                  </p>
+                  </h4>
                   <p style={{ fontFamily: G, fontSize: "0.95rem", color: "#666", lineHeight: 1.7 }}>
                     Seguimiento individual de prácticas completadas y avance en programas — visible únicamente para el usuario.
                   </p>
@@ -582,11 +603,9 @@ export default function Page() {
               </div>
 
               {/* ÁREAS ACTIVAS */}
-              <div style={{ marginBottom: "40px" }}>
-                <p style={{ fontFamily: G, fontSize: "0.9rem", color: "#999", fontStyle: "italic" }}>
-                  Áreas activas: Yoga · Meditación · Entrenamiento · Respiración
-                </p>
-              </div>
+              <p style={{ fontFamily: G, fontSize: "0.9rem", color: "#999", fontStyle: "italic", marginBottom: "32px" }}>
+                Áreas activas: Yoga · Meditación · Entrenamiento · Respiración
+              </p>
 
               {/* FRASE DE CIERRE */}
               <div style={{
