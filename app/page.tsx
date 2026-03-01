@@ -538,7 +538,87 @@ export default function Page() {
               ))}
             </div>
 
-            <p style={{ ...EB, marginBottom: "32px" }}>Cómo funciona</p>
+            {/* ───────── QUÉ INCLUYE AURA ───────── */}
+            <div style={{ marginTop: "64px" }}>
+
+              <p style={{ ...SUB, marginBottom: "20px" }}>
+                Qué incluye AURA
+              </p>
+
+              <div style={{
+                display: "flex",
+                flexDirection: "column",
+                gap: "24px",
+                maxWidth: "760px"
+              }}>
+
+                <div>
+                  <p style={{ fontFamily: G, fontWeight: 600, marginBottom: "6px" }}>
+                    • Biblioteca activa de clases grabadas
+                  </p>
+                  <p style={{ fontFamily: G, fontSize: "0.95rem", color: "#666", lineHeight: 1.7 }}>
+                    Contenido estructurado en video, organizado por áreas y niveles. Cada práctica tiene una intención concreta y una ejecución clara.
+                  </p>
+                </div>
+
+                <div>
+                  <p style={{ fontFamily: G, fontWeight: 600, marginBottom: "6px" }}>
+                    • Programas funcionales diseñados para practicarse desde cualquier lugar
+                  </p>
+                  <p style={{ fontFamily: G, fontSize: "0.95rem", color: "#666", lineHeight: 1.7 }}>
+                    Secuencias guiadas paso a paso que permiten sostener un proceso sin depender de horarios fijos ni espacios específicos.
+                  </p>
+                </div>
+
+                <div>
+                  <p style={{ fontFamily: G, fontWeight: 600, marginBottom: "6px" }}>
+                    • Sesión semanal en vivo con facilitadores certificados
+                  </p>
+                  <p style={{ fontFamily: G, fontSize: "0.95rem", color: "#666", lineHeight: 1.7 }}>
+                    Práctica en tiempo real orientada a regulación del sistema nervioso, prevención del desgaste emocional y fortalecimiento del bienestar sostenible.
+                  </p>
+                </div>
+
+                <div>
+                  <p style={{ fontFamily: G, fontWeight: 600, marginBottom: "6px" }}>
+                    • Nuevos programas lanzados cada mes
+                  </p>
+                  <p style={{ fontFamily: G, fontSize: "0.95rem", color: "#666", lineHeight: 1.7 }}>
+                    Actualización constante con métodos y secuencias funcionales que amplían la biblioteca sin saturarla.
+                  </p>
+                </div>
+
+                <div>
+                  <p style={{ fontFamily: G, fontWeight: 600, marginBottom: "6px" }}>
+                    • Progreso personal visible dentro de la plataforma
+                  </p>
+                  <p style={{ fontFamily: G, fontSize: "0.95rem", color: "#666", lineHeight: 1.7 }}>
+                    Seguimiento individual de prácticas completadas y avance en programas — visible únicamente para el usuario.
+                  </p>
+                </div>
+
+                <div style={{ marginTop: "12px" }}>
+                  <p style={{ fontFamily: G, fontSize: "0.9rem", color: "#777" }}>
+                    Áreas activas: Yoga · Meditación · Entrenamiento · Respiración
+                  </p>
+                </div>
+
+              </div>
+
+              <div style={{ marginTop: "40px" }}>
+                <p style={{
+                  fontFamily: S,
+                  fontSize: "clamp(1.2rem,2vw,1.5rem)",
+                  fontStyle: "italic",
+                  lineHeight: 1.5
+                }}>
+                  Cuando la regulación se sostiene, la estabilidad emocional y el rendimiento también.
+                </p>
+              </div>
+
+            </div>
+
+            <p style={{ ...EB, marginBottom: "32px", marginTop: "56px" }}>Cómo funciona</p>
             <div className="g4" style={{ display: "grid", gridTemplateColumns: "repeat(4,1fr)", gap: "24px", marginBottom: "56px" }}>
               {[
                 { n: "1", label: "Acceso privado",   desc: "Link separado — no integrado en sistemas corporativos. Login individual. Datos 100% privados desde el inicio." },
@@ -556,7 +636,32 @@ export default function Page() {
 
             <p style={{ ...EB, marginBottom: "32px" }}>Programas de ejemplo</p>
             <div style={{ borderTop: "1px solid #e0e0da" }}>
-              {programas.map((prog, i) => (
+              {[
+                {
+                  tag: "14 días", title: "Para el insomnio",
+                  sub: "Meditación · Breathing · Educación",
+                  result: "+1–2 horas de sueño real",
+                  science: "Capacidad cognitiva +30% · Riesgo depresión –40% · Concentración +25%",
+                  source: "Harvard Business Review",
+                  img: "/images/sleep-wellness.jpg",
+                },
+                {
+                  tag: "21 días", title: "Para el dolor postural",
+                  sub: "Yoga · Stretching · Educación",
+                  result: "–35 a 50% reducción de dolor",
+                  science: "Ansiedad –40% · Depresión –30% · Autoestima y control mejorados",
+                  source: "American Psychological Association",
+                  img: "/images/yoga-nature.jpg",
+                },
+                {
+                  tag: "7 días",  title: "Para el estrés crónico",
+                  sub: "Meditación · Breathing · Educación",
+                  result: "Reducción visible de estrés",
+                  science: "Depresión clínica –60% · Burnout –50%",
+                  source: "WHO Global Mental Health Report 2023",
+                  img: "/images/stress-relief.jpg",
+                },
+              ].map((prog, i) => (
                 <div key={prog.title} className="g-prog" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", borderBottom: "1px solid #e0e0da" }}>
                   <div className="prog-img" style={{ order: i % 2 === 1 ? 2 : 1, height: "clamp(200px,26vw,320px)", overflow: "hidden", background: "#e8e8e4" }}>
                     <img src={prog.img} alt={prog.title} style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} />
@@ -578,7 +683,6 @@ export default function Page() {
             </p>
           </div>
         </section>
-
         {/* ══════════════════════════════════════════════
             05 · IMPACTO FINANCIERO (NUEVA SECCIÓN)
         ══════════════════════════════════════════════ */}
