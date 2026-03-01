@@ -489,71 +489,28 @@ export default function Page() {
           </div>
         </section>
 
-        {/* ══════════════════════════════════════════════
-            04 · LA SOLUCIÓN
-        ══════════════════════════════════════════════ */}
-        <section ref={refs.solucion} style={{ ...SECPAD, background: "#fafaf8" }}>
-          <div style={MW}>
-            <p style={EB}>04 · La Solución</p>
-
-            <h2 style={{ fontFamily: S, fontSize: "clamp(1.8rem,3.5vw,2.8rem)", fontWeight: 400, lineHeight: 1.2, marginBottom: "18px" }}>
-              AURA · Arquitectura del Bienestar.<br />
-              <em>No un beneficio. Un espacio.</em>
-            </h2>
-
-            <p style={{ fontFamily: G, fontSize: "1rem", color: "#555", lineHeight: 1.85, maxWidth: "700px", marginBottom: "48px" }}>
-              Tu equipo entra por voluntad propia — sin presión, sin integración con sistemas corporativos, sin vigilancia. Lo que pasa adentro es de ellos. Lo que Willdom ve son los resultados.
-            </p>
-
-            <div className="g2" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", borderTop: "1px solid #e0e0da", borderBottom: "1px solid #e0e0da", marginBottom: "56px" }}>
-              {[
-                {
-                  n: "01", label: "Prácticas Reales",
-                  body: "Meditación, yoga, breathing y educación guiados por especialistas certificados. Basados en investigación científica, diseñados para resolver problemas específicos — no para llenar un calendario de beneficios.",
-                },
-                {
-                  n: "02", label: "Estructura Sin Fricción",
-                  body: "Programas con inicio, proceso y resultado claros. No son challenges que pueden fallar — generan logro genuino. Cada práctica tiene claridad de qué esperar y qué cambia.",
-                },
-                {
-                  n: "03", label: "Privacidad Total",
-                  body: "Tu equipo entra. Lo que pasa adentro, es de ellos. Espacio completamente separado de los sistemas corporativos. Sin vigilancia, sin reportes individuales. Datos 100% privados.",
-                },
-                {
-                  n: "04", label: "Comunidad Global",
-                  body: "Parte de una plataforma abierta al público general. Usuarios de distintas industrias, roles y contextos. La sensación real de no estar solo en el desafío.",
-                },
-              ].map((p, i) => (
-                <div key={p.label} style={{
-                  padding: "32px",
-                  paddingLeft:  i % 2 === 1 ? "32px" : "0",
-                  paddingRight: i % 2 === 0 ? "32px" : "0",
-                  borderRight: i % 2 === 0 ? "1px solid #e0e0da" : "none",
-                  borderTop: i >= 2 ? "1px solid #e0e0da" : "none",
-                }}>
-                  <p style={{ ...SUB, marginBottom: "12px" }}>{p.n}</p>
-                  <h3 style={{ fontFamily: S, fontSize: "1.3rem", fontWeight: 400, marginBottom: "10px" }}>{p.label}</h3>
-                  <p style={{ fontFamily: G, fontSize: "0.95rem", color: "#666", lineHeight: 1.78 }}>{p.body}</p>
-                </div>
-              ))}
-            </div>
-
-            {/* ───────── QUÉ INCLUYE AURA ───────── */}
+        {/* ───────── QUÉ INCLUYE AURA ───────── */}
             <div style={{ marginTop: "64px" }}>
 
-              <p style={{ ...SUB, marginBottom: "20px" }}>
+              <p style={{ ...SUB, marginBottom: "32px" }}>
                 Qué incluye AURA
               </p>
 
               <div style={{
-                display: "flex",
-                flexDirection: "column",
+                display: "grid",
+                gridTemplateColumns: "repeat(2, 1fr)",
                 gap: "24px",
-                maxWidth: "760px"
+                marginBottom: "40px"
               }}>
 
-                <div>
-                  <p style={{ fontFamily: G, fontWeight: 600, marginBottom: "6px" }}>
+                {/* CARD 1 */}
+                <div style={{
+                  background: "#fff",
+                  border: "1px solid #e0e0da",
+                  borderRadius: "8px",
+                  padding: "24px"
+                }}>
+                  <p style={{ fontFamily: G, fontWeight: 600, fontSize: "0.95rem", marginBottom: "8px", color: "#1a1a1a" }}>
                     • Biblioteca activa de clases grabadas
                   </p>
                   <p style={{ fontFamily: G, fontSize: "0.95rem", color: "#666", lineHeight: 1.7 }}>
@@ -561,8 +518,14 @@ export default function Page() {
                   </p>
                 </div>
 
-                <div>
-                  <p style={{ fontFamily: G, fontWeight: 600, marginBottom: "6px" }}>
+                {/* CARD 2 */}
+                <div style={{
+                  background: "#fff",
+                  border: "1px solid #e0e0da",
+                  borderRadius: "8px",
+                  padding: "24px"
+                }}>
+                  <p style={{ fontFamily: G, fontWeight: 600, fontSize: "0.95rem", marginBottom: "8px", color: "#1a1a1a" }}>
                     • Programas funcionales diseñados para practicarse desde cualquier lugar
                   </p>
                   <p style={{ fontFamily: G, fontSize: "0.95rem", color: "#666", lineHeight: 1.7 }}>
@@ -570,8 +533,14 @@ export default function Page() {
                   </p>
                 </div>
 
-                <div>
-                  <p style={{ fontFamily: G, fontWeight: 600, marginBottom: "6px" }}>
+                {/* CARD 3 */}
+                <div style={{
+                  background: "#fff",
+                  border: "1px solid #e0e0da",
+                  borderRadius: "8px",
+                  padding: "24px"
+                }}>
+                  <p style={{ fontFamily: G, fontWeight: 600, fontSize: "0.95rem", marginBottom: "8px", color: "#1a1a1a" }}>
                     • Sesión semanal en vivo con facilitadores certificados
                   </p>
                   <p style={{ fontFamily: G, fontSize: "0.95rem", color: "#666", lineHeight: 1.7 }}>
@@ -579,8 +548,14 @@ export default function Page() {
                   </p>
                 </div>
 
-                <div>
-                  <p style={{ fontFamily: G, fontWeight: 600, marginBottom: "6px" }}>
+                {/* CARD 4 */}
+                <div style={{
+                  background: "#fff",
+                  border: "1px solid #e0e0da",
+                  borderRadius: "8px",
+                  padding: "24px"
+                }}>
+                  <p style={{ fontFamily: G, fontWeight: 600, fontSize: "0.95rem", marginBottom: "8px", color: "#1a1a1a" }}>
                     • Nuevos programas lanzados cada mes
                   </p>
                   <p style={{ fontFamily: G, fontSize: "0.95rem", color: "#666", lineHeight: 1.7 }}>
@@ -588,8 +563,15 @@ export default function Page() {
                   </p>
                 </div>
 
-                <div>
-                  <p style={{ fontFamily: G, fontWeight: 600, marginBottom: "6px" }}>
+                {/* CARD 5 - ANCHO COMPLETO */}
+                <div style={{
+                  background: "#fff",
+                  border: "1px solid #e0e0da",
+                  borderRadius: "8px",
+                  padding: "24px",
+                  gridColumn: "1 / -1"
+                }}>
+                  <p style={{ fontFamily: G, fontWeight: 600, fontSize: "0.95rem", marginBottom: "8px", color: "#1a1a1a" }}>
                     • Progreso personal visible dentro de la plataforma
                   </p>
                   <p style={{ fontFamily: G, fontSize: "0.95rem", color: "#666", lineHeight: 1.7 }}>
@@ -597,92 +579,32 @@ export default function Page() {
                   </p>
                 </div>
 
-                <div style={{ marginTop: "12px" }}>
-                  <p style={{ fontFamily: G, fontSize: "0.9rem", color: "#777" }}>
-                    Áreas activas: Yoga · Meditación · Entrenamiento · Respiración
-                  </p>
-                </div>
-
               </div>
 
-              <div style={{ marginTop: "40px" }}>
+              {/* ÁREAS ACTIVAS */}
+              <div style={{ marginBottom: "40px" }}>
+                <p style={{ fontFamily: G, fontSize: "0.9rem", color: "#999", fontStyle: "italic" }}>
+                  Áreas activas: Yoga · Meditación · Entrenamiento · Respiración
+                </p>
+              </div>
+
+              {/* FRASE DE CIERRE */}
+              <div style={{
+                borderTop: "1px solid #e0e0da",
+                paddingTop: "32px"
+              }}>
                 <p style={{
                   fontFamily: S,
                   fontSize: "clamp(1.2rem,2vw,1.5rem)",
                   fontStyle: "italic",
-                  lineHeight: 1.5
+                  lineHeight: 1.5,
+                  color: "#1a1a1a"
                 }}>
                   Cuando la regulación se sostiene, la estabilidad emocional y el rendimiento también.
                 </p>
               </div>
 
             </div>
-
-            <p style={{ ...EB, marginBottom: "32px", marginTop: "56px" }}>Cómo funciona</p>
-            <div className="g4" style={{ display: "grid", gridTemplateColumns: "repeat(4,1fr)", gap: "24px", marginBottom: "56px" }}>
-              {[
-                { n: "1", label: "Acceso privado",   desc: "Link separado — no integrado en sistemas corporativos. Login individual. Datos 100% privados desde el inicio." },
-                { n: "2", label: "Elige tu camino",  desc: "Cada persona selecciona según su necesidad real. Sin presión para elegir correctamente. La plataforma guía." },
-                { n: "3", label: "Práctica en vivo", desc: "Acceso 24/7. Sin horarios fijos. Tu ritmo, tu tiempo, sin compromisos rígidos." },
-                { n: "4", label: "Datos agregados",  desc: "Willdom ve participación y retención general — nunca datos individuales ni personales." },
-              ].map((s) => (
-                <div key={s.n} style={{ borderTop: "3px solid #1a1a1a", paddingTop: "18px" }}>
-                  <p style={{ fontFamily: S, fontSize: "2.2rem", lineHeight: 1, marginBottom: "12px" }}>{s.n}</p>
-                  <p style={{ fontFamily: G, fontSize: "0.95rem", fontWeight: 600, marginBottom: "8px" }}>{s.label}</p>
-                  <p style={{ fontFamily: G, fontSize: "0.88rem", color: "#666", lineHeight: 1.72 }}>{s.desc}</p>
-                </div>
-              ))}
-            </div>
-
-            <p style={{ ...EB, marginBottom: "32px" }}>Programas de ejemplo</p>
-            <div style={{ borderTop: "1px solid #e0e0da" }}>
-              {[
-                {
-                  tag: "14 días", title: "Para el insomnio",
-                  sub: "Meditación · Breathing · Educación",
-                  result: "+1–2 horas de sueño real",
-                  science: "Capacidad cognitiva +30% · Riesgo depresión –40% · Concentración +25%",
-                  source: "Harvard Business Review",
-                  img: "/images/sleep-wellness.jpg",
-                },
-                {
-                  tag: "21 días", title: "Para el dolor postural",
-                  sub: "Yoga · Stretching · Educación",
-                  result: "–35 a 50% reducción de dolor",
-                  science: "Ansiedad –40% · Depresión –30% · Autoestima y control mejorados",
-                  source: "American Psychological Association",
-                  img: "/images/yoga-nature.jpg",
-                },
-                {
-                  tag: "7 días",  title: "Para el estrés crónico",
-                  sub: "Meditación · Breathing · Educación",
-                  result: "Reducción visible de estrés",
-                  science: "Depresión clínica –60% · Burnout –50%",
-                  source: "WHO Global Mental Health Report 2023",
-                  img: "/images/stress-relief.jpg",
-                },
-              ].map((prog, i) => (
-                <div key={prog.title} className="g-prog" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", borderBottom: "1px solid #e0e0da" }}>
-                  <div className="prog-img" style={{ order: i % 2 === 1 ? 2 : 1, height: "clamp(200px,26vw,320px)", overflow: "hidden", background: "#e8e8e4" }}>
-                    <img src={prog.img} alt={prog.title} style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} />
-                  </div>
-                  <div style={{ order: i % 2 === 1 ? 1 : 2, display: "flex", flexDirection: "column", justifyContent: "center", padding: "clamp(24px,4vw,48px)" }}>
-                    <p style={{ ...SUB, marginBottom: "14px" }}>{prog.tag}</p>
-                    <h3 style={{ fontFamily: S, fontSize: "clamp(1.3rem,2.5vw,1.8rem)", fontWeight: 400, marginBottom: "10px", lineHeight: 1.2 }}>{prog.title}</h3>
-                    <p style={{ fontFamily: G, fontSize: "0.88rem", color: "#999", marginBottom: "20px" }}>{prog.sub}</p>
-                    <div style={{ width: "28px", height: "1px", background: "#ccc", marginBottom: "20px" }} />
-                    <p style={{ fontFamily: S, fontSize: "1.1rem", fontStyle: "italic", marginBottom: "12px" }}>"{prog.result}"</p>
-                    <p style={{ fontFamily: G, fontSize: "0.875rem", color: "#777", marginBottom: "4px" }}>{prog.science}</p>
-                    <p style={{ fontFamily: G, fontSize: "0.78rem", color: "#bbb", fontStyle: "italic" }}>{prog.source}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
-            <p style={{ fontFamily: G, fontSize: "0.82rem", color: "#aaa", fontStyle: "italic", marginTop: "16px" }}>
-              AURA continúa expandiendo según demanda de usuarios globales y evolución de la investigación científica.
-            </p>
-          </div>
-        </section>
         {/* ══════════════════════════════════════════════
             05 · IMPACTO FINANCIERO (NUEVA SECCIÓN)
         ══════════════════════════════════════════════ */}
