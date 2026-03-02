@@ -175,10 +175,28 @@ export default function Page() {
               Un contenedor de bienestar diseñado para sostener procesos reales.
             </p>
 
-            <div style={{ width: "100%", maxWidth: "720px", height: "clamp(200px,32vw,380px)", overflow: "hidden", borderRadius: "12px", marginBottom: "36px", background: "#e8e8e4" }}>
-              <img src="/images/hero-meditation.jpg" alt="Persona en calma activa"
-                style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "center 35%", display: "block" }} />
-            </div>
+            <div style={{ 
+  width: "100%", 
+  maxWidth: "800px", // Aumentamos un poco el ancho máximo
+  height: "clamp(300px, 45vw, 500px)", // Altura más generosa para que se vea "completa"
+  overflow: "hidden", 
+  borderRadius: "16px", // Bordes más suaves para un look premium
+  marginBottom: "40px", 
+  background: "#e8e8e4",
+  boxShadow: "0 20px 40px rgba(0,0,0,0.05)" // Sombra sutil para dar profundidad
+}}>
+  <img 
+    src="/images/hero-meditation.jpg" 
+    alt="Persona en calma activa"
+    style={{ 
+      width: "100%", 
+      height: "100%", 
+      objectFit: "cover", 
+      objectPosition: "center center", // Centrado perfecto
+      display: "block" 
+    }} 
+  />
+</div>
 
             <div className="hero-metrics" style={{ display: "flex", gap: "48px", alignItems: "center" }}>
               {[
