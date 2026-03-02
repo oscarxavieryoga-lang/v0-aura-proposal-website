@@ -616,8 +616,8 @@ export default function Page() {
           </div>
         </section>
 
-        {/* ══════════════════════════════════════════════
-            05 · IMPACTO FINANCIERO (NUEVA SECCIÓN)
+      {/* ══════════════════════════════════════════════
+            05 · IMPACTO FINANCIERO
         ══════════════════════════════════════════════ */}
         <section ref={refs.financiero} style={{ ...SECPAD, background: "#f0efe9" }}>
           <div style={MW}>
@@ -646,7 +646,7 @@ export default function Page() {
               No significa trabajar más horas. Significa trabajar mejor en las mismas horas. Los estudios documentan cuánta productividad se pierde — y cuánta se puede recuperar.
             </p>
 
-            {/* BLOQUE · DATO CIENTÍFICO DOCUMENTADO */}
+            {/* EL PROBLEMA REAL */}
             <div style={{
               background: "#fff",
               padding: "clamp(32px,5vw,48px)",
@@ -654,136 +654,133 @@ export default function Page() {
               marginBottom: "56px",
               borderTop: "3px solid #1a1a1a"
             }}>
-              <p style={{ ...SUB, marginBottom: "16px", textAlign: "center" }}>DATO CIENTÍFICO DOCUMENTADO</p>
-              
-              <p style={{
-                fontFamily: S,
-                fontSize: "clamp(2.5rem,6vw,4.5rem)",
-                fontWeight: 400,
-                lineHeight: 1,
-                textAlign: "center",
-                marginBottom: "12px"
-              }}>
-                11.3
-              </p>
+              <p style={{ ...SUB, marginBottom: "24px" }}>EL PROBLEMA REAL</p>
 
               <p style={{
                 fontFamily: G,
-                fontSize: "clamp(0.95rem,1.5vw,1.05rem)",
+                fontSize: "0.95rem",
                 color: "#555",
-                textAlign: "center",
-                marginBottom: "8px"
+                lineHeight: 1.8,
+                marginBottom: "24px"
               }}>
-                días de productividad perdida por persona, por año
+                Willdom tiene 350 developers remotos enfrentando 3 problemas documentados que cuestan productividad:
               </p>
-
-              <p style={{
-                fontFamily: G,
-                fontSize: "0.82rem",
-                color: "#999",
-                textAlign: "center",
-                fontStyle: "italic"
-              }}>
-                Harvard Business Review, 2019
-              </p>
-
-              <div style={{
-                borderTop: "1px solid #e0e0da",
-                marginTop: "20px",
-                paddingTop: "16px",
-                textAlign: "center"
-              }}>
-                <p style={{
-                  fontFamily: G,
-                  fontSize: "0.88rem",
-                  color: "#777"
-                }}>
-                  −$2,260 USD · por developer · por año
-                </p>
-              </div>
-            </div>
-
-            {/* GRÁFICAS DE RETORNO */}
-            <div style={{ marginBottom: "56px" }}>
-              <p style={{ ...SUB, marginBottom: "32px" }}>Retorno estimado por programa (25% participación)</p>
 
               <div style={{
                 display: "grid",
-                gridTemplateColumns: "1fr",
-                gap: "28px"
+                gridTemplateColumns: "1fr 1fr 1fr",
+                gap: "24px"
               }}>
                 {[
-                  { label: "Sueño",      devs: "35 developers", retorno: "$5,912", pct: 43 },
-                  { label: "Movimiento", devs: "30 developers", retorno: "$11,250", pct: 82 },
-                  { label: "Estrés",     devs: "22 developers", retorno: "$13,750", pct: 100 },
-                ].map((r) => (
-                  <div key={r.label} style={{
-                    display: "grid",
-                    gridTemplateColumns: "140px 1fr auto",
-                    gap: "24px",
-                    alignItems: "center",
-                    paddingBottom: "28px",
-                    borderBottom: "1px solid #e0e0da"
-                  }}>
-                    <div>
-                      <p style={{ fontFamily: G, fontSize: "0.95rem", fontWeight: 600, color: "#1a1a1a" }}>
-                        {r.label}
-                      </p>
-                      <p style={{ fontFamily: G, fontSize: "0.82rem", color: "#999", marginTop: "4px" }}>
-                        {r.devs}
-                      </p>
-                    </div>
-
-                    <div style={{ display: "flex", alignItems: "center", gap: "12px" }}>
-                      <div style={{
-                        width: `${r.pct}%`,
-                        height: "8px",
-                        background: "#1a1a1a",
-                        borderRadius: "2px"
-                      }} />
-                    </div>
-
-                    <p style={{
-                      fontFamily: S,
-                      fontSize: "clamp(1.1rem,2vw,1.3rem)",
-                      fontWeight: 400,
-                      color: "#1a1a1a",
-                      whiteSpace: "nowrap"
-                    }}>
-                      {r.retorno}
-                    </p>
+                  { label: "SUEÑO", stat: "11.3 días", desc: "perdidos/año por developer", source: "Harvard Business Review, 2019" },
+                  { label: "MOVIMIENTO", stat: "12-15%", desc: "pérdida de productividad", source: "OSHA – Datos Ocupacionales" },
+                  { label: "ESTRÉS", stat: "18-22%", desc: "pérdida de productividad", source: "American Psychological Association, 2024" },
+                ].map((item) => (
+                  <div key={item.label} style={{ borderLeft: "3px solid #1a1a1a", paddingLeft: "16px" }}>
+                    <p style={{ fontFamily: G, fontWeight: 600, fontSize: "0.9rem", color: "#1a1a1a", marginBottom: "8px" }}>{item.label}</p>
+                    <p style={{ fontFamily: S, fontSize: "1.4rem", fontWeight: 400, color: "#1a1a1a", marginBottom: "4px" }}>{item.stat}</p>
+                    <p style={{ fontFamily: G, fontSize: "0.82rem", color: "#666", marginBottom: "12px" }}>{item.desc}</p>
+                    <p style={{ fontFamily: G, fontSize: "0.75rem", color: "#999", fontStyle: "italic" }}>{item.source}</p>
                   </div>
                 ))}
               </div>
+
+              <div style={{ borderTop: "1px solid #e0e0da", marginTop: "24px", paddingTop: "16px" }}>
+                <p style={{ fontFamily: G, fontSize: "0.88rem", color: "#777", textAlign: "center" }}>
+                  <strong>En dinero:</strong> $2,260 USD por developer por año
+                </p>
+              </div>
+            </div>
+
+            {/* CÓMO AURA RESUELVE */}
+            <div style={{
+              background: "#fff",
+              border: "1px solid #e0e0da",
+              borderRadius: "8px",
+              padding: "32px",
+              marginBottom: "56px"
+            }}>
+              <p style={{ ...SUB, marginBottom: "24px" }}>CÓMO AURA RESUELVE ESTO</p>
+
+              {[
+                { camino: "Sueño", como: "Meditación + Breathing", por_que: "Regula cortisol → Sueño profundo", resultado: "Harvard: +30% capacidad cognitiva" },
+                { camino: "Movimiento", como: "Yoga + Stretching", por_que: "Elimina dolor postular → Recupera productividad", resultado: "Estudios: -29% dolor con movimiento regular" },
+                { camino: "Estrés", como: "Meditación + Breathing", por_que: "Regula respuesta al estrés → Previene burnout", resultado: "WHO: -60% depresión clínica, -50% burnout" },
+              ].map((item, i) => (
+                <div key={item.camino} style={{ display: "grid", gridTemplateColumns: "80px 1fr", gap: "16px", paddingBottom: "20px", borderBottom: i < 2 ? "1px solid #f0efe9" : "none" }}>
+                  <p style={{ fontFamily: G, fontWeight: 600, fontSize: "0.9rem", color: "#1a1a1a" }}>{item.camino}</p>
+                  <div>
+                    <p style={{ fontFamily: G, fontSize: "0.88rem", color: "#555", marginBottom: "4px" }}><strong>Incluye:</strong> {item.como}</p>
+                    <p style={{ fontFamily: G, fontSize: "0.88rem", color: "#555", marginBottom: "4px" }}><strong>Funciona porque:</strong> {item.por_que}</p>
+                    <p style={{ fontFamily: G, fontSize: "0.82rem", color: "#999", fontStyle: "italic" }}>Resultado: {item.resultado}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            {/* SUPUESTOS */}
+            <div style={{
+              background: "#fff",
+              border: "1px solid #e0e0da",
+              borderRadius: "8px",
+              padding: "32px",
+              marginBottom: "56px"
+            }}>
+              <p style={{ ...SUB, marginBottom: "24px" }}>SUPUESTOS CONSERVADORES</p>
+
+              <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: "32px", marginBottom: "24px" }}>
+                <div>
+                  <p style={{ fontFamily: G, fontWeight: 600, fontSize: "0.9rem", marginBottom: "8px", color: "#1a1a1a" }}>Adopción</p>
+                  <p style={{ fontFamily: S, fontSize: "1.8rem", fontWeight: 400, color: "#1a1a1a", marginBottom: "4px" }}>25%</p>
+                  <p style={{ fontFamily: G, fontSize: "0.85rem", color: "#999" }}>87 de 350 developers</p>
+                </div>
+
+                <div>
+                  <p style={{ fontFamily: G, fontWeight: 600, fontSize: "0.9rem", marginBottom: "8px", color: "#1a1a1a" }}>Distribución</p>
+                  <p style={{ fontFamily: G, fontSize: "0.88rem", color: "#666" }}>40% sueño = 35 devs<br/>35% movimiento = 30 devs<br/>25% estrés = 22 devs</p>
+                </div>
+
+                <div>
+                  <p style={{ fontFamily: G, fontWeight: 600, fontSize: "0.9rem", marginBottom: "8px", color: "#1a1a1a" }}>Mejora Real</p>
+                  <p style={{ fontFamily: S, fontSize: "1.8rem", fontWeight: 400, color: "#1a1a1a", marginBottom: "4px" }}>30%</p>
+                  <p style={{ fontFamily: G, fontSize: "0.82rem", color: "#999" }}>Del potencial documentado</p>
+                </div>
+              </div>
+            </div>
+
+            {/* CÁLCULOS */}
+            <div style={{ marginBottom: "56px" }}>
+              <p style={{ ...SUB, marginBottom: "32px" }}>CÁLCULOS DETALLADOS</p>
+
+              {[
+                { area: "Sueño", paso1: "11.3 días × 30% mejora = 3.39 días", paso2: "3.39 días × $200/día × 35 devs = $23,730/año", paso3: "$5,932 en 3 meses" },
+                { area: "Movimiento", paso1: "OSHA: 12-15% pérdida | Yoga reduce -29% dolor", paso2: "Conservador: Recuperamos 4.5% de productividad", paso3: "$16,875 en 3 meses" },
+                { area: "Estrés", paso1: "APA/WHO: 18-22% pérdida | 30% mejora real = 6.6%", paso2: "$50,000 × 6.6% × 22 devs = $72,600/año", paso3: "$18,150 en 3 meses" },
+              ].map((item, i) => (
+                <div key={item.area} style={{ padding: "24px 32px", borderBottom: i < 2 ? "1px solid #e0e0da" : "none", background: i % 2 === 0 ? "#fff" : "#f9f9f7" }}>
+                  <p style={{ fontFamily: G, fontWeight: 600, fontSize: "0.95rem", color: "#1a1a1a", marginBottom: "12px" }}>{item.area}</p>
+                  <p style={{ fontFamily: G, fontSize: "0.88rem", color: "#555", marginBottom: "8px" }}>{item.paso1}</p>
+                  <p style={{ fontFamily: G, fontSize: "0.88rem", color: "#555", marginBottom: "8px" }}>{item.paso2}</p>
+                  <p style={{ fontFamily: G, fontSize: "0.88rem", color: "#1a1a1a", fontWeight: 600 }}>→ {item.paso3}</p>
+                </div>
+              ))}
             </div>
 
             {/* TOTAL */}
-            <div style={{
-              background: "#fff",
-              padding: "clamp(24px,4vw,36px)",
-              borderRadius: "8px",
-              display: "grid",
-              gridTemplateColumns: "1fr auto",
-              gap: "24px",
-              alignItems: "center",
-              borderTop: "2px solid #1a1a1a"
-            }}>
+            <div style={{ background: "#fff", padding: "clamp(24px,4vw,36px)", borderRadius: "8px", display: "grid", gridTemplateColumns: "1fr auto", gap: "24px", alignItems: "center", borderTop: "2px solid #1a1a1a", marginBottom: "56px" }}>
               <div>
-                <p style={{ fontFamily: G, fontSize: "0.9rem", color: "#555" }}>
-                  Total recuperado en 3 meses
-                </p>
-                <p style={{ fontFamily: G, fontSize: "0.82rem", color: "#999", marginTop: "4px" }}>
-                  87 developers · supuestos conservadores al 30%
-                </p>
+                <p style={{ fontFamily: G, fontSize: "0.9rem", color: "#555" }}>Total recuperado en 3 meses</p>
+                <p style={{ fontFamily: G, fontSize: "0.82rem", color: "#999", marginTop: "4px" }}>$5,932 + $16,875 + $18,150</p>
               </div>
-              <p style={{
-                fontFamily: S,
-                fontSize: "clamp(1.8rem,3.5vw,2.5rem)",
-                fontWeight: 400,
-                color: "#1a1a1a"
-              }}>
-                $30,912
-              </p>
+              <p style={{ fontFamily: S, fontSize: "clamp(1.8rem,3.5vw,2.5rem)", fontWeight: 400, color: "#1a1a1a" }}>$40,957</p>
+            </div>
+
+            {/* ROI */}
+            <div style={{ background: "#fff", padding: "32px", borderRadius: "8px", textAlign: "center", borderTop: "3px solid #1a1a1a" }}>
+              <p style={{ ...SUB, marginBottom: "16px" }}>EL RETORNO</p>
+              <p style={{ fontFamily: S, fontSize: "clamp(2.5rem,5vw,4rem)", fontWeight: 400, color: "#1a1a1a", lineHeight: 1, marginBottom: "12px" }}>4.4×</p>
+              <p style={{ fontFamily: G, fontSize: "1rem", color: "#555", marginBottom: "8px" }}>$40,957 ÷ $9,300 = 4.4×</p>
+              <p style={{ fontFamily: G, fontSize: "0.9rem", color: "#777", fontStyle: "italic" }}>Por cada $1 invertido, se recuperan $4.40</p>
             </div>
 
           </div>
