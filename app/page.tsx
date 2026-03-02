@@ -1056,6 +1056,3 @@ export default function Page() {
     </>
   )
 }
-    </>
-  )
-}
