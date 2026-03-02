@@ -184,7 +184,7 @@ export default function Page() {
               {[
                 { val: "4.4×",   label: "ROI estimado" },
                 { val: "87",     label: "Developers activos" },
-                { val: "$,300", label: "Inversión base" },
+                { val: "$9,300", label: "Inversión base" },
               ].map((m, i, arr) => (
                 <React.Fragment key={m.label}>
                   <div style={{ textAlign: "center" }}>
@@ -363,7 +363,7 @@ export default function Page() {
               marginBottom: "40px"
             }}>
               <img
-                src="/images/emotional-regulation-man.jpg"
+                src="/emotional-regulation-man.jpg"
                 alt="Persona en presencia consciente con su entorno"
                 style={{
                   width: "100%",
