@@ -927,26 +927,27 @@ export default function Page() {
         </section>
 
        {/* ══════════════════════════════════════════════
-    08 · PRÓXIMOS PASOS
+    08 · PRÓXIMOS PASOS (VERSION AUTORIDAD)
 ══════════════════════════════════════════════ */}
-<section ref={refs.pasos} style={{ ...SECPAD, background: "#1a1a1a", display: "flex", alignItems: "center", justifyContent: "center", minHeight: "60vh" }}>
-  <div style={{ maxWidth: "800px", width: "100%", textAlign: "center" }}>
-    <p style={{ ...EB, color: "#555" }}>08 · Próximos Pasos</p>
+<section ref={refs.pasos} style={{ ...SECPAD, background: "#111", display: "flex", alignItems: "center", justifyContent: "center", minHeight: "70vh" }}>
+  <div style={{ maxWidth: "900px", width: "100%", textAlign: "center" }}>
+    <p style={{ ...EB, color: "#444", marginBottom: "40px" }}>08 · Próximos Pasos</p>
 
-    <h2 style={{ fontFamily: S, fontSize: "clamp(2rem,5vw,3.5rem)", fontWeight: 400, lineHeight: 1.15, color: "#f0efe9", marginBottom: "32px" }}>
-      Consolidemos el bienestar<br /><em>como un activo estratégico.</em>
+    <h2 style={{ fontFamily: S, fontSize: "clamp(2.2rem,6vw,4.5rem)", fontWeight: 400, lineHeight: 1.1, color: "#f0efe9", marginBottom: "32px" }}>
+      Consolidemos el bienestar<br /><i style={{ opacity: 0.8 }}>como un activo estratégico.</i>
     </h2>
 
-    <p style={{ fontFamily: G, fontSize: "1.1rem", color: "#888", lineHeight: 1.85, marginBottom: "64px", maxWidth: "600px", margin: "0 auto 64px" }}>
+    <p style={{ fontFamily: G, fontSize: "1.1rem", color: "#777", lineHeight: 1.8, marginBottom: "80px", maxWidth: "650px", margin: "0 auto 80px" }}>
       Esta propuesta busca iniciar una fase de prueba de 3 meses para medir el impacto real en la retención y productividad del equipo de Willdom.
     </p>
 
-    <div style={{ borderTop: "1px solid #2e2e2e", paddingTop: "48px" }}>
-      <p style={{ ...SUB, color: "#666", marginBottom: "40px", textAlign: "center" }}>Responsables del Proyecto</p>
+    {/* Bloque de Firmas con Autoridad */}
+    <div style={{ borderTop: "1px solid #222", paddingTop: "60px" }}>
+      <p style={{ ...SUB, color: "#555", marginBottom: "48px", letterSpacing: "0.5em" }}>Responsables del Proyecto</p>
       
-      <div style={{ 
+      <div className="g-resp" style={{ 
         display: "grid", 
-        gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", 
+        gridTemplateColumns: "1fr 1fr", 
         gap: "40px",
         textAlign: "left" 
       }}>
@@ -954,22 +955,69 @@ export default function Page() {
           { 
             name: "Oscar Xavier Mantilla Sandoval", 
             role: "Founder & Director", 
-            org: "AURA — Arquitectura del Bienestar" 
+            org: "AURA — Arquitectura del Bienestar",
+            initials: "OXM"
           },
           { 
             name: "Paula Hernández", 
             role: "Program Co-Lead", 
-            org: "Wellness Instructor & Specialist" 
+            org: "Wellness Instructor & Specialist",
+            initials: "PH"
           },
         ].map((p) => (
           <div key={p.name} style={{ 
-            padding: "24px", 
-            borderLeft: "1px solid #333", 
-            background: "rgba(255,255,255,0.02)" 
+            padding: "40px", 
+            background: "rgba(255,255,255,0.02)",
+            border: "1px solid rgba(255,255,255,0.05)",
+            position: "relative",
+            overflow: "hidden"
           }}>
-            <p style={{ fontFamily: S, fontSize: "1.25rem", color: "#f0efe9", marginBottom: "8px" }}>{p.name}</p>
-            <p style={{ fontFamily: G, fontSize: "0.85rem", color: "#999", letterSpacing: "0.1em", textTransform: "uppercase", marginBottom: "4px" }}>{p.role}</p>
-            <p style={{ fontFamily: G, fontSize: "0.75rem", color: "#555" }}>{p.org}</p>
+            {/* Sello sutil de fondo para autoridad visual */}
+            <span style={{ 
+              position: "absolute", 
+              right: "-10px", 
+              bottom: "-10px", 
+              fontSize: "8rem", 
+              fontFamily: S, 
+              color: "rgba(255,255,255,0.02)", 
+              fontWeight: 700,
+              pointerEvents: "none" 
+            }}>
+              {p.initials}
+            </span>
+
+            <div style={{ width: "30px", height: "1px", background: "#c5a572", marginBottom: "24px" }} /> {/* Acento dorado/bronce para prestigio */}
+            
+            <p style={{ 
+              fontFamily: S, 
+              fontSize: "1.6rem", 
+              color: "#f0efe9", 
+              marginBottom: "8px",
+              letterSpacing: "-0.02em" 
+            }}>
+              {p.name}
+            </p>
+            
+            <p style={{ 
+              fontFamily: G, 
+              fontSize: "0.75rem", 
+              color: "#c5a572", // Color enfatizado para el cargo
+              letterSpacing: "0.2em", 
+              textTransform: "uppercase", 
+              fontWeight: 600,
+              marginBottom: "4px" 
+            }}>
+              {p.role}
+            </p>
+            
+            <p style={{ 
+              fontFamily: G, 
+              fontSize: "0.8rem", 
+              color: "#555",
+              marginTop: "12px" 
+            }}>
+              {p.org}
+            </p>
           </div>
         ))}
       </div>
