@@ -616,7 +616,7 @@ export default function Page() {
           </div>
         </section>
 
-      {/* ══════════════════════════════════════════════
+     {/* ══════════════════════════════════════════════
             05 · IMPACTO FINANCIERO
         ══════════════════════════════════════════════ */}
         <section ref={refs.financiero} style={{ ...SECPAD, background: "#f0efe9" }}>
