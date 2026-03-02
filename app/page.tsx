@@ -1048,7 +1048,7 @@ export default function Page() {
             <p style={{ fontFamily: G, fontSize: "0.82rem", color: "#888" }}>Arquitectura del Bienestar</p>
           </div>
           <div style={{ textAlign: "right" }}>
-            <p style={{ fontFamily: G, fontSize: "0.78rem", color: "#aaa", marginBottom: "4px" }}>Propuesta Comercial · Willdom · Febrero 2026</p>
+            <p style={{ fontFamily: G, fontSize: "0.78rem", color: "#aaa", marginBottom: "4px" }}>Propuesta Comercial · Willdom · Marzo 2026</p>
             <p style={{ fontFamily: G, fontSize: "0.72rem", color: "#bbb", fontStyle: "italic" }}>Confidencial</p>
           </div>
         </div>
