@@ -363,7 +363,7 @@ export default function Page() {
               marginBottom: "40px"
             }}>
               <img
-                src="emotional-regulation-man.jpg"
+                src="/images/emotional-regulation-man.jpg"
                 alt="Persona en presencia consciente con su entorno"
                 style={{
                   width: "100%",
@@ -617,7 +617,6 @@ export default function Page() {
         </section>
 
         {/* ══════════════════════════════════════════════
-            {/* ══════════════════════════════════════════════
             05 · IMPACTO FINANCIERO (NUEVA SECCIÓN)
         ══════════════════════════════════════════════ */}
         <section ref={refs.financiero} style={{ ...SECPAD, background: "#f0efe9" }}>
@@ -699,79 +698,14 @@ export default function Page() {
                   fontSize: "0.88rem",
                   color: "#777"
                 }}>
-                  En dinero: $2,260 USD por developer por año (basado en salario promedio LATAM $50,000)
-                </p>
-              </div>
-            </div>
-
-            {/* SUPUESTOS CONSERVADORES */}
-            <div style={{
-              background: "#fff",
-              border: "1px solid #e0e0da",
-              borderRadius: "8px",
-              padding: "32px",
-              marginBottom: "56px"
-            }}>
-              <p style={{ ...SUB, marginBottom: "20px" }}>SUPUESTOS CONSERVADORES</p>
-
-              <div style={{
-                display: "grid",
-                gridTemplateColumns: "repeat(3, 1fr)",
-                gap: "32px"
-              }}>
-                <div>
-                  <p style={{ fontFamily: G, fontWeight: 600, fontSize: "0.9rem", marginBottom: "8px", color: "#1a1a1a" }}>
-                    Adopción
-                  </p>
-                  <p style={{ fontFamily: S, fontSize: "1.8rem", fontWeight: 400, color: "#1a1a1a", marginBottom: "4px" }}>
-                    25%
-                  </p>
-                  <p style={{ fontFamily: G, fontSize: "0.85rem", color: "#999" }}>
-                    87 de 350 developers
-                  </p>
-                </div>
-
-                <div>
-                  <p style={{ fontFamily: G, fontWeight: 600, fontSize: "0.9rem", marginBottom: "8px", color: "#1a1a1a" }}>
-                    Mejora real
-                  </p>
-                  <p style={{ fontFamily: S, fontSize: "1.8rem", fontWeight: 400, color: "#1a1a1a", marginBottom: "4px" }}>
-                    30%
-                  </p>
-                  <p style={{ fontFamily: G, fontSize: "0.85rem", color: "#999" }}>
-                    Del potencial documentado
-                  </p>
-                </div>
-
-                <div>
-                  <p style={{ fontFamily: G, fontWeight: 600, fontSize: "0.9rem", marginBottom: "8px", color: "#1a1a1a" }}>
-                    Resultado
-                  </p>
-                  <p style={{ fontFamily: S, fontSize: "1.8rem", fontWeight: 400, color: "#1a1a1a", marginBottom: "4px" }}>
-                    $40,957
-                  </p>
-                  <p style={{ fontFamily: G, fontSize: "0.85rem", color: "#999" }}>
-                    En 3 meses · ROI 4.4×
-                  </p>
-                </div>
-              </div>
-
-              <div style={{ borderTop: "1px solid #e0e0da", marginTop: "24px", paddingTop: "20px" }}>
-                <p style={{
-                  fontFamily: G,
-                  fontSize: "0.85rem",
-                  color: "#888",
-                  fontStyle: "italic",
-                  lineHeight: 1.7
-                }}>
-                  Los programas de bienestar incluyen meditación, yoga, breathing y educación. La ciencia documenta que estos caminos reducen los problemas identificados. Usamos 30% como cifra honesta — no todos adoptarán igual, ni todos mejorarán al máximo.
+                  −$2,260 USD · por developer · por año
                 </p>
               </div>
             </div>
 
             {/* GRÁFICAS DE RETORNO */}
             <div style={{ marginBottom: "56px" }}>
-              <p style={{ ...SUB, marginBottom: "32px" }}>Retorno estimado por camino de bienestar (25% participación)</p>
+              <p style={{ ...SUB, marginBottom: "32px" }}>Retorno estimado por programa (25% participación)</p>
 
               <div style={{
                 display: "grid",
@@ -779,9 +713,9 @@ export default function Page() {
                 gap: "28px"
               }}>
                 {[
-                  { label: "Sueño",      devs: "35 developers", retorno: "$5,932", pct: 43 },
-                  { label: "Movimiento", devs: "30 developers", retorno: "$16,875", pct: 82 },
-                  { label: "Estrés",     devs: "22 developers", retorno: "$18,150", pct: 100 },
+                  { label: "Sueño",      devs: "35 developers", retorno: "$5,912", pct: 43 },
+                  { label: "Movimiento", devs: "30 developers", retorno: "$11,250", pct: 82 },
+                  { label: "Estrés",     devs: "22 developers", retorno: "$13,750", pct: 100 },
                 ].map((r) => (
                   <div key={r.label} style={{
                     display: "grid",
@@ -848,7 +782,7 @@ export default function Page() {
                 fontWeight: 400,
                 color: "#1a1a1a"
               }}>
-                $40,957
+                $30,912
               </p>
             </div>
 
