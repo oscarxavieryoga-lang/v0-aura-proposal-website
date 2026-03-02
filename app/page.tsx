@@ -149,7 +149,7 @@ export default function Page() {
 
           <header style={{ display: "flex", justifyContent: "space-between", alignItems: "center", padding: "24px clamp(20px,5vw,60px)", borderBottom: "1px solid #e8e8e4" }}>
             <span style={{ fontFamily: G, fontSize: "11px", letterSpacing: "0.4em", textTransform: "uppercase", color: "#555", fontWeight: 600 }}>AURA</span>
-            <span style={{ fontFamily: G, fontSize: "11px", letterSpacing: "0.25em", textTransform: "uppercase", color: "#999" }}>Confidencial · Febrero 2026</span>
+            <span style={{ fontFamily: G, fontSize: "11px", letterSpacing: "0.25em", textTransform: "uppercase", color: "#999" }}>Confidencial · Marzo 2026</span>
           </header>
 
           <div style={{ flex: 1, display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", textAlign: "center", padding: "56px clamp(20px,5vw,60px) 40px" }}>
@@ -1054,6 +1054,19 @@ export default function Page() {
                       <span style={{ fontFamily: S, fontSize: "1rem", fontWeight: 400, whiteSpace: "nowrap" }}>{c.r}</span>
                     </div>
                   ))}
+                </div>
+
+                <div style={{
+                  display: "grid",
+                  gridTemplateColumns: "100px 1fr auto",
+                  gap: "16px",
+                  padding: "14px 0",
+                  borderTop: "2px solid #1a1a1a",
+                  alignItems: "center"
+                }}>
+                  <span style={{ fontFamily: G, fontSize: "0.9rem", color: "#555" }}>Total</span>
+                  <span style={{ fontFamily: G, fontSize: "0.9rem", color: "#555" }}>Inversión $9,300 · ROI 4.4×</span>
+                  <span style={{ fontFamily: S, fontSize: "1.1rem", fontWeight: 400 }}>$40,957</span>
                 </div>
 
                 <div style={{
