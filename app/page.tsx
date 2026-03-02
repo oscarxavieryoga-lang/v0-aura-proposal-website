@@ -926,49 +926,56 @@ export default function Page() {
           </div>
         </section>
 
-        {/* ══════════════════════════════════════════════
-            08 · PRÓXIMOS PASOS
-        ══════════════════════════════════════════════ */}
-        <section ref={refs.pasos} style={{ ...SECPAD, background: "#1a1a1a", display: "flex", alignItems: "center", justifyContent: "center" }}>
-          <div style={{ maxWidth: "640px", textAlign: "center" }}>
-            <p style={{ ...EB, color: "#555" }}>08 · Próximos Pasos</p>
+       {/* ══════════════════════════════════════════════
+    08 · PRÓXIMOS PASOS
+══════════════════════════════════════════════ */}
+<section ref={refs.pasos} style={{ ...SECPAD, background: "#1a1a1a", display: "flex", alignItems: "center", justifyContent: "center", minHeight: "60vh" }}>
+  <div style={{ maxWidth: "800px", width: "100%", textAlign: "center" }}>
+    <p style={{ ...EB, color: "#555" }}>08 · Próximos Pasos</p>
 
-            <h2 style={{ fontFamily: S, fontSize: "clamp(2rem,5vw,4rem)", fontWeight: 400, lineHeight: 1.15, color: "#f0efe9", marginBottom: "20px" }}>
-              Una reunión de 30 minutos<br /><em>para cerrar el acuerdo.</em>
-            </h2>
+    <h2 style={{ fontFamily: S, fontSize: "clamp(2rem,5vw,3.5rem)", fontWeight: 400, lineHeight: 1.15, color: "#f0efe9", marginBottom: "32px" }}>
+      Consolidemos el bienestar<br /><em>como un activo estratégico.</em>
+    </h2>
 
-            <p style={{ fontFamily: G, fontSize: "1rem", color: "#888", lineHeight: 1.85, marginBottom: "12px" }}>
-              Con el equipo de decisión de Willdom. Responder preguntas, ver la plataforma en vivo, firmar.
-            </p>
+    <p style={{ fontFamily: G, fontSize: "1.1rem", color: "#888", lineHeight: 1.85, marginBottom: "64px", maxWidth: "600px", margin: "0 auto 64px" }}>
+      Esta propuesta busca iniciar una fase de prueba de 3 meses para medir el impacto real en la retención y productividad del equipo de Willdom.
+    </p>
 
-            <p style={{ fontFamily: G, fontSize: "0.88rem", color: "#555", lineHeight: 1.8, marginBottom: "40px" }}>
-              El piloto puede iniciar en menos de 4 semanas.<br />
-              El equipo puede estar practicando antes de que termine el mes.
-            </p>
-
-            <a
-              href="mailto:contacto@aura.com"
-              style={{ display: "inline-block", border: "1px solid rgba(255,255,255,0.25)", color: "#f0efe9", fontFamily: G, fontSize: "0.82rem", letterSpacing: "0.3em", textTransform: "uppercase", padding: "18px 40px", textDecoration: "none", marginBottom: "48px" }}
-            >
-              Agendar Reunión
-            </a>
-
-            <div style={{ borderTop: "1px solid #2e2e2e", paddingTop: "32px" }}>
-              <p style={{ ...SUB, color: "#444", marginBottom: "20px" }}>Presentado por</p>
-              <div style={{ display: "flex", justifyContent: "center", gap: "clamp(20px,5vw,56px)", flexWrap: "wrap" }}>
-                {[
-                  { name: "Oscar Xavier Mantilla Sandoval", role: "Founder & Director — AURA" },
-                  { name: "Paula Hernández",                role: "Program Co-Lead & Wellness Instructor" },
-                ].map((p) => (
-                  <div key={p.name} style={{ textAlign: "center" }}>
-                    <p style={{ fontFamily: S, fontSize: "1rem", color: "#e0dfd8", marginBottom: "4px" }}>{p.name}</p>
-                    <p style={{ fontFamily: G, fontSize: "0.78rem", color: "#555" }}>{p.role}</p>
-                  </div>
-                ))}
-              </div>
-            </div>
+    <div style={{ borderTop: "1px solid #2e2e2e", paddingTop: "48px" }}>
+      <p style={{ ...SUB, color: "#666", marginBottom: "40px", textAlign: "center" }}>Responsables del Proyecto</p>
+      
+      <div style={{ 
+        display: "grid", 
+        gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", 
+        gap: "40px",
+        textAlign: "left" 
+      }}>
+        {[
+          { 
+            name: "Oscar Xavier Mantilla Sandoval", 
+            role: "Founder & Director", 
+            org: "AURA — Arquitectura del Bienestar" 
+          },
+          { 
+            name: "Paula Hernández", 
+            role: "Program Co-Lead", 
+            org: "Wellness Instructor & Specialist" 
+          },
+        ].map((p) => (
+          <div key={p.name} style={{ 
+            padding: "24px", 
+            borderLeft: "1px solid #333", 
+            background: "rgba(255,255,255,0.02)" 
+          }}>
+            <p style={{ fontFamily: S, fontSize: "1.25rem", color: "#f0efe9", marginBottom: "8px" }}>{p.name}</p>
+            <p style={{ fontFamily: G, fontSize: "0.85rem", color: "#999", letterSpacing: "0.1em", textTransform: "uppercase", marginBottom: "4px" }}>{p.role}</p>
+            <p style={{ fontFamily: G, fontSize: "0.75rem", color: "#555" }}>{p.org}</p>
           </div>
-        </section>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>
 
         {/* ══════════════════════════════════════════════
             APÉNDICES
