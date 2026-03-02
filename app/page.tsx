@@ -961,7 +961,7 @@ export default function Page() {
         Esta propuesta busca iniciar una fase de prueba de 3 meses para medir el impacto real en la retención y productividad del equipo de Willdom.
       </p>
       <p style={{ fontFamily: S, fontSize: "1.25rem", color: "#c5a572", fontStyle: "italic", borderTop: "1px solid #222", paddingTop: "24px" }}>
-        El siguiente paso es coordinar una breve sesión de 30 minutos para formalizar el inicio del piloto y definir el cronograma de lanzamientos.
+        El siguiente paso es coordinar una breve sesión de 30 minutos para responder pregutnas, hacer un tour de la plataforma, formalizar el inicio del piloto y definir el cronograma de lanzamientos.
       </p>
     </div>
 
