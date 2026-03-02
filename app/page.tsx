@@ -1010,30 +1010,64 @@ export default function Page() {
                 ))}
                 <p style={{ fontFamily: G, fontSize: "0.82rem", color: "#aaa", marginTop: "10px" }}>Referencia: $50,000/año = $200/día (250 días laborales)</p>
 
-                <p style={{ ...EB, marginBottom: "16px", marginTop: "32px" }}>C · Metodología de Cálculo</p>
+               <p style={{ ...EB, marginBottom: "16px", marginTop: "32px" }}>C · Metodología de Cálculo</p>
+                
                 <p style={{ fontFamily: G, fontSize: "0.88rem", color: "#666", lineHeight: 1.8, marginBottom: "16px" }}>
-                  Participación: 25% (87 de 350) · Sueño 40% = 35 devs · Movimiento 35% = 30 devs · Estrés 25% = 22 devs<br />
-                  Beneficios conservadores: Sueño 30% potencial · Movimiento 3% productividad · Estrés 5% productividad
+                  <strong>Participación:</strong> 25% adopción = 87 de 350 developers<br />
+                  <strong>Distribución:</strong> Sueño 40% = 35 devs · Movimiento 35% = 30 devs · Estrés 25% = 22 devs<br />
+                  <strong>Mejora real:</strong> 30% del potencial máximo documentado en cada área
                 </p>
-                {[
-                  { l: "Sueño",      c: "35 × 3.39 días × $200 = $23,730/año", r: "$5,932 en 3 meses" },
-                  { l: "Movimiento", c: "30 × $50,000 × 3% = $45,000/año",     r: "$11,250 en 3 meses" },
-                  { l: "Estrés",     c: "22 × $50,000 × 5% = $55,000/año",     r: "$13,750 en 3 meses" },
-                ].map((c) => (
-                  <div key={c.l} style={{ display: "flex", justifyContent: "space-between", padding: "10px 0", borderBottom: "1px solid #f0efe9", flexWrap: "wrap", gap: "8px" }}>
-                    <span style={{ fontFamily: S, fontSize: "1rem", minWidth: "80px" }}>{c.l}</span>
-                    <span style={{ fontFamily: G, fontSize: "0.85rem", color: "#888" }}>{c.c}</span>
-                    <span style={{ fontFamily: S, fontSize: "1rem" }}>{c.r}</span>
-                  </div>
-                ))}
-                <div style={{ display: "flex", justifyContent: "space-between", padding: "14px 0", borderTop: "2px solid #1a1a1a" }}>
-                  <span style={{ fontFamily: G, fontSize: "0.9rem", color: "#555" }}>Total · Inversión $8,000 · ROI 3.9×</span>
-                  <span style={{ fontFamily: S, fontSize: "1.1rem" }}>$30,932</span>
+
+                <div style={{
+                  display: "grid",
+                  gridTemplateColumns: "1fr",
+                  gap: "0",
+                  marginBottom: "24px"
+                }}>
+                  {[
+                    { 
+                      l: "Sueño",
+                      c: "11.3 días × 30% mejora = 3.39 días · 35 devs × 3.39 días × $200/día = $23,730/año",
+                      r: "$5,932 en 3 meses"
+                    },
+                    { 
+                      l: "Movimiento",
+                      c: "OSHA: 12-15% pérdida | Yoga reduce -29% dolor | 50% conservador = 4.5% mejora · 30 devs × $50,000 × 4.5% = $67,500/año",
+                      r: "$16,875 en 3 meses"
+                    },
+                    { 
+                      l: "Estrés",
+                      c: "APA/WHO: 18-22% pérdida | 30% mejora real = 6.6% recuperado · 22 devs × $50,000 × 6.6% = $72,600/año",
+                      r: "$18,150 en 3 meses"
+                    },
+                  ].map((c, i) => (
+                    <div key={c.l} style={{
+                      display: "grid",
+                      gridTemplateColumns: "100px 1fr auto",
+                      gap: "16px",
+                      padding: "16px 0",
+                      borderBottom: i < 2 ? "1px solid #f0efe9" : "none",
+                      alignItems: "start"
+                    }}>
+                      <span style={{ fontFamily: S, fontSize: "1rem", fontWeight: 400 }}>{c.l}</span>
+                      <span style={{ fontFamily: G, fontSize: "0.82rem", color: "#666", lineHeight: 1.6 }}>{c.c}</span>
+                      <span style={{ fontFamily: S, fontSize: "1rem", fontWeight: 400, whiteSpace: "nowrap" }}>{c.r}</span>
+                    </div>
+                  ))}
                 </div>
-              </div>
-            )}
-          </div>
-        </section>
+
+                <div style={{
+                  display: "grid",
+                  gridTemplateColumns: "100px 1fr auto",
+                  gap: "16px",
+                  padding: "14px 0",
+                  borderTop: "2px solid #1a1a1a",
+                  alignItems: "center"
+                }}>
+                  <span style={{ fontFamily: G, fontSize: "0.9rem", color: "#555" }}>Total</span>
+                  <span style={{ fontFamily: G, fontSize: "0.9rem", color: "#555" }}>Inversión $9,300 · ROI 4.4×</span>
+                  <span style={{ fontFamily: S, fontSize: "1.1rem", fontWeight: 400 }}>$40,957</span>
+                </div>
 
         {/* FOOTER */}
         <footer style={{ background: "#f0efe9", borderTop: "1px solid #e0e0da", padding: "36px clamp(20px,5vw,60px)" }}>
