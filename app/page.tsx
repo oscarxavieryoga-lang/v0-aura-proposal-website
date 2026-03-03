@@ -813,7 +813,7 @@ export default function Page() {
 
             <h2 style={{ fontFamily: S, fontSize: "clamp(1.8rem,3.5vw,2.8rem)", fontWeight: 400, lineHeight: 1.2, marginBottom: "18px" }}>
               Pagamos el éxito juntos.<br />
-              <em>Si AURA funciona, ambos lo sabemos.</em>
+              <em>Si ECOS funciona, ambos lo sabemos.</em>
             </h2>
 
             <h3 style={{ fontFamily: G, fontSize: "clamp(1.1rem,1.8vw,1.3rem)", fontWeight: 600, color: "#1a1a1a", marginBottom: "12px", lineHeight: 1.3 }}>
@@ -849,7 +849,7 @@ export default function Page() {
             </p>
 
             <p style={{ fontFamily: G, fontSize: "1rem", color: "#555", lineHeight: 1.85, maxWidth: "680px", marginBottom: "48px" }}>
-              AURA crece cuando el equipo de Willdom mejora.
+              ECOS crece cuando el equipo de Willdom mejora.
             </p>
 
             <div className="g-inv" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "56px" }}>
@@ -941,7 +941,7 @@ export default function Page() {
             <div className="g-resp" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", border: "1px solid #d8d7d0" }}>
               {[
                 {
-                  who: "AURA",
+                  who: "ECOS",
                   items: [
                     "Setup técnico y activación del acceso corporativo",
                     "Reportes mensuales de datos agregados — nunca datos personales",
@@ -1010,7 +1010,7 @@ export default function Page() {
           { 
             name: "Oscar Xavier Mantilla Sandoval", 
             role: "FOUNDER & DIRECTOR", 
-            org: "AURA — Arquitectura del Bienestar",
+            org: "ECOS — Arquitectura del Bienestar",
             initials: "OXM"
           },
           { 
@@ -1132,7 +1132,7 @@ export default function Page() {
       <footer style={{ background: "#f0efe9", borderTop: "1px solid #e0e0da", padding: "36px clamp(20px,5vw,60px)" }}>
         <div style={{ maxWidth: "900px", margin: "0 auto", display: "flex", flexWrap: "wrap", justifyContent: "space-between", alignItems: "flex-end", gap: "16px" }}>
           <div>
-            <p style={{ fontFamily: S, fontSize: "1.2rem", marginBottom: "4px" }}>AURA</p>
+            <p style={{ fontFamily: S, fontSize: "1.2rem", marginBottom: "4px" }}>ECOS WELLNESS CLUB</p>
             <p style={{ fontFamily: G, fontSize: "0.82rem", color: "#888" }}>Arquitectura del Bienestar</p>
           </div>
           <div style={{ textAlign: "right" }}>
