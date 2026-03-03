@@ -148,7 +148,7 @@ export default function Page() {
         <section style={{ background: "#fff", display: "flex", flexDirection: "column", minHeight: "100svh" }}>
 
           <header style={{ display: "flex", justifyContent: "space-between", alignItems: "center", padding: "24px clamp(20px,5vw,60px)", borderBottom: "1px solid #e8e8e4" }}>
-            <span style={{ fontFamily: G, fontSize: "11px", letterSpacing: "0.4em", textTransform: "uppercase", color: "#555", fontWeight: 600 }}>AURA</span>
+            <span style={{ fontFamily: G, fontSize: "11px", letterSpacing: "0.4em", textTransform: "uppercase", color: "#555", fontWeight: 600 }}>ECOS WELLNESS CLUB</span>
             <span style={{ fontFamily: G, fontSize: "11px", letterSpacing: "0.25em", textTransform: "uppercase", color: "#999" }}>Confidencial · Marzo 2026</span>
           </header>
 
@@ -257,7 +257,7 @@ export default function Page() {
             </p>
 
             <p style={{ fontFamily: G, fontSize: "1rem", color: "#555", lineHeight: 1.85, maxWidth: "700px", marginBottom: "48px" }}>
-              AURA es la respuesta. Un espacio de bienestar diseñado para developers remotos que cargan con insomnio, dolor postural y estrés crónico. Acceso 24/7, privacidad total, prácticas reales guiadas por especialistas. Sin vigilancia corporativa.
+              ECOS es la respuesta. Un espacio de bienestar diseñado para developers remotos que cargan con insomnio, dolor postural y estrés crónico. Acceso 24/7, privacidad total, prácticas reales guiadas por especialistas. Sin vigilancia corporativa.
             </p>
 
             <div style={{ background: "#f0efe9", padding: "24px 32px", marginBottom: "40px", borderLeft: "3px solid #1a1a1a", display: "flex", gap: "40px", flexWrap: "wrap" }}>
@@ -278,7 +278,7 @@ export default function Page() {
 
             <div style={{ borderTop: "1px solid #e0e0da", paddingTop: "40px", display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(180px,1fr))", gap: "32px" }}>
               {[
-                { label: "La solución",            value: "AURA",   sub: "Arquitectura del Bienestar" },
+                { label: "La solución",            value: "ECOS",   sub: "Arquitectura del Bienestar" },
                 { label: "Participación esperada",  value: "25%",    sub: "87 de 350 developers" },
                 { label: "Retorno estimado",        value: "4.4×",   sub: "ROI en 3 meses de piloto" },
                 { label: "Inversión base",          value: "$9,300", sub: "Piloto 3 meses · pagos escalonados" },
@@ -515,7 +515,7 @@ export default function Page() {
             <p style={EB}>04 · La Solución</p>
 
             <h2 style={{ fontFamily: S, fontSize: "clamp(1.8rem,3.5vw,2.8rem)", fontWeight: 400, lineHeight: 1.2, marginBottom: "18px" }}>
-              AURA · Arquitectura del Bienestar.<br />
+              ECOS · Arquitectura del Bienestar.<br />
               <em>No un beneficio. Un espacio.</em>
             </h2>
 
@@ -556,7 +556,7 @@ export default function Page() {
               ))}
             </div>
 
-            {/* ───────── QUÉ INCLUYE AURA ───────── */}
+            {/* ───────── QUÉ INCLUYE ECOS WELLNESS CLUB ───────── */}
             <div className="g2" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", borderTop: "1px solid #e0e0da", borderBottom: "1px solid #e0e0da", marginBottom: "56px" }}>
               {[
                 {
@@ -629,7 +629,7 @@ export default function Page() {
               ))}
             </div>
             <p style={{ fontFamily: G, fontSize: "0.82rem", color: "#aaa", fontStyle: "italic", marginTop: "16px" }}>
-              AURA continúa expandiendo según demanda de usuarios globales y evolución de la investigación científica.
+              ECOS WELLNESS CLUB continúa expandiendo según demanda de usuarios globales y evolución de la investigación científica.
             </p>
           </div>
         </section>
@@ -710,7 +710,7 @@ export default function Page() {
               </div>
             </div>
 
-            {/* CÓMO AURA RESUELVE */}
+            {/* CÓMO ECOS RESUELVE */}
             <div style={{
               background: "#fff",
               border: "1px solid #e0e0da",
@@ -718,7 +718,7 @@ export default function Page() {
               padding: "32px",
               marginBottom: "56px"
             }}>
-              <p style={{ ...SUB, marginBottom: "24px" }}>CÓMO AURA RESUELVE ESTO</p>
+              <p style={{ ...SUB, marginBottom: "24px" }}>CÓMO ECOS RESUELVE ESTO</p>
 
               {[
                 { camino: "Sueño", como: "Meditación + Breathing", por_que: "Regula cortisol → Sueño profundo", resultado: "Harvard: +30% capacidad cognitiva" },
@@ -816,94 +816,10 @@ export default function Page() {
               <em>Si AURA funciona, ambos lo sabemos.</em>
             </h2>
 
-            {/* INTRODUCCIÓN */}
-            <div style={{
-              background: "#fff",
-              padding: "clamp(32px,5vw,48px)",
-              borderRadius: "12px",
-              marginBottom: "56px",
-              borderLeft: "3px solid #1a1a1a"
-            }}>
-              <p style={{ ...SUB, marginBottom: "16px" }}>MODELO DE INVERSIÓN ALINEADO A RESULTADOS</p>
+            <p style={{ fontFamily: G, fontSize: "1rem", color: "#555", lineHeight: 1.85, maxWidth: "680px", marginBottom: "48px" }}>
+              Modelo de inversión alineado a resultados. Creemos que el bienestar corporativo debe ser medible y compartido. Por eso estructuramos esta propuesta con una inversión base que cubre la implementación completa del piloto de 3 meses, y un componente variable ligado a resultados concretos. Esto significa que: La base garantiza la ejecución integral del programa. El componente variable solo se activa si los indicadores acordados muestran mejoras medibles. Willdom tiene acceso al dashboard en tiempo real durante todo el proceso. De esta manera, alineamos incentivos: AURA crece cuando el equipo de Willdom mejora.
+            </p>
 
-              <p style={{
-                fontFamily: G,
-                fontSize: "0.95rem",
-                color: "#555",
-                lineHeight: 1.85,
-                marginBottom: "20px"
-              }}>
-                Creemos que el bienestar corporativo debe ser medible y compartido.
-              </p>
-
-              <p style={{
-                fontFamily: G,
-                fontSize: "0.95rem",
-                color: "#555",
-                lineHeight: 1.85,
-                marginBottom: "24px"
-              }}>
-                Por eso estructuramos esta propuesta con una inversión base que cubre la implementación completa del piloto de 3 meses, y un componente variable ligado a resultados concretos.
-              </p>
-
-              <p style={{ ...SUB, marginBottom: "16px" }}>ESTO SIGNIFICA QUE:</p>
-
-              <ul style={{
-                listStyle: "none",
-                display: "flex",
-                flexDirection: "column",
-                gap: "12px"
-              }}>
-                {[
-                  "La base garantiza la ejecución integral del programa.",
-                  "El componente variable solo se activa si los indicadores acordados muestran mejoras medibles.",
-                  "Willdom tiene acceso al dashboard en tiempo real durante todo el proceso."
-                ].map((item) => (
-                  <li key={item} style={{
-                    display: "flex",
-                    gap: "12px",
-                    alignItems: "flex-start"
-                  }}>
-                    <span style={{
-                      width: "4px",
-                      height: "4px",
-                      borderRadius: "50%",
-                      background: "#1a1a1a",
-                      flexShrink: 0,
-                      marginTop: "8px"
-                    }} />
-                    <span style={{
-                      fontFamily: G,
-                      fontSize: "0.9rem",
-                      color: "#555",
-                      lineHeight: 1.6
-                    }}>
-                      {item}
-                    </span>
-                  </li>
-                ))}
-              </ul>
-
-              <div style={{
-                borderTop: "1px solid #e0e0da",
-                marginTop: "24px",
-                paddingTop: "20px"
-              }}>
-                <p style={{ ...SUB, marginBottom: "12px" }}>DE ESTA MANERA, ALINEAMOS INCENTIVOS:</p>
-                
-                <p style={{
-                  fontFamily: G,
-                  fontSize: "0.95rem",
-                  color: "#555",
-                  lineHeight: 1.8,
-                  fontStyle: "italic"
-                }}>
-                  AURA crece cuando el equipo de Willdom mejora.
-                </p>
-              </div>
-            </div>
-
-            {/* ESTRUCTURA DE PAGOS */}
             <div className="g-inv" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "56px" }}>
 
               <div>
@@ -956,7 +872,6 @@ export default function Page() {
             </div>
           </div>
         </section>
-
         {/* ══════════════════════════════════════════════
             07 · IMPLEMENTACIÓN
         ══════════════════════════════════════════════ */}
