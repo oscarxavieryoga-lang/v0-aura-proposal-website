@@ -816,25 +816,94 @@ export default function Page() {
               <em>Si AURA funciona, ambos lo sabemos.</em>
             </h2>
 
-            <p style={{ fontFamily: G, fontSize: "1rem", color: "#555", lineHeight: 1.85, maxWidth: "680px", marginBottom: "48px" }}>
-              Modelo de inversión alineado a resultados
+            {/* INTRODUCCIÓN */}
+            <div style={{
+              background: "#fff",
+              padding: "clamp(32px,5vw,48px)",
+              borderRadius: "12px",
+              marginBottom: "56px",
+              borderLeft: "3px solid #1a1a1a"
+            }}>
+              <p style={{ ...SUB, marginBottom: "16px" }}>MODELO DE INVERSIÓN ALINEADO A RESULTADOS</p>
 
-Creemos que el bienestar corporativo debe ser medible y compartido.
+              <p style={{
+                fontFamily: G,
+                fontSize: "0.95rem",
+                color: "#555",
+                lineHeight: 1.85,
+                marginBottom: "20px"
+              }}>
+                Creemos que el bienestar corporativo debe ser medible y compartido.
+              </p>
 
-Por eso estructuramos esta propuesta con una inversión base que cubre la implementación completa del piloto de 3 meses, y un componente variable ligado a resultados concretos.
+              <p style={{
+                fontFamily: G,
+                fontSize: "0.95rem",
+                color: "#555",
+                lineHeight: 1.85,
+                marginBottom: "24px"
+              }}>
+                Por eso estructuramos esta propuesta con una inversión base que cubre la implementación completa del piloto de 3 meses, y un componente variable ligado a resultados concretos.
+              </p>
 
-Esto significa que:
+              <p style={{ ...SUB, marginBottom: "16px" }}>ESTO SIGNIFICA QUE:</p>
 
-La base garantiza la ejecución integral del programa.
+              <ul style={{
+                listStyle: "none",
+                display: "flex",
+                flexDirection: "column",
+                gap: "12px"
+              }}>
+                {[
+                  "La base garantiza la ejecución integral del programa.",
+                  "El componente variable solo se activa si los indicadores acordados muestran mejoras medibles.",
+                  "Willdom tiene acceso al dashboard en tiempo real durante todo el proceso."
+                ].map((item) => (
+                  <li key={item} style={{
+                    display: "flex",
+                    gap: "12px",
+                    alignItems: "flex-start"
+                  }}>
+                    <span style={{
+                      width: "4px",
+                      height: "4px",
+                      borderRadius: "50%",
+                      background: "#1a1a1a",
+                      flexShrink: 0,
+                      marginTop: "8px"
+                    }} />
+                    <span style={{
+                      fontFamily: G,
+                      fontSize: "0.9rem",
+                      color: "#555",
+                      lineHeight: 1.6
+                    }}>
+                      {item}
+                    </span>
+                  </li>
+                ))}
+              </ul>
 
-El componente variable solo se activa si los indicadores acordados muestran mejoras medibles.
+              <div style={{
+                borderTop: "1px solid #e0e0da",
+                marginTop: "24px",
+                paddingTop: "20px"
+              }}>
+                <p style={{ ...SUB, marginBottom: "12px" }}>DE ESTA MANERA, ALINEAMOS INCENTIVOS:</p>
+                
+                <p style={{
+                  fontFamily: G,
+                  fontSize: "0.95rem",
+                  color: "#555",
+                  lineHeight: 1.8,
+                  fontStyle: "italic"
+                }}>
+                  AURA crece cuando el equipo de Willdom mejora.
+                </p>
+              </div>
+            </div>
 
-Willdom tiene acceso al dashboard en tiempo real durante todo el proceso.
-
-De esta manera, alineamos incentivos:
-AURA crece cuando el equipo de Willdom mejora.
-            </p>
-
+            {/* ESTRUCTURA DE PAGOS */}
             <div className="g-inv" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "56px" }}>
 
               <div>
