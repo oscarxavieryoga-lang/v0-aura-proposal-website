@@ -816,8 +816,10 @@ export default function Page() {
               <em>Si AURA funciona, ambos lo sabemos.</em>
             </h2>
 
+            <p style={{ ...SUB, marginBottom: "24px" }}>MODELO DE INVERSIÓN ALINEADO A RESULTADOS</p>
+
             <p style={{ fontFamily: G, fontSize: "1rem", color: "#555", lineHeight: 1.85, maxWidth: "680px", marginBottom: "48px" }}>
-              Modelo de inversión alineado a resultados. Creemos que el bienestar corporativo debe ser medible y compartido. Por eso estructuramos esta propuesta con una inversión base que cubre la implementación completa del piloto de 3 meses, y un componente variable ligado a resultados concretos. Esto significa que: La base garantiza la ejecución integral del programa. El componente variable solo se activa si los indicadores acordados muestran mejoras medibles. Willdom tiene acceso al dashboard en tiempo real durante todo el proceso. De esta manera, alineamos incentivos: AURA crece cuando el equipo de Willdom mejora.
+              Creemos que el bienestar corporativo debe ser medible y compartido. Por eso estructuramos esta propuesta con una inversión base que cubre la implementación completa del piloto de 3 meses, y un componente variable ligado a resultados concretos. Esto significa que: La base garantiza la ejecución integral del programa. El componente variable solo se activa si los indicadores acordados muestran mejoras medibles. Willdom tiene acceso al dashboard en tiempo real durante todo el proceso. De esta manera, alineamos incentivos: AURA crece cuando el equipo de Willdom mejora.
             </p>
 
             <div className="g-inv" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "56px" }}>
