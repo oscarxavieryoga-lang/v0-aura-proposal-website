@@ -816,35 +816,35 @@ export default function Page() {
               <em>Si AURA funciona, ambos lo sabemos.</em>
             </h2>
 
-            <h3 style={{ fontFamily: G, fontSize: "clamp(1.1rem,1.8vw,1.3rem)", fontWeight: 600, color: "#1a1a1a", marginBottom: "24px", lineHeight: 1.3 }}>
+            <h3 style={{ fontFamily: G, fontSize: "clamp(1.1rem,1.8vw,1.3rem)", fontWeight: 600, color: "#1a1a1a", marginBottom: "12px", lineHeight: 1.3 }}>
               Modelo de inversión alineado a resultados
             </h3>
 
-            <p style={{ fontFamily: G, fontSize: "1rem", color: "#555", lineHeight: 1.85, maxWidth: "680px", marginBottom: "20px" }}>
+            <p style={{ fontFamily: G, fontSize: "1rem", color: "#555", lineHeight: 1.85, maxWidth: "680px", marginBottom: "8px" }}>
               Creemos que el bienestar corporativo debe ser medible y compartido.
             </p>
 
-            <p style={{ fontFamily: G, fontSize: "1rem", color: "#555", lineHeight: 1.85, maxWidth: "680px", marginBottom: "20px" }}>
+            <p style={{ fontFamily: G, fontSize: "1rem", color: "#555", lineHeight: 1.85, maxWidth: "680px", marginBottom: "8px" }}>
               Por eso estructuramos esta propuesta con una inversión base que cubre la implementación completa del piloto de 3 meses, y un componente variable ligado a resultados concretos.
             </p>
 
-            <p style={{ fontFamily: G, fontSize: "1rem", color: "#555", lineHeight: 1.85, maxWidth: "680px", marginBottom: "20px", fontWeight: 600 }}>
+            <p style={{ fontFamily: G, fontSize: "1rem", color: "#555", lineHeight: 1.85, maxWidth: "680px", marginBottom: "8px", fontWeight: 600 }}>
               Esto significa que:
             </p>
 
-            <ul style={{ marginBottom: "20px", paddingLeft: "20px" }}>
-              <li style={{ fontFamily: G, fontSize: "1rem", color: "#555", lineHeight: 1.85, marginBottom: "12px" }}>
+            <ul style={{ marginBottom: "8px", paddingLeft: "20px" }}>
+              <li style={{ fontFamily: G, fontSize: "1rem", color: "#555", lineHeight: 1.85, marginBottom: "4px" }}>
                 La base garantiza la ejecución integral del programa.
               </li>
-              <li style={{ fontFamily: G, fontSize: "1rem", color: "#555", lineHeight: 1.85, marginBottom: "12px" }}>
+              <li style={{ fontFamily: G, fontSize: "1rem", color: "#555", lineHeight: 1.85, marginBottom: "4px" }}>
                 El componente variable solo se activa si los indicadores acordados muestran mejoras medibles.
               </li>
-              <li style={{ fontFamily: G, fontSize: "1rem", color: "#555", lineHeight: 1.85, marginBottom: "12px" }}>
+              <li style={{ fontFamily: G, fontSize: "1rem", color: "#555", lineHeight: 1.85, marginBottom: "4px" }}>
                 Willdom tiene acceso al dashboard en tiempo real durante todo el proceso.
               </li>
             </ul>
 
-            <p style={{ fontFamily: G, fontSize: "1rem", color: "#555", lineHeight: 1.85, maxWidth: "680px", marginBottom: "20px", fontWeight: 600 }}>
+            <p style={{ fontFamily: G, fontSize: "1rem", color: "#555", lineHeight: 1.85, maxWidth: "680px", marginBottom: "8px", fontWeight: 600 }}>
               De esta manera, alineamos incentivos:
             </p>
 
