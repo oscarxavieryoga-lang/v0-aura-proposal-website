@@ -281,7 +281,7 @@ export default function Page() {
                 { label: "La solución",            value: "ECOS",   sub: "Arquitectura del Bienestar" },
                 { label: "Participación esperada",  value: "25%",    sub: "87 de 350 developers" },
                 { label: "Retorno estimado",        value: "4.4×",   sub: "ROI en 3 meses de piloto" },
-                { label: "Inversión base",          value: "$9,300", sub: "Piloto 3 meses · pagos escalonados" },
+                { label: "Inversión base",          value: "$9,300 USD", sub: "Piloto 3 meses · pagos escalonados" },
               ].map((m) => (
                 <div key={m.label}>
                   <p style={{ ...SUB, marginBottom: "10px" }}>{m.label}</p>
