@@ -790,7 +790,7 @@ export default function Page() {
                 <p style={{ fontFamily: G, fontSize: "0.9rem", color: "#555" }}>Total recuperado en 3 meses</p>
                 <p style={{ fontFamily: G, fontSize: "0.82rem", color: "#999", marginTop: "4px" }}>$5,932 + $16,875 + $18,150</p>
               </div>
-              <p style={{ fontFamily: S, fontSize: "clamp(1.8rem,3.5vw,2.5rem)", fontWeight: 400, color: "#1a1a1a" }}>$40,957</p>
+              <p style={{ fontFamily: S, fontSize: "clamp(1.8rem,3.5vw,2.5rem)", fontWeight: 400, color: "#1a1a1a" }}>$40,957 USD</p>
             </div>
 
             {/* ROI */}
