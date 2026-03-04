@@ -874,7 +874,7 @@ export default function Page() {
                   <div style={{ display: "grid", gridTemplateColumns: "36px 1fr auto", gap: "14px", padding: "20px", background: "#1a1a1a", alignItems: "center" }}>
                     <div />
                     <p style={{ fontFamily: G, fontSize: "0.92rem", color: "#f0efe9" }}>Total base obligatorio — 3 meses</p>
-                    <p style={{ fontFamily: S, fontSize: "1.4rem", color: "#f0efe9" }}>$9,300</p>
+                    <p style={{ fontFamily: S, fontSize: "1.4rem", color: "#f0efe9" }}>$9,300 USD</p>
                   </div>
                 </div>
               </div>
@@ -895,7 +895,7 @@ export default function Page() {
                 </div>
 
                 <p style={{ ...SUB, marginBottom: "8px" }}>Máximo total</p>
-                <p style={{ fontFamily: S, fontSize: "clamp(2.2rem,4.5vw,3.5rem)", fontWeight: 400, lineHeight: 1, marginBottom: "16px" }}>$13,800</p>
+                <p style={{ fontFamily: S, fontSize: "clamp(2.2rem,4.5vw,3.5rem)", fontWeight: 400, lineHeight: 1, marginBottom: "16px" }}>$13,800 USD</p>
 
                 <p style={{ fontFamily: G, fontSize: "0.82rem", color: "#aaa", fontStyle: "italic", lineHeight: 1.7 }}>
                   "Willdom ve en tiempo real qué metas se están cumpliendo. No hay sorpresas."
