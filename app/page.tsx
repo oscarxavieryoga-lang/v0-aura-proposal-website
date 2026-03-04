@@ -202,7 +202,7 @@ export default function Page() {
               {[
                 { val: "4.4×",   label: "ROI estimado" },
                 { val: "87",     label: "Developers activos" },
-                { val: "$9,300", label: "Inversión base" },
+                { val: "$9,300 USD", label: "Inversión base" },
               ].map((m, i, arr) => (
                 <React.Fragment key={m.label}>
                   <div style={{ textAlign: "center" }}>
